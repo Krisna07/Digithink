@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --textcolor: #0b0d08;
+  --backgroundColor: #f0f4ec;
+  --primaryBtn: #a492bf;
+  --secondaryBtn: #e0e6d5;
+  --accent: #6f5794;
+  --textHover: #0e110a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --textcolor: #eff3e8;
+    --backgroundColor: #130b0b;
+    --primaryBtn: #6b35bb;
+    --secondaryBtn: #70746a;
+    --accent: #403058;
+    --textHover: #cecfcc;
+  }
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  background-color: var(--backgroundColor);
+  color: var(--textcolor);
+}
