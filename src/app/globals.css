@@ -11,7 +11,7 @@
   --textHover: #0e110a;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --textcolor: #eff3e8;
     --backgroundColor: #130b0b;
@@ -20,7 +20,7 @@
     --accent: #403058;
     --textHover: #cecfcc;
   }
-}
+} */
 
 body {
   margin: 0 auto;
