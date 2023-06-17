@@ -13,7 +13,7 @@ interface btnProps {
 
 const Button = ({ btnText, isIcon, icon, variant }: btnProps) => {
   const primaryBtn =
-    "w-fit px-4 py-2 bg-primary-Btn rounded-[8px] border-none hover:text-hover-Text outline-none flex items-center  gap-2";
+    "w-fit h-fit px-4 py-2 bg-primary-Btn rounded-[8px] border-none hover:text-hover-Text outline-none flex items-center  gap-2";
   const secondaryBtn =
     "w-fit px-4 py-2 bg-secondary-Btn rounded-[8px] border-none text-hover-text hover:text-text-color outline-none";
 

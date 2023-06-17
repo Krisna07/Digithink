@@ -1,18 +1,15 @@
-import Image from "next/image";
+import Digital from "./Components/Homepage/Digital";
 import Herosection from "./Components/Homepage/Herosection";
+import Homeservices from "./Components/Homepage/Homeservices";
+import Social from "./Components/Homepage/social";
 
 export default function Home() {
   return (
     <main className="w-full grid-place-items-center">
       <Herosection />
-      <div className="w-full grid place-items-center">
-        <div className="md:w-[80%]">
-          <div>
-            <h4></h4>
-          </div>
-          <div></div>
-        </div>
-      </div>
+      <Digital />
+      <Homeservices />
+      <Social />
     </main>
   );
 }

@@ -70,7 +70,7 @@ const Navbar = () => {
               src="/logo.gif"
               width={500}
               height={500}
-              alt="Picture of the author"
+              alt="Picture of the logo"
             />
           </div>
           <div className="w-fit" onClick={() => setopen(!isopen)}>
