@@ -18,6 +18,7 @@ module.exports = {
         "primary-Btn": "var(--primaryBtn)",
         "secondary-Btn": "var(--secondaryBtn)",
         "accent-color": "var(--accent)",
+        "background-color": "var(--backgroundColor)",
       },
     },
   },
