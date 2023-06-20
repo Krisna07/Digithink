@@ -1,12 +1,21 @@
-import { Facebook, Instagram, Slack, Twitter, Youtube } from "lucide-react";
+import {
+  Book,
+  BookOpen,
+  Facebook,
+  Instagram,
+  Slack,
+  Twitter,
+  Youtube,
+} from "lucide-react";
 import React from "react";
+import Button from "../Button";
 
 const Social = () => {
   return (
-    <div className="w-full text-text-color flex items-center justify-end py-8 overflow-hidden">
-      <div className="w-[80%] grid gap-4  ">
+    <div className="w-full p-4 text-text-color flex items-center justify-end py-8 overflow-hidden">
+      <div className="md:w-[80%] grid gap-4  ">
         <h2 className="text-3xl font-bold">Social media</h2>
-        <h2 className="font-semibold w-[40%]">
+        <h2 className="font-semibold md:w-[40%]">
           We do the social meida campign every now and then. Subscribe our
           channel and get 10% off in our next campgin.
         </h2>
@@ -25,6 +34,7 @@ const Social = () => {
               voluptatum commodi ratione veniam provident nam autem ipsam optio
               nisi!
             </div>
+            <Button btnText="Read More" icon={<BookOpen />} />
             <Facebook
               size={80}
               strokeWidth={1}

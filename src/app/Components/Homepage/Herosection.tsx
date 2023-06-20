@@ -1,18 +1,14 @@
 import React from "react";
+import Button from "../Button";
 
 const Herosection = () => {
   return (
-    <div className="w-full h-[500px]  p-4 bg-gradient-to-r from-indigo-500 to-slate-500 grid place-items-center box-border text-center gap-4">
-      <div className="md:w-[60%] grid gap-4 box-border">
-        <h1 className="text-4xl font-bold">Think the digital way!</h1>
-        <p className="font-semibold">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam
-          dignissimos distinctio atque quaerat expedita excepturi facere
-          repellat reiciendis officia ipsa explicabo, nemo ea cum corrupti
-          molestiae porro ullam veniam aliquam aut. Unde eveniet, cumque dicta
-          ab cum assumenda consequuntur officiis maiores! Quas maxime fuga
-          accusamus nisi incidunt autem, qui at!
-        </p>
+    <div className="w-full h-[800px]  p-4 bg-gradient-to-r from-indigo-500 to-slate-500 grid place-items-center box-border text-center gap-4">
+      <div className="md:w-[60%] w-full  grid gap-4 place-items-left box-border">
+        <h1 className="text-6xl md:text-[100px] font-bold text-left leading-[150%]">
+          We Help <br /> You Take A Step <br /> In Digitial
+        </h1>
+        <Button btnText="View our work" />
       </div>
     </div>
   );

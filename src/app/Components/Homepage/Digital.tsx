@@ -4,7 +4,7 @@ import Button from "../Button";
 
 const Digital = () => {
   return (
-    <div className="w-full grid place-items-center py-8">
+    <div className="w-full grid place-items-center py-8 px-4">
       <div className="md:w-[60%] gap-8 flex justify-between">
         <div className="grid gap-2 md:w-1/2 place-items-left ">
           <div>

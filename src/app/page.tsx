@@ -1,3 +1,4 @@
+import Customers from "./Components/Homepage/Customers";
 import Digital from "./Components/Homepage/Digital";
 import Herosection from "./Components/Homepage/Herosection";
 import Homeservices from "./Components/Homepage/Homeservices";
@@ -10,6 +11,7 @@ export default function Home() {
       <Digital />
       <Homeservices />
       <Social />
+      <Customers />
     </main>
   );
 }

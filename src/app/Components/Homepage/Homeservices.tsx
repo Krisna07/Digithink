@@ -25,8 +25,8 @@ const Homeservices = () => {
     },
   ];
   return (
-    <div className="w-full grid place-items-center py-8 bg-text-color text-background-color">
-      <div className="w-[60%] grid gap-4">
+    <div className="w-full grid place-items-center py-8 px-4 bg-text-color text-background-color">
+      <div className="md:w-[60%] grid gap-4">
         <h4 className="font-semibold ">our services</h4>
         <h2 className="text-3xl font-bold py-2">We will help you all way in</h2>
         <p className="md:w-4/6">
@@ -35,7 +35,7 @@ const Homeservices = () => {
           assumenda voluptates recusandae reprehenderit. Accusamus.
         </p>
         <div className="services w-full flex items-center justify-between  wrap">
-          <div className="grid grid-cols-4 gap-4 ">
+          <div className="grid md:grid-cols-2 lg:grid-col-4  gap-4 ">
             {services.map((service) => (
               <div
                 className="bg-accent-color h-full rounded p-2 text-background-color flex flex-col justify-between gap-2   "
