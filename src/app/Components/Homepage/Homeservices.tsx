@@ -38,7 +38,7 @@ const Homeservices = () => {
           <div className="grid md:grid-cols-2 lg:grid-col-4  gap-4 ">
             {services.map((service) => (
               <div
-                className="bg-accent-color h-full rounded p-2 text-background-color flex flex-col justify-between gap-2   "
+                className="bg-gray-200 h-full rounded p-[20px] text-background-color flex flex-col justify-between gap-2   "
                 key={service.title}
               >
                 <div className="w-full flex justify-between items-center text-xl font-semibold ">

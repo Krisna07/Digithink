@@ -3,12 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --textcolor: #0b0d08;
-  --backgroundColor: #f0f4ec;
-  --primaryBtn: #a492bf;
-  --secondaryBtn: #e0e6d5;
-  --accent: #6f5794;
-  --textHover: #434441;
+  --secondaryColor: gray;
+  --btnColor: black;
+  --hoverBtn: rgb(109, 109, 109);
+  --accentColor: rgb(145, 66, 66);
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -25,6 +23,5 @@
 body {
   margin: 0 auto;
   padding: 0;
-  background-color: var(--backgroundColor);
-  color: var(--textcolor);
+  background-color: white;
 }
