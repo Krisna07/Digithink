@@ -13,7 +13,7 @@ interface btnProps {
 
 const Button = ({ btnText, isIcon, icon, variant }: btnProps) => {
   const primaryBtn =
-    "w-fit h-fit px-4 py-2 bg-primary-Btn rounded-[8px] border-none hover:text-hover-Text outline-none flex items-center  gap-2";
+    "w-fit h-fit px-4 py-2 bg-black rounded-full border-none hover:text-gray-100 text-white outline-none flex items-center  gap-2";
   const secondaryBtn =
     "w-fit px-4 py-2 bg-secondary-Btn rounded-[8px] border-none text-hover-text hover:text-text-color outline-none";
 
@@ -21,7 +21,7 @@ const Button = ({ btnText, isIcon, icon, variant }: btnProps) => {
 
   return (
     <button
-      className={`${variant ? variant : primaryBtn}`}
+      className={variant ? variant : primaryBtn}
       onMouseEnter={() => setHover(!isHover)}
       onMouseLeave={() => setHover(!isHover)}
     >
