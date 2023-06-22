@@ -34,7 +34,7 @@ const Social = () => {
               voluptatum commodi ratione veniam provident nam autem ipsam optio
               nisi!
             </div>
-            <Button btnText="Read More" icon={<BookOpen />} />
+
             <Facebook
               size={80}
               strokeWidth={1}

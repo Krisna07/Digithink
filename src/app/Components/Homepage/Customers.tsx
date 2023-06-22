@@ -29,7 +29,6 @@ const Customers = () => {
                     unde ullam fugit.
                   </p>
                 </div>
-                <Button btnText="View shop" />
               </div>
             ))}
           </div>

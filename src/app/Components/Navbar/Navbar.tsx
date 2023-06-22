@@ -56,10 +56,11 @@ const Navbar = () => {
         </div>
         <div>
           <Button
-            btnText="Signin"
-            isIcon={true}
-            icon={undefined}
-            variant={""}
+            variant={"default"}
+            label={"Sign up"}
+            color={"primary"}
+            className={undefined}
+            size="sm"
           />
         </div>
       </div>
@@ -95,12 +96,7 @@ const Navbar = () => {
               {menu.navTitle}
             </div>
           ))}
-          <Button
-            btnText="Signin"
-            isIcon={true}
-            icon={undefined}
-            variant={""}
-          />
+          <Button label="Signin" variant={"default"} size="sm" className={""} />
         </div>
       </div>
     </div>

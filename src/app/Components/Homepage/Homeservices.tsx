@@ -1,12 +1,14 @@
 import React from "react";
-import Button from "../Button";
+
 import { AppWindow, Cpu } from "lucide-react";
+import { FaDigitalOcean } from "react-icons/fa";
+import Card from "../Card";
 const Homeservices = () => {
   const services = [
     {
       title: "Digital Marketing",
       des: "Yes we do the digital marketing for your business. We can handle the soical media profiles and help you reach out the potential costumers",
-      icon: <Cpu />,
+      icon: <FaDigitalOcean />,
     },
     {
       title: "Ad Management",
@@ -37,17 +39,13 @@ const Homeservices = () => {
         <div className="services w-full flex items-center justify-between  wrap">
           <div className="grid md:grid-cols-2 lg:grid-col-4  gap-4 ">
             {services.map((service) => (
-              <div
-                className="bg-gray-200 h-full rounded p-[20px] text-background-color flex flex-col justify-between gap-2   "
+              <Card
                 key={service.title}
-              >
-                <div className="w-full flex justify-between items-center text-xl font-semibold ">
-                  <h2>{service.title}</h2>
-                  <span className="text-[40px]">{service.icon}</span>
-                </div>
-                <p>{service.des}</p>
-                <Button btnText="More" isIcon={true} />
-              </div>
+                cardTitle={service.title}
+                cardDes={service.des}
+                cardIcon={service.icon}
+                btntext={"More"}
+              />
             ))}
           </div>
         </div>
