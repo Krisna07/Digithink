@@ -8,7 +8,7 @@ const Herosection = () => {
         <h1 className="text-6xl md:text-[80px] font-bold text-left leading-[120%]">
           We Help <br /> You Take A Step <br /> In Digitial
         </h1>
-        <Button btnText="View our work" />
+        <Button variant={"ghost"} label={"Learn More"} size={"sm"} />
       </div>
     </div>
   );
