@@ -6,25 +6,18 @@ interface CardProps {
   cardTitle: string;
   cardDes: string;
   cardIcon: any;
-  btntext: string;
 }
 
-const Card = ({ cardTitle, cardDes, cardIcon, btntext }: CardProps) => {
+const Card = ({ cardTitle, cardDes, cardIcon }: CardProps) => {
   return (
-    <div className="grid place-items-left gap-4 p-4 bg-gray-300 rounded-lg">
-      <div className="flex items-center justify-between gap-4">
-        <div className="text-left">
-          <h2 className="font-bold">{cardTitle}</h2>
-          <p>{cardDes}</p>
-        </div>
-        <div className="text-[80px]">{cardIcon ? cardIcon : ""}</div>
+    <div className="grid place-items-center gap-4 p-4 bg-gray-200 rounded-lg hover:shadow-[0_0_4px_0_gray]">
+      <div className="text-[32px] p-4 bg-slate-400 rounded-full text-white">
+        {cardIcon ? cardIcon : ""}
       </div>
-      <Button
-        variant={"default"}
-        size="default"
-        label={btntext}
-        className={undefined}
-      />
+      <div className="text-center">
+        <h2 className="font-bold text-lg">{cardTitle}</h2>
+        <p>{cardDes}</p>
+      </div>
     </div>
   );
 };
