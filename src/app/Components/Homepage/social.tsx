@@ -12,8 +12,8 @@ import Button from "../Button";
 
 const Social = () => {
   return (
-    <div className="w-full p-4 text-text-color flex items-center justify-end py-8 overflow-hidden">
-      <div className="md:w-[80%] grid gap-4  ">
+    <div className="w-full p-4 text-text-color flex items-center justify-center py-8 overflow-hidden">
+      <div className="laptop:w-[1000px] grid gap-4  ">
         <h2 className="text-3xl font-bold">Social media</h2>
         <h2 className="font-semibold md:w-[40%]">
           We do the social meida campign every now and then. Subscribe our

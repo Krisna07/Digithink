@@ -32,8 +32,8 @@ const Navbar = () => {
   ];
   const [isopen, setopen] = useState<boolean>();
   return (
-    <div className="w-full shadow-lg px-4 py-2 bg-secondary-Btn grid place-items-center">
-      <div className="hidden  w-[80%] md:flex items-center justify-between">
+    <div className="w-full  shadow-lg px-4 py-2 bg-secondary-Btn grid place-items-center">
+      <div className="hidden  desktop:w-[1024px] tablet:w-full md:flex items-center justify-between">
         <div className="">
           <div className="w-[50px] h-[50px] bg-hover-Text rounded-full flex items-center justify-center overflow-hidden">
             <Image
@@ -64,7 +64,7 @@ const Navbar = () => {
           />
         </div>
       </div>
-      <div className="w-full md:hidden px-4 box-border grid gap-4 overflow-hidden">
+      <div className="w-full tablet:hidden px-4 box-border grid gap-4 overflow-hidden">
         <div className="w-full box-border flex items-center justify-between">
           <div className="w-[50px] h-[50px] bg-hover-Text rounded-full flex items-center justify-center overflow-hidden">
             <Image

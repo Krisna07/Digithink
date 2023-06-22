@@ -7,10 +7,10 @@ const Requestform = () => {
   const [select, setSelected] = useState<boolean>(false);
   const requestType = ["Design", "Web Developement"];
   return (
-    <div className="w-full py-8 grid place-items-center gap-8 p-4">
+    <div className="laptop:w-[1000px] py-8 grid place-items-center gap-8 p-4">
       <div className="grid place-items-center gap-8">
         <h2>Submit your request here</h2>
-        <div className="flex gap-4 md:w-[40%] flex-wrap items-center justify-center">
+        <div className="flex gap-4  flex-wrap items-center justify-center">
           {" "}
           {[...Array(8)].map((request, x) => (
             <div
@@ -28,7 +28,7 @@ const Requestform = () => {
           ))}
         </div>
       </div>
-      <form className="md:w-[40%] w-full  grid gap-4">
+      <form className="laptop:w-[60%] tablet:w-[80%] w-full  grid gap-4">
         <label htmlFor="email" className="grid gap-4 ">
           Username
           <input type="text" className="rounded-lg bg-gray-200 px-4 py-2" />

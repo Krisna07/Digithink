@@ -20,6 +20,13 @@ module.exports = {
         "accent-color": "var(--accent)",
         "background-color": "var(--backgroundColor)",
       },
+      screens: {
+        tablet: "640px",
+
+        laptop: "1024px",
+
+        desktop: "1280px",
+      },
     },
   },
   plugins: [],

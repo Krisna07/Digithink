@@ -4,10 +4,10 @@ import Button from "../Button";
 
 const Digital = () => {
   return (
-    <div className="w-full grid place-items-center py-8 px-4">
-      <div className="md:w-[60%] gap-8 flex justify-between">
-        <div className="grid gap-2 md:w-1/2 place-items-left ">
-          <div>
+    <div className="w-full grid place-items-center py-8 px-4 relative overflow-hidden ">
+      <div className="tablet:w-full laptop:w-[1000px] gap-8  flex justify-between relative">
+        <div className="grid gap-2 tablet:w-1/2 place-items-left relative z-20 ">
+          <div className="grid gap-4">
             <h4 className="font-semibold text-hover-Text">Go Digital</h4>
             <h2 className="text-3xl font-bold py-2">
               A digital team for your business{" "}
@@ -17,11 +17,30 @@ const Digital = () => {
               porro hic velit vero! Placeat provident cumque iure impedit
               praesentium. Iure!
             </p>
+            <div className="w-fit grid gap-2 grid-cols-4">
+              <div className="w-20 h-20 bg-slate-200 rounded-full grid place-items-center text-[40px] font-bold">
+                D
+              </div>
+              <div className="w-20 h-20 bg-slate-200 rounded-full grid place-items-center text-[40px] font-bold">
+                I
+              </div>
+              <div className="w-20 h-20 bg-slate-200 rounded-full grid place-items-center text-[40px] font-bold">
+                G
+              </div>
+              <div className="w-20 h-20 bg-slate-200 rounded-full grid place-items-center text-[40px] font-bold">
+                I
+              </div>
+            </div>
           </div>
 
-          <Button btnText="Contact us" isIcon={true} />
+          <Button
+            label="Contact us"
+            variant={"default"}
+            size={"sm"}
+            className="h-fit"
+          />
         </div>
-        <div className=" grid place-items-center ">
+        <div className="  place-items-center hidden tablet:grid ">
           <div className="">
             <Image
               src="/logo.gif"

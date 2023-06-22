@@ -7,6 +7,7 @@ import { BiMedal, BiShareAlt, BiWallet } from "react-icons/bi";
 import { TfiBrush } from "react-icons/tfi";
 
 import Card from "../Card";
+import Button from "../Button";
 const Homeservices = () => {
   const services = [
     {
@@ -41,16 +42,16 @@ const Homeservices = () => {
     },
   ];
   return (
-    <div className="w-full grid place-items-center py-8 px-4 bg-text-color text-background-color">
-      <div className="md:w-[60%] grid gap-4">
+    <div className="w-full grid place-items-center py-8 px-4 bg-slate-200 text-background-color">
+      <div className="laptop:w-[1000px]  grid gap-4">
         <h4 className="font-semibold ">our services</h4>
         <h2 className="text-3xl font-bold py-2">We will help you all way in</h2>
-        <p className="md:w-4/6">
+        <p className="laptop:w-3/6">
           We are a web agency specializing in creating stunning and functional
           websites that captivate your audience and drive results.
         </p>
         <div className="services w-full flex items-center justify-between  wrap">
-          <div className="grid md:grid-cols-2   gap-6 ">
+          <div className="grid tablet:grid-cols-2 laptop:grid-cols-3  gap-6 ">
             {services.map((service) => (
               <Card
                 key={service.title}
@@ -60,6 +61,14 @@ const Homeservices = () => {
               />
             ))}
           </div>
+        </div>
+        <div className="w-full grid place-items-center">
+          <Button
+            label="Learn more"
+            variant={"primary"}
+            size="lg"
+            className={undefined}
+          />
         </div>
       </div>
     </div>
