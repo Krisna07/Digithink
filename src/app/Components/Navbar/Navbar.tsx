@@ -32,7 +32,7 @@ const Navbar = () => {
   ];
   const [isopen, setopen] = useState<boolean>();
   return (
-    <div className="w-full  shadow-lg px-4 py-2 bg-secondary-Btn grid place-items-center">
+    <div className="w-full fixed z-[90] bg-white  shadow-lg px-4 py-2 bg-secondary-Btn grid place-items-center">
       <div className="hidden  desktop:w-[1024px] tablet:w-full md:flex items-center justify-between">
         <div className="">
           <div className="w-[50px] h-[50px] bg-hover-Text rounded-full flex items-center justify-center overflow-hidden">
