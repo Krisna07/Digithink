@@ -9,7 +9,7 @@ import Button from "./Button";
 const Footer = () => {
   return (
     <div className="w-full p-8 grid place-items-center text-white bg-slate-800">
-      <div className="w-[1080px] flex  justify-between">
+      <div className="laptop:w-[1080px] flex  justify-between flex-wrap gap-4">
         <div className="flex justify-start">
           <div className="w-20 h-20 rounded-lg overflow-hidden">
             {" "}
@@ -29,7 +29,7 @@ const Footer = () => {
             <span>Unit 1, Xyz Street</span>
             <span>Suburb, State 0000</span>
           </div>
-          <span className="flex text-lg hover:bg-black px-4 py-2 text-white items-center gap-4 underline text-black fonr-semibold">
+          <span className="flex text-lg hover:bg-black  text-white items-center gap-4 underline text-black font-semibold">
             View on map <LocateIcon />
           </span>
         </div>
@@ -41,12 +41,12 @@ const Footer = () => {
             <span>Unit 1, Xyz Street</span>
             <span>Suburb, State 0000</span>
           </div>
-          <span className="flex text-lg hover:bg-black px-4 py-2 text-white items-center gap-4 underline text-black fonr-semibold">
+          <span className="flex text-lg hover:bg-black text-white items-center text-left gap-4 underline text-black font-semibold">
             View on map <LocateIcon />
           </span>
         </div>
-        <div className="grid place-items-left uppercase">
-          <span className="uppercase">
+        <div className="grid place-items-left uppercase gap-4">
+          <span className="uppercase fnt-semi-bold">
             Want to be the smartest in our office ?
           </span>
           <span>
