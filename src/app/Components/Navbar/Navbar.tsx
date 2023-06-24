@@ -1,7 +1,7 @@
 "use client";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Button from "../Button";
 
 interface Navtypes {
@@ -30,7 +30,9 @@ const Navbar = () => {
       navTitle: "Contact us",
     },
   ];
+
   const [isopen, setopen] = useState<boolean>();
+
   return (
     <div className="w-full fixed z-[90] bg-white  shadow-lg px-4 py-2 bg-secondary-Btn grid place-items-center">
       <div className="hidden  desktop:w-[1024px] tablet:w-full md:flex items-center justify-between">
@@ -40,7 +42,7 @@ const Navbar = () => {
               src="/logo.gif"
               width={500}
               height={500}
-              alt="Picture of the author"
+              alt="Picture of the logo"
             />
           </div>
         </div>
