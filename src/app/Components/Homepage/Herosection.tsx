@@ -5,8 +5,8 @@ import Button from "../Button";
 const Herosection = () => {
   return (
     <div className="w-full py-8   p-4 bg-gradient-to-r from-black to-slate-900 grid place-items-center box-border text-center gap-4 relative">
-      <div className="laptop:w-[1000px] flex align-items-center justify-center relative">
-        <div className="laptop:w-1/2 text-white text-left relative z-20  flex flex-col gap-4  box-border">
+      <div className="laptop:w-[1000px] grid tablet:grid-cols-2 relative">
+        <div className=" text-white text-left relative z-20  flex flex-col gap-4  box-border">
           <h1 className=" text-3xl  font-bold  leading-[120%]">
             We Help You Take A Step In Digitial
           </h1>
@@ -23,11 +23,11 @@ const Herosection = () => {
             className="h-fit"
           />
         </div>
-        <div className="w-1/2 laptop:relative absolute left-0 top-0 z-10">
+        <div className=" laptop:relative  h-full  absolute top-[0px] tablet:right-0 z-10">
           <Image
             src={"./herobackground.svg"}
-            width={500}
-            height={500}
+            width={400}
+            height={400}
             alt={"Heroimage"}
           />
         </div>
