@@ -25,3 +25,8 @@ body {
   padding: 0;
   background-color: white;
 }
+
+.textStroke {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
