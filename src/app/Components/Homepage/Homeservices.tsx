@@ -1,10 +1,11 @@
+"use client";
 import React from "react";
 
-import { AppWindow, Code2Icon, Cpu, Settings } from "lucide-react";
 import { FaCode, FaDigitalOcean } from "react-icons/fa";
 import { BiMedal, BiShareAlt, BiWallet } from "react-icons/bi";
 
 import { TfiBrush } from "react-icons/tfi";
+import { useState, useRef, useEffect } from "react";
 
 import Card from "../Card";
 import Button from "../Button";
@@ -41,8 +42,37 @@ const Homeservices = () => {
       icon: <BiWallet />,
     },
   ];
+  const [isIntersecting, setIsIntersecting] = useState<boolean>(false);
+  const ref = useRef(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsIntersecting(entry.isIntersecting);
+      },
+      { rootMargin: "-300px" }
+    );
+    console.log(isIntersecting);
+    observer.observe(ref.current);
+
+    return () => observer.disconnect();
+  }, [isIntersecting]);
+
+  // useEffect(() => {
+  //   if (isIntersecting) {
+  //     ref.current.querySelectorAll("div").forEach((el) => {
+  //       el.classList.add("slide-in");
+  //     });
+  //   } else {
+  //     ref.current.querySelectorAll("div").forEach((el) => {
+  //       el.classList.remove("slide-in");
+  //     });
+  //   }
+  // }, [isIntersecting]);
   return (
-    <div className="w-full grid place-items-center py-8 px-4 bg-slate-200 text-background-color">
+    <div
+      className="w-full grid place-items-center py-8 px-4 bg-slate-200 text-background-color"
+      ref={ref}
+    >
       <div className="laptop:w-[1000px]  grid gap-4">
         <h4 className="font-semibold ">our services</h4>
         <h2 className="text-3xl font-bold py-2">We will help you all way in</h2>
@@ -51,7 +81,11 @@ const Homeservices = () => {
           websites that captivate your audience and drive results.
         </p>
         <div className="services w-full flex items-center justify-between  wrap">
-          <div className="grid tablet:grid-cols-2 laptop:grid-cols-3  gap-6 ">
+          <div
+            className={`grid tablet:grid-cols-2 laptop:grid-cols-3 gap-[20px] relative transition-all  overflow-hidden ${
+              isIntersecting ? "bottom-0" : "bottom-[-100px]"
+            }`}
+          >
             {services.map((service) => (
               <Card
                 key={service.title}
