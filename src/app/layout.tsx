@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        <div className="top-[66px] relative">{children}</div>
+        <div className="top-[66px] relative ">{children}</div>
         <Footer />
       </body>
     </html>

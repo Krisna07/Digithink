@@ -57,22 +57,8 @@ const Homeservices = () => {
     return () => observer.disconnect();
   }, [isIntersecting]);
 
-  // useEffect(() => {
-  //   if (isIntersecting) {
-  //     ref.current.querySelectorAll("div").forEach((el) => {
-  //       el.classList.add("slide-in");
-  //     });
-  //   } else {
-  //     ref.current.querySelectorAll("div").forEach((el) => {
-  //       el.classList.remove("slide-in");
-  //     });
-  //   }
-  // }, [isIntersecting]);
   return (
-    <div
-      className="w-full grid place-items-center py-8 px-4 bg-slate-200 text-background-color"
-      ref={ref}
-    >
+    <div className="w-full grid place-items-center py-8 px-4 bg-slate-200 text-background-color">
       <div className="laptop:w-[1000px]  grid gap-4">
         <h4 className="font-semibold ">our services</h4>
         <h2 className="text-3xl font-bold py-2">We will help you all way in</h2>
@@ -82,17 +68,32 @@ const Homeservices = () => {
         </p>
         <div className="services w-full flex items-center justify-between  wrap">
           <div
-            className={`grid tablet:grid-cols-2 laptop:grid-cols-3 gap-[20px] relative transition-all  overflow-hidden ${
-              isIntersecting ? "bottom-0" : "bottom-[-100px]"
-            }`}
+            className={`grid tablet:grid-cols-2 laptop:grid-cols-3  relative transition-all  overflow-hidden 
+           gap-[20px]
+            `}
+            ref={ref}
           >
             {services.map((service) => (
-              <Card
+              <div
                 key={service.title}
-                cardTitle={service.title}
-                cardDes={service.des}
-                cardIcon={service.icon}
-              />
+                className={`w-fit h-fit relative transition-all ease-in-out duration-[${
+                  services.indexOf(service) * 75
+                }ms]  ${
+                  !isIntersecting
+                    ? services.indexOf(service) % 2
+                      ? "right-[-100%] "
+                      : "left-[-100%] "
+                    : services.indexOf(service) % 2
+                    ? "right-[0%] "
+                    : "left-[0%] "
+                } `}
+              >
+                <Card
+                  cardTitle={service.title}
+                  cardDes={service.des}
+                  cardIcon={service.icon}
+                />
+              </div>
             ))}
           </div>
         </div>
