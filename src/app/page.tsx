@@ -9,6 +9,7 @@ import Requestform from "./Components/Homepage/Requestform";
 import Social from "./Components/Homepage/social";
 
 export default function Home() {
+  //create the individual animation states for each section and animate on scroll
   const [isIntersecting, setIsIntersecting] = useState<boolean>(false);
   const ref = useRef(null);
   useEffect(() => {
