@@ -5,10 +5,10 @@ import Button from "../Button";
 const Digital = () => {
   return (
     <div className="tablet:w-full laptop:w-[1000px] gap-8  flex justify-between relative">
-      <div className="grid gap-2 tablet:w-1/2 place-items-left relative z-20 ">
-        <div className="grid gap-4">
+      <div className="grid gap-2  tablet:w-1/2 place-items-left relative z-20 ">
+        <div className="grid  text-left leading-[130%]">
           <h4 className="font-semibold text-hover-Text">Go Digital</h4>
-          <h2 className="text-3xl font-bold py-2">
+          <h2 className="text-3xl font-bold ">
             A digital team for your business{" "}
           </h2>
           <p className="md:w-5/6">

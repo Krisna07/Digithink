@@ -63,7 +63,7 @@ export default function Home() {
       </div>
       <div
         ref={sectionRefs[1]}
-        className={`w-full py-8 ${
+        className={`w-full py-[40px] ${
           !sectionIntersecting[1] ? "opacity-0" : "opcaity-1"
         }   p-4 grid place-items-center box-border text-center gap-4 relative transition-opacity ease-in-out duration-1000`}
       >
@@ -71,7 +71,7 @@ export default function Home() {
       </div>
       <div
         ref={sectionRefs[2]}
-        className={`w-full py-8 ${
+        className={`w-full py-[40px] ${
           !sectionIntersecting[2] ? "opacity-0" : "opcaity-1"
         }   p-4 grid place-items-center box-border text-center gap-4 relative transition-opacity ease-in-out duration-1000`}
       >
@@ -79,15 +79,15 @@ export default function Home() {
       </div>
       <div
         ref={sectionRefs[3]}
-        className={`w-full py-8 ${
+        className={`w-full py-[40px] ${
           !sectionIntersecting[3] ? "opacity-0" : "opcaity-1"
-        }   p-4 grid place-items-center box-border text-center gap-4 relative transition-opacity ease-in-out duration-1000`}
+        }   p-4 grid place-items-center box-border text-center gap-4 relative transition-opacity ease-in-out duration-1000 bg-gray-200`}
       >
         <Homeservices />
       </div>
       <div
         ref={sectionRefs[4]}
-        className={`w-full py-8 ${
+        className={`w-full py-[40px] ${
           !sectionIntersecting[4] ? "opacity-0" : "opcaity-1"
         }   p-4 grid place-items-center box-border text-center gap-4 relative transition-opacity ease-in-out duration-1000`}
       >
@@ -95,7 +95,7 @@ export default function Home() {
       </div>
       <div
         ref={sectionRefs[5]}
-        className={`w-full py-8 ${
+        className={`w-full py-[40px] ${
           !sectionIntersecting[5] ? "opacity-0" : "opcaity-1"
         }   p-4 grid place-items-center box-border text-center gap-4 relative transition-opacity skew-y-[-2deg] bg-slate-900 text-white ease-in-out duration-1000`}
       >
@@ -103,7 +103,7 @@ export default function Home() {
       </div>
       <div
         ref={sectionRefs[6]}
-        className={`w-full py-8 ${
+        className={`w-full py-[40px] pb-20 ${
           !sectionIntersecting[6] ? "opacity-0" : "opcaity-1"
         }   p-4 grid place-items-center box-border text-center gap-4 relative transition-opacity ease-in-out duration-1000`}
       >

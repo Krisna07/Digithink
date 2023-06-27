@@ -61,7 +61,7 @@ const Homeservices = () => {
           {services.map((service) => (
             <div
               key={service.title}
-              className={`w-fit h-fit relative transition-all ease-in-out`}
+              className={`w-fit h-full relative transition-all ease-in-out bg-white rounded-lg hover:shadow-[0_0_4px_0_gray]`}
             >
               <Card
                 cardTitle={service.title}
