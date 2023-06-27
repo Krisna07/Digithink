@@ -4,9 +4,10 @@ import Button from "../Button";
 
 const Herosection = () => {
   return (
-    <div className="laptop:w-[1000px] grid tablet:grid-cols-2 relative">
-      <div className=" text-white text-left relative z-20  flex flex-col gap-4  box-border">
-        <h1 className=" text-3xl  font-bold  leading-[120%]">
+    <div className="laptop:w-[1000px] grid place-items-center tablet:grid-cols-2 relative">
+      <div className="w-fit text-white text-left relative z-20  flex flex-col gap-4  box-border">
+        <h2 className="font-semi-bold">DigiThink Media</h2>
+        <h1 className=" text-3xl w-fit  font-bold  leading-[120%] text-transparent bg-clip-text bg-gradient-to-t from-[#FFFFFF] to-[#6D6D6D]">
           We Help You Take A Step In Digitial
         </h1>
         <p>
@@ -16,7 +17,7 @@ const Herosection = () => {
           people salary has cut{" "}
         </p>
         <Button
-          variant={"ghost"}
+          variant={"primary"}
           label={"Learn More"}
           size={"sm"}
           className="h-fit"

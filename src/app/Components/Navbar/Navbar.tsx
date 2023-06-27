@@ -34,10 +34,10 @@ const Navbar = () => {
   const [isopen, setopen] = useState<boolean>();
 
   return (
-    <div className="w-full fixed z-[90] bg-white  shadow-lg px-4 py-2 bg-secondary-Btn grid place-items-center">
+    <div className="w-full fixed z-[90] bg-[#000000]  shadow-lg px-4 py-[10px] bg-secondary-Btn grid place-items-center">
       <div className="hidden  desktop:w-[1024px] tablet:w-full tablet:flex items-center justify-between">
         <div className="">
-          <div className="w-[50px] h-[50px] bg-hover-Text rounded-full flex items-center justify-center overflow-hidden">
+          <div className="w-[50px] h-[50px] rounded-full flex items-center justify-center overflow-hidden">
             <Image
               src="/logo.gif"
               width={500}
@@ -46,7 +46,7 @@ const Navbar = () => {
             />
           </div>
         </div>
-        <div className="flex w-fit gap-2">
+        <div className="flex w-fit text-[#FFFFFF] gap-2">
           {navItems.map((menu) => (
             <div
               key={menu.navTitle}

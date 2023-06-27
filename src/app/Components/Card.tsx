@@ -10,7 +10,7 @@ interface CardProps {
 
 const Card = ({ cardTitle, cardDes, cardIcon }: CardProps) => {
   return (
-    <div className="grid place-items-center gap-4 p-4 bg-white rounded-lg hover:shadow-[0_0_4px_0_gray]">
+    <div className="grid place-items-center h-full gap-4 p-4 bg-white rounded-lg hover:shadow-[0_0_4px_0_gray]">
       <div className="text-[32px] p-4 bg-slate-400 rounded-full text-white">
         {cardIcon ? cardIcon : ""}
       </div>

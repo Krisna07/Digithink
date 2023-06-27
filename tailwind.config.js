@@ -13,14 +13,6 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
 
-      colors: {
-        "text-color": "var(--textcolor)",
-        "hover-Text": "var(--textHover)",
-        "primary-Btn": "var(--primaryBtn)",
-        "secondary-Btn": "var(--secondaryBtn)",
-        "accent-color": "var(--accent)",
-        "background-color": "var(--backgroundColor)",
-      },
       screens: {
         tablet: "640px",
 
