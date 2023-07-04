@@ -54,7 +54,7 @@ const Homeservices = () => {
       </p>
       <div className="services w-full flex items-center justify-between  wrap">
         <div
-          className={`grid tablet:grid-cols-2 laptop:grid-cols-3 p-4 relative transition-all  overflow-hidden 
+          className={`grid tablet:grid-cols-2 laptop:grid-cols-3 py-4 relative transition-all  overflow-hidden 
            gap-[20px]
             `}
         >
@@ -76,7 +76,7 @@ const Homeservices = () => {
         <Button
           label="Learn more"
           variant={"primary"}
-          size="lg"
+          size="sm"
           className={undefined}
         />
       </div>

@@ -4,14 +4,14 @@ import Button from "../Button";
 const Customers = () => {
   return (
     <div className="laptop:w-[1000px] grid gap-4 skew-y-[2deg]">
-      <h2 className=" text-2xl font-bold text-left">
+    <div>  <h2 className=" text-2xl font-bold ">
         Customers satisfaction is our{" "}
         <span className=" hover:underline">Goal</span>
       </h2>
       <p>
         We have carried out the project that keep oushing us to the limit. New
         challenges are our type.
-      </p>
+      </p></div>
       <div className="customers w-full">
         <div className="w-full grid laptop:grid-cols-4  tablet:grid-cols-2  gap-[20px]">
           {[...Array(4)].map((items, x) => (
