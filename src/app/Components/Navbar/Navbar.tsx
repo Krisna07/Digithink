@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import Button from "../Button";
+import Link from "next/link";
 
 interface Navtypes {
   navItems: [
@@ -16,18 +17,23 @@ const Navbar = () => {
   const navItems = [
     {
       navTitle: "Home",
+      link:"./"
     },
     {
       navTitle: "Services",
+      link:"./services"
     },
     {
       navTitle: "Projects",
+      link:"./projects"
     },
     {
       navTitle: "About us",
+      link:"./about"
     },
     {
       navTitle: "Contact us",
+      link:"./contact"
     },
   ];
 
@@ -52,7 +58,8 @@ const Navbar = () => {
               key={menu.navTitle}
               className="p-2 hover:text-hover-Text cursor-default font-semibold"
             >
-              {menu.navTitle}
+              <Link href={menu.link}>   {menu.navTitle}</Link>
+          
             </div>
           ))}
         </div>

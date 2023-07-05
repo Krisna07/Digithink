@@ -17,7 +17,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [height, setHeight] = useState<string>(0);
+  const [height, setHeight] = useState<string>('0');
 
   console.log(height);
 
@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        <div className="top-[66px] relative ">{children}</div>
+        <div className="py-[66px] relative ">{children}</div>
         <Footer />
       </body>
     </html>
