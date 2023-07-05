@@ -80,18 +80,24 @@ const Social = () => {
   return (
     <div className="laptop:w-[1000px] grid place-items-center gap-4 ">
       <h2 className="text-3xl font-bold">Our Campigns</h2>
-      <h2 className="font-semibold md:w-[40%]">
+      <h2 className="font-semibold md:w-[80%]">
         We do the social meida campign every now and then. Subscribe our channel
         and get 10% off in our next campgin.
       </h2>
       <div className="laptop:w-[1000px] flex gap-4 py-4 overflow-x-scroll">
-       {campign.map((item)=> <div key={item.title} className="max-w-fit min-w-[300px] h-full grid gap-4 text-left bg-gray-400 rounded-md relative p-4 box-border bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-100 shadow-lg ">
-          <div className="flex"><div><h2 className="text-lg font-bold">{item.title}</h2>
+       {campign.map((item)=>
+        <div key={item.title} className="max-w-fit min-w-[300px] grid gap-4 text-left bg-gray-400  rounded-md relative p-4 box-border bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-100 shadow-lg ">
+          <div className="flex items-center justify-between">
+            <div>
+              <h2 className="text-lg font-bold">{item.title}</h2>
           <div className="text-sm font-semibold text-hover-Text">
-            <span>{item.startDate}</span> - <span>{item.endDate}</span></div>
+            <span>{item.startDate}</span> - <span>{item.endDate}</span>
+            </div>
 
           </div>
-          <div   className="p-4 text-[32px] rounded  bottom-4 right-4">{item.icon}</div></div>
+          <div   className="p-4 text-[32px] rounded  bottom-4 right-4">{item.icon}</div>
+
+          </div>
           {/* <div>
             {item.description}
           </div> */}

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { FaCode, FaDigitalOcean } from "react-icons/fa";
+import { FaBullhorn, FaChartLine, FaCode, FaDesktop, FaDigitalOcean, FaPaintBrush, FaShareAlt } from "react-icons/fa";
 import { BiMedal, BiShareAlt, BiWallet } from "react-icons/bi";
 
 import { TfiBrush } from "react-icons/tfi";
@@ -12,33 +12,33 @@ const Homeservices = () => {
   const services = [
     {
       title: "Strategy",
-      des: "Yes we do the digital marketing for your business. We can handle the soical media profiles and help you reach out the potential costumers",
-      icon: <FaDigitalOcean />,
+      des: "We develop comprehensive social media strategies tailored to your business goals. Our expert team will help you navigate the ever-changing landscape of social media platforms to maximize your online presence and reach your target audience.",
+      icon: <FaChartLine />,
     },
     {
-      title: "Branding",
-      des: "Our team is expertise in ad managment. We can help you with all platforms that can host your ad campagin. Google, meta , titok , etc you name it.",
-      icon: <BiMedal />,
+      title: "Web Design",
+      des: "Our talented designers transform your ideas into captivating and user-friendly website interfaces. We focus on creating visually appealing designs that enhance the overall user experience and leave a lasting impression on your visitors.",
+      icon: <FaDesktop />,
     },
     {
-      title: "Web Developement",
-      des: "We can built the website and application for your app from scratch. From code to web builder we do it all",
-      icon: <FaCode />,
+      title: "Web Development",
+      des: "Turn your vision into a fully functional website with our professional web development services. From building your first website to developing complex web applications, our skilled developers ensure clean and efficient code that brings your ideas to life.",
+      icon: <FaCode/>,
     },
     {
       title: "UI/UX Design",
-      des: "We do customisations for the web sites and applications. We can help improve SEO and perfomance of your website. We also providethe service for web upgrade and migration. ",
-      icon: <TfiBrush />,
+      des: "Our UI/UX design experts specialize in crafting intuitive and seamless user interfaces. By understanding your target audience and their needs, we create visually appealing designs with a focus on usability, resulting in a delightful user experience.",
+      icon: <FaPaintBrush />,
     },
     {
-      title: "Social Media",
-      des: "We do customisations for the web sites and applications. We can help improve SEO and perfomance of your website. We also providethe service for web upgrade and migration. ",
-      icon: <BiShareAlt />,
+      title: "Social Media Management",
+      des: "Let us handle your social media presence while you focus on growing your business. We develop tailored social media strategies, curate engaging content, and manage your social media accounts to increase brand awareness and drive meaningful engagement.",
+      icon: <FaShareAlt />,
     },
     {
-      title: "Ecommerce",
-      des: "We do customisations for the web sites and applications. We can help improve SEO and perfomance of your website. We also providethe service for web upgrade and migration. ",
-      icon: <BiWallet />,
+      title: "Digital Marketing",
+      des: "Our digital marketing services encompass a wide range of strategies to promote your business effectively. From search engine optimization (SEO) to pay-per-click (PPC) advertising and email marketing, we employ the right tactics to boost your online visibility and attract valuable leads.",
+      icon: <FaBullhorn />,
     },
   ];
 
@@ -46,7 +46,8 @@ const Homeservices = () => {
     <div className="laptop:w-[1000px] grid gap-4">
       <h4 className="w-full text-left font-semibold ">our services</h4>
       <h2 className="text-3xl text-left font-bold py-2">
-        We will help you all way in
+        We have all the <span className="text-transparent textStroke ">Contents</span> &nbsp; <br />
+        covered for the <span className="text-transparent textStroke">Internet</span>
       </h2>
       <p className="laptop:w-3/6 text-left">
         We are a web agency specializing in creating stunning and functional
@@ -54,14 +55,14 @@ const Homeservices = () => {
       </p>
       <div className="services w-full flex items-center justify-between  wrap">
         <div
-          className={`grid tablet:grid-cols-2 laptop:grid-cols-3 py-4 relative transition-all  overflow-hidden 
+          className={`grid tablet:grid-cols-2 laptop:grid-cols-2 py-4 px-1 relative transition-all  overflow-hidden 
            gap-[20px]
             `}
         >
           {services.map((service) => (
             <div
               key={service.title}
-              className={`w-fit h-full relative transition-all ease-in-out bg-white rounded-lg hover:shadow-[0_0_4px_0_gray]`}
+              className={`w-fit h-full relative transition-all ease-in-out bg-[#FFF] rounded-[20px] shadow-[0px_0px_4px_1px_rgba(0, 0, 0, 0.25)] hover:shadow-[0_0_4px_0_gray]`}
             >
               <Card
                 cardTitle={service.title}

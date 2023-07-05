@@ -81,7 +81,7 @@ export default function Home() {
         ref={sectionRefs[3]}
         className={`w-full py-[40px] ${
           !sectionIntersecting[3] ? "opacity-0" : "opcaity-1"
-        }   p-4 grid place-items-center box-border text-center gap-4 relative transition-opacity ease-in-out duration-1000 bg-gray-200`}
+        }   p-4 grid place-items-center box-border text-center gap-4 relative transition-opacity ease-in-out duration-1000 bg-white`}
       >
         <Homeservices />
       </div>

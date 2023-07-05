@@ -17,7 +17,7 @@ const Customers = () => {
           {[...Array(4)].map((items, x) => (
             <div
               key={x}
-              className="grid place-items-left text-black  gap-8 bg-gray-200 p-4 rounded-lg hover:translate-y-[-4px] hover:translate-x-[-4px] transition-all hover:shadow-[0_0px_4px_0px_rgba(0,0,0,0.3)]"
+              className="grid place-items-left text-black text-left bg-gray-200 p-4 rounded-lg hover:translate-y-[-4px] hover:translate-x-[-4px] transition-all hover:shadow-[0_0px_4px_0px_rgba(0,0,0,0.3)]"
             >
               <div className="w-fit">
                 <h2 className="text-xl font-bold">Name Of the business</h2>
