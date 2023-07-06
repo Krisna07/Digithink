@@ -129,6 +129,14 @@ const page = () => {
       </div>
     
     </div>
+    <div className="w-full p-8 bg-white grid place-items-center">
+      <div className="">
+        The services we have done should be enough for noew 
+        {/* need more than 4 items  */}
+        {/* ceeate a card for each items  */}
+      </div>
+      
+    </div>
      </div>;
 };
 
