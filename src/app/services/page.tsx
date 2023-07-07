@@ -119,7 +119,7 @@ const page = () => {
         <h2 className={headings}>Our Social Media Services</h2>
         <p className={subheading}>Associated apps</p>
         <div className="w-full grid tablet:grid-cols-2 laptop:grid-cols-3 gap-[20px]">
-          {socials.map((social)=><div key={social.name} className="w-full grid items-center  shadow-sm bg-white text-black p-4 rounded-lg ">
+          {socials.map((social)=><div key={social.name} className="w-full grid items-center  shadow-sm bg-white text-black p-4 rounded-lg hover:scale-[1.05]">
             <div className={`${subheading} flex justify-between`}>{social.name} <div>{social.icon}</div></div> 
             <div >{social.des}</div>
             </div>)}
