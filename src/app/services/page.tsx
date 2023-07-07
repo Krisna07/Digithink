@@ -117,7 +117,7 @@ const page = () => {
       <div className={`${sectioncss} skew-y-[5deg]`}>
        <div className={sectiongrid}> <h3 className={subheading}> Social Media</h3>
         <h2 className={headings}>Our Social Media Services</h2>
-        <p>Associated apps</p>
+        <p className={subheading}>Associated apps</p>
         <div className="w-full grid tablet:grid-cols-2 laptop:grid-cols-3 gap-[20px]">
           {socials.map((social)=><div key={social.name} className="w-full grid items-center  shadow-sm bg-white text-black p-4 rounded-lg ">
             <div className={`${subheading} flex justify-between`}>{social.name} <div>{social.icon}</div></div> 
@@ -130,8 +130,21 @@ const page = () => {
     
     </div>
     <div className="w-full p-8 bg-white grid place-items-center">
-      <div className="">
-        The services we have done should be enough for noew 
+      <div className={sectioncss}>
+      <div className={`${sectiongrid} h-full`}>
+          <h2 className={subheading}>The services we have done should be enough for noew </h2>
+        <h2 className={headings}>our goal is to bring the business together</h2>
+        <div className="grid grid-cols-2 gap-[20px]">
+          <div className=" h-28 bg-gray-200"></div>
+          <div className=" h-28 bg-gray-200"></div>
+          <div className=" h-28 bg-gray-200"></div>
+          <div className=" h-28 bg-gray-200"></div>
+        </div>
+        <Button size={'sm'} variant={'primary'} label="More" className={undefined}/>
+        </div>
+        <div className={`${sectiongrid} `}>
+            <Image src={'/social.jpg'} className="rounded-xl shadow-lg overflow-none" width={500} height={500} alt=""/>
+        </div>
         {/* need more than 4 items  */}
         {/* ceeate a card for each items  */}
       </div>
