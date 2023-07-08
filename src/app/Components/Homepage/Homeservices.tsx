@@ -1,6 +1,14 @@
 import React from "react";
 
-import { FaBullhorn, FaChartLine, FaCode, FaDesktop, FaDigitalOcean, FaPaintBrush, FaShareAlt } from "react-icons/fa";
+import {
+  FaBullhorn,
+  FaChartLine,
+  FaCode,
+  FaDesktop,
+  FaDigitalOcean,
+  FaPaintBrush,
+  FaShareAlt,
+} from "react-icons/fa";
 import { BiMedal, BiShareAlt, BiWallet } from "react-icons/bi";
 
 import { TfiBrush } from "react-icons/tfi";
@@ -23,7 +31,7 @@ const Homeservices = () => {
     {
       title: "Web Development",
       des: "Turn your vision into a fully functional website with our professional web development services. From building your first website to developing complex web applications, our skilled developers ensure clean and efficient code that brings your ideas to life.",
-      icon: <FaCode/>,
+      icon: <FaCode />,
     },
     {
       title: "UI/UX Design",
@@ -46,8 +54,11 @@ const Homeservices = () => {
     <div className="laptop:w-[1000px] grid gap-4">
       <h4 className="w-full text-left font-semibold ">our services</h4>
       <h2 className="text-3xl text-left font-bold py-2">
-        We have all the <span className="text-transparent textStroke ">Contents</span> &nbsp; <br />
-        covered for the <span className="text-transparent textStroke">Internet</span>
+        We have all the{" "}
+        <span className="text-transparent textStroke ">Contents</span> &nbsp;{" "}
+        <br />
+        covered for the{" "}
+        <span className="text-transparent textStroke">Internet</span>
       </h2>
       <p className="laptop:w-3/6 text-left">
         We are a web agency specializing in creating stunning and functional
@@ -62,7 +73,7 @@ const Homeservices = () => {
           {services.map((service) => (
             <div
               key={service.title}
-              className={`w-fit h-full relative transition-all ease-in-out bg-[#FFF] rounded-[20px] shadow-[0px_0px_4px_1px_rgba(0, 0, 0, 0.25)] hover:shadow-[0_0_4px_0_gray]`}
+              className={`w-fit h-full relative transition-all ease-in-out bg-[#FFF] rounded-[20px] shadow-[0_0_3px_0px_gray] hover:shadow-[0_0_4px_0_gray]`}
             >
               <Card
                 cardTitle={service.title}
