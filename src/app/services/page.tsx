@@ -14,7 +14,10 @@ import {
   FaSnapchatGhost,
   FaRedditAlien,
   FaArrowRight,
+  FaKickstarter,
+  FaDrawPolygon,
 } from "react-icons/fa";
+import { BiPolygon } from "react-icons/bi";
 
 const page = () => {
   const sectionRefs = [
@@ -58,7 +61,7 @@ const page = () => {
   //   };
   // }, []);
   const sectioncss =
-    "laptop:w-[1000px] flex items-center justify-between gap-8";
+    "laptop:w-[1000px] w-full flex items-center justify-between gap-8 p-4";
   const sectiongrid = "grid gap-4";
   const subheading = "text-lg font-semibold";
   const headings = "text-3xl font-bold";
@@ -138,10 +141,9 @@ const page = () => {
           className="hidden tablet:flex "
         />
       </div>
-      <div className="w-full grid place-items-center bg-slate-600 text-white skew-y-[-5deg]  p-20">
+      <div className="w-full grid place-items-center bg-slate-600 text-white skew-y-[-5deg]  py-20">
         <div className={`${sectioncss} skew-y-[5deg]`}>
-          <div className={sectiongrid}>
-            {" "}
+          <div className={`${sectiongrid} w-full`}>
             <h3 className={subheading}> Social Media</h3>
             <h2 className={headings}>Our Social Media Services</h2>
             <p className={subheading}>Associated apps</p>
@@ -170,38 +172,73 @@ const page = () => {
             <h2 className={headings}>
               our goal is to bring the business together
             </h2>
-            <div className="grid grid-cols-2 gap-[20px]">
-              <div className="w-full relative grid place-items-center ">
-                <div className="w-full h-full relative z-10 bg-gray-200 p-4 grid gap-4">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      {" "}
-                      <h3 className={subheading}>Some title</h3>
-                      <h2 className={headings}>Headinngs</h2>
-                    </div>
-                    <div className="rounded-full bg-black p-4 text-white hover:bg-gray-800 hover:text-yellow-400 hover:shadow-[4px_0px_0px_1px_#f6ad55]">
-                      <FaArrowRight size={"20px"} className="rotate-[-45deg]" />
-                    </div>
-                  </div>
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Optio quia nisi, sequi perferendis vitae quod labore iure
-                    consectetur illum nemo?
-                  </p>
-                </div>
-                <div className="w-[20%] h-[50%] absolute z-0 bg-yellow-400 -top-1 -left-1"></div>
-              </div>
-            </div>
+            <div className="grid grid-cols-2 gap-[20px]"></div>
             <Button
-              size={"lg"}
+              size={"sm"}
               variant={"primary"}
               label="More"
               className={undefined}
             />
           </div>
-          <div className={`${sectiongrid} `}></div>
-          {/* need more than 4 items  */}
-          {/* ceeate a card for each items  */}
+          <div className={`${sectiongrid}`}>
+            <div className="w-full relative grid place-items-center ">
+              <div className="w-full h-full relative z-10 bg-gray-200 p-4 grid gap-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className={subheading}>Some title</h3>
+                    <h2 className={headings}>Headinngs</h2>
+                  </div>
+                  <div className="rounded-full bg-black p-4 text-white hover:bg-gray-800 hover:text-yellow-400 hover:shadow-[4px_0px_0px_1px_#f6ad55]">
+                    <FaArrowRight size={"20px"} className="rotate-[-45deg]" />
+                  </div>
+                </div>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Optio quia nisi, sequi perferendis vitae quod labore iure
+                  consectetur illum nemo?
+                </p>
+              </div>
+              <div className="w-[20%] h-[50%] absolute z-0 bg-yellow-400 -top-1 -left-1"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="w-full grid place-items-center ">
+        <div className={`${sectioncss} grid-cols-2`}>
+          <div className={`${sectiongrid} w-1/2`}>
+            <FaKickstarter />
+            <div className="">
+              <h2 className={subheading}>strategy</h2>
+              <h2 className={headings}>
+                The Startegy Of Reviving A{" "}
+                <span className="text-transparent textStroke">Business</span>
+              </h2>
+              <p>
+                We develop comprehensive social media strategies tailored to
+                your business goals. Our expert team will help you navigate the
+                ever-changing landscape of social media platforms to maximize
+                your online presence and reach your target audience.
+              </p>
+            </div>
+          </div>
+          <div className="w-1/2 h-[300px] bg-yellow-300 relative grid place-items-center  rounded-xl">
+            <div className="w-1/2 h-[500px] bg-gray-200 absolute top-[-100px] shadow-lg rounded-lg "></div>
+            <div className="border border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto">
+              <div className="animate-pulse flex space-x-4">
+                <div className="rounded-full bg-slate-700 h-10 w-10"></div>
+                <div className="flex-1 space-y-6 py-1">
+                  <div className="h-2 bg-slate-700 rounded"></div>
+                  <div className="space-y-3">
+                    <div className="grid grid-cols-3 gap-4">
+                      <div className="h-2 bg-slate-700 rounded col-span-2"></div>
+                      <div className="h-2 bg-slate-700 rounded col-span-1"></div>
+                    </div>
+                    <div className="h-2 bg-slate-700 rounded"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
