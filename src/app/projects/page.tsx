@@ -17,6 +17,7 @@ import {
   FaShopify,
 } from "react-icons/fa";
 import Image from "next/image";
+import Builts from "./Builts";
 
 const page = () => {
   const projectArray = [
@@ -189,6 +190,7 @@ const page = () => {
           </div>
         </div>
       </div>
+      <Builts />
     </div>
   );
 };
