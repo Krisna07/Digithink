@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Button from "../Button";
+import { FaPhoneAlt } from "react-icons/fa";
 
 const Digital = () => {
   return (
@@ -11,14 +12,12 @@ const Digital = () => {
           <h2 className="text-3xl font-bold ">
             A digital team for your business{" "}
           </h2>
-          <p >
+          <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur
             porro hic velit vero! Placeat provident cumque iure impedit
             praesentium. Iure!
           </p>
-          <div className="w-fit grid gap-2 grid-cols-4">
-           
-          </div>
+          <div className="w-fit grid gap-2 grid-cols-4"></div>
         </div>
 
         <Button
@@ -26,9 +25,9 @@ const Digital = () => {
           variant={"default"}
           size={"sm"}
           className="h-fit"
+          icon={<FaPhoneAlt />}
         />
       </div>
-     
     </div>
   );
 };

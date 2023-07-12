@@ -2,6 +2,7 @@ import { Facebook, Instagram, Slack, Twitter, Youtube } from "lucide-react";
 import React from "react";
 import Button from "../Button";
 import {
+  FaBook,
   FaFacebook,
   FaInstagram,
   FaLinkedin,
@@ -120,6 +121,7 @@ const Social = () => {
               size={"sm"}
               className={""}
               label={"Read"}
+              icon={undefined}
             />
           </div>
         ))}
