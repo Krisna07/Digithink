@@ -2,18 +2,21 @@ import React from "react";
 import Button from "../Components/Button";
 import {
   FaAssistiveListeningSystems,
+  FaChevronRight,
   FaComment,
   FaCommentAlt,
+  FaMeetup,
 } from "react-icons/fa";
+import Teamspitch from "./Teamspitch";
 
 const page = () => {
   return (
     <div className="grid place-items-center gap-8">
-      <div className="tablet:w-[600px] grid text-center gap-6 place-items-center py-16 px-4">
-        <h2 className=" text-3xl text-center font-semibold">
+      <div className="tablet:w-[600px] w-full grid text-center gap-6 place-items-center py-16 px-4">
+        <h2 className="w-full text-3xl text-center font-semibold">
           A small team of{" "}
           <span className="text-transparent textStroke">Innovative</span> ideas
-          to <br /> <span className="text-transparent textStroke">Improve</span>
+          to <span className="text-transparent textStroke">Improve</span>
         </h2>
         <p className="text-sm">
           We think the enterprise way to help you stand out. Through out the
@@ -38,6 +41,7 @@ const page = () => {
           />
         </div>
       </div>
+      <Teamspitch />
     </div>
   );
 };
