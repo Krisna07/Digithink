@@ -8,6 +8,7 @@ import {
   FaMeetup,
 } from "react-icons/fa";
 import Teamspitch from "./Teamspitch";
+import Teams from "./teams";
 
 const page = () => {
   return (
@@ -42,6 +43,7 @@ const page = () => {
         </div>
       </div>
       <Teamspitch />
+      <Teams />
     </div>
   );
 };
