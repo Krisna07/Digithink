@@ -73,16 +73,16 @@ const Teamspitch = () => {
       <div className="tablet:max-w-[600px] desktop:w-[600px] grid gap-8 overflow-hidden box-border">
         <div className="flex gap-4 relative border-b-[1px] box-border">
           <span
-            className={`opacity-60 py-2 p-4 hover:opacity-100 ${
-              left == 0 ? "opacity-100" : ""
+            className={` py-2 p-4 hover:opacity-1 ${
+              left == 0 ? "opacity-1" : "opacity-60"
             } transition-all font-semibold`}
             onClick={() => handleOptionClick(0)}
             ref={menuRefs[0]}>
             Ronaldo
           </span>
           <span
-            className={`opacity-60 py-2 p-4 hover:opacity-100 ${
-              left == 100 ? "opacity-100" : ""
+            className={` py-2 p-4 hover:opacity-100 ${
+              left == 100 ? "opacity-100" : "opacity-60"
             } transition-all font-semibold`}
             onClick={() => handleOptionClick(1)}
             ref={menuRefs[1]}>
@@ -105,11 +105,11 @@ const Teamspitch = () => {
           className="w-full flex  relative transition-all box-border">
           {teamspitchObj.map((pitch) => (
             <div
-              className="min-w-[100%] grid gap-4"
+              className="min-w-[100%] grid gap-2"
               key={pitch.title}>
               <h2 className="font-bold text-xl">{pitch.title}</h2>
               <p>{pitch.des}</p>
-              <span className="flex gap-4 place-items-center w-auto text-sm">
+              <span className="flex gap-2 place-items-center w-auto text-sm font-semibold bg-gray-200 hover:bg-gray-400 w-fit px-2 py-1 rounded-lg">
                 Book a meeting <FaChevronRight />
               </span>
             </div>
