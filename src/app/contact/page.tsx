@@ -2,42 +2,41 @@
 import Image from "next/image";
 import React, { useState } from "react";
 
-const FORM_ENDPOINT = "https://herotofu.com/start"; // TODO - update to the correct endpoint
-
 const page = () => {
   const [submitted, setSubmitted] = useState(false);
   const handleSubmit = (e: any) => {
     e.preventDefault();
-
-    const inputs = e.target.elements;
-    const data = {};
-
-    for (let i = 0; i < inputs.length; i++) {
-      if (inputs[i].name) {
-        data[inputs[i].name] = inputs[i].value;
-      }
-    }
-
-    fetch(FORM_ENDPOINT, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Form response was not ok");
-        }
-
-        setSubmitted(true);
-      })
-      .catch((err) => {
-        // Submit the form manually
-        e.target.submit();
-      });
   };
+
+  //   const inputs = e.target.elements;
+  //   const data = {};
+
+  //   for (let i = 0; i < inputs.length; i++) {
+  //     if (inputs[i].name) {
+  //       data[inputs[i].name] = inputs[i].value;
+  //     }
+  //   }
+
+  //   fetch(FORM_ENDPOINT, {
+  //     method: "POST",
+  //     headers: {
+  //       Accept: "application/json",
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(data),
+  //   })
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error("Form response was not ok");
+  //       }
+
+  //       setSubmitted(true);
+  //     })
+  //     .catch((err) => {
+  //       // Submit the form manually
+  //       e.target.submit();
+  //     });
+  // };
 
   if (submitted) {
     return (
@@ -49,23 +48,31 @@ const page = () => {
   }
 
   return (
-    <div className="grid place-items-center box-border bg-gradient-to-b from-gray-500 to-white p-8 gap-8">
-      <div className="bg-gradient-to-t from-red-500 to-red-300 rounded-full relative ">
-        <div className="w-[500px] h-[500px] bg-red-500 top-0 animate-pulse rounded-full"></div>
+    <div className="grid place-items-center box-border bg-gradient-to-b from-gray-500 to-white gap-8">
+      <div className="w-full bg-gradient-to-t from-red-500 to-red-300 grid place-items-center relative p-8">
+        <div className="grid gap-4 laptop:w-[1000px]">
+          <h2 className="text-lg  font-semibold">Contcat</h2>
+          <p className="w-4/6">
+            The light drops deep as does my teddy. I never nuzzle, 'cause to
+            nuzzle is the mate of ready. Beyond the walls of bananas, life is
+            defined. I think of buildings when I'm in a Devon state of mind.
+          </p>
+        </div>
+        {/* <div className="w-[500px] h-[500px] bg-red-500 top-0 animate-pulse rounded-full"></div> */}
+
         <Image
           src={"/contact.png"}
           width={500}
           height={500}
           alt=""
-          className="absolute top-0  rounded-full"
+          className="absoulte right-0  rounded-full bg-red-500"
         />
       </div>
       <form
         className="laptop:w-[1000px]  w-full grid item-center text-center gap-4 bg-gray-100 p-4 rounded shadow"
-        action={FORM_ENDPOINT}
         onSubmit={handleSubmit}
         method="POST">
-        <h2>Contact Us</h2>
+        <h2 className=" text-lg font-semibold">Contact Us</h2>
         <div className="mb-3 pt-0">
           <input
             type="text"
