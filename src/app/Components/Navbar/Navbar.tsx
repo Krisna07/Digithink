@@ -9,7 +9,7 @@ interface Navtypes {
   navItems: [
     {
       navItems: String;
-    },
+    }
   ];
 }
 
@@ -39,6 +39,28 @@ const Navbar = () => {
 
   const [isopen, setopen] = useState<boolean>();
 
+  const menuRefs = [...Array(navItems.length).fill(useRef(null))];
+
+  const setWidth = (ref: any) => {
+    return ref.current ? ref.current.getBoundingClientRect().width + "px" : "0";
+  };
+
+  const [btmbdr, setBtmbdr] = useState(0);
+
+  const [barW, setBarW] = useState(setWidth(menuRefs[0]));
+
+  const handleOptionClick = (index: number) => {
+    const width = setWidth(menuRefs[index]);
+
+    const position = menuRefs[index].current.offsetLeft;
+    setBarW(width);
+    setBtmbdr(position);
+  };
+
+  useEffect(() => {
+    setBarW(setWidth(menuRefs[0]));
+  }, []);
+
   return (
     <div className="w-full text-black fixed z-[90] bg-gray-300  shadow-lg px-4 py-[10px] bg-secondary-Btn grid place-items-center">
       <div className="hidden  desktop:w-[1024px] tablet:w-full tablet:flex items-center justify-between">
@@ -52,14 +74,22 @@ const Navbar = () => {
             />
           </div>
         </div>
-        <div className="flex w-fit text-black gap-2">
+        <div className="flex w-fit text-black gap-2 relative">
           {navItems.map((menu) => (
             <div
               key={menu.navTitle}
-              className="p-2 hover:text-gray-500 cursor-default text-sm font-semibold">
+              onClick={() => handleOptionClick(navItems.indexOf(menu))}
+              ref={menuRefs[navItems.indexOf(menu)]}
+              className="p-2 hover:text-gray-500 cursor-default text-sm font-semibold "
+            >
               <Link href={menu.link}> {menu.navTitle}</Link>
             </div>
           ))}
+
+          <div
+            style={{ width: `${barW}`, left: `${btmbdr}` }}
+            className=" h-[1px] absolute bottom-0 bg-gray-800 "
+          ></div>
         </div>
         <div>
           <Button
@@ -68,6 +98,7 @@ const Navbar = () => {
             color={"primary"}
             className={undefined}
             size="sm"
+            icon={null}
           />
         </div>
       </div>
@@ -81,40 +112,29 @@ const Navbar = () => {
               alt="Picture of the logo"
             />
           </div>
-          <div
-            className="w-fit"
-            onClick={() => setopen(!isopen)}>
+          <div className="w-fit" onClick={() => setopen(!isopen)}>
             {!isopen ? (
-              <Menu
-                color="black"
-                size={"40px"}
-              />
+              <Menu color="black" size={"40px"} />
             ) : (
-              <X
-                color="black"
-                size={"40px"}
-              />
+              <X color="black" size={"40px"} />
             )}
           </div>
         </div>
         <div
           className={`w-full gap-2 overflow-hidden ${
             isopen ? "grid" : "hidden"
-          }`}>
+          }`}
+        >
           {navItems.map((menu) => (
             <div
               key={menu.navTitle}
               className="w-full p-2 hover:text-background-color hover:bg-accent-color cursor-default font-semibold"
-              onClick={() => (isopen ? setopen(!isopen) : "")}>
+              onClick={() => (isopen ? setopen(!isopen) : "")}
+            >
               <Link href={menu.link}> {menu.navTitle}</Link>
             </div>
           ))}
-          <Button
-            label="Signin"
-            variant={"default"}
-            size="sm"
-            className={""}
-          />
+          <Button label="Signin" variant={"default"} size="sm" className={""} />
         </div>
       </div>
     </div>

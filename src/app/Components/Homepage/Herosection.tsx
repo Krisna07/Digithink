@@ -21,6 +21,7 @@ const Herosection = () => {
           label={"Learn More"}
           size={"sm"}
           className="h-fit"
+          icon={""}
         />
       </div>
       <div className=" laptop:relative  h-full  absolute top-[0px] tablet:right-0 z-10">
