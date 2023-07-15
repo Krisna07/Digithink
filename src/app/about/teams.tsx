@@ -9,14 +9,14 @@ const Teams = () => {
     return item.current ? item.current.getBoundingClientRect().left : 0;
   };
   const [left, setLeft] = useState(`${getLeft(leftRef)}px`);
-  console.log(left);
+
   async function handleResize() {
     setLeft(await getLeft(leftRef));
   }
   useEffect(() => {
     return setLeft(getLeft(leftRef));
   }, []);
-  console.log(left);
+
   return (
     <div className="w-full  py-8 grid place-items-center overflow-hidden">
       <div
