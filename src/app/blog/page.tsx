@@ -11,7 +11,9 @@ const page = () => {
   return (
     <div className="w-full grid place-items-center">
       <div className="desktop:w-[1200px] py-8 px-4 box-border tablet:flex grid gap-12">
-        <div className="tablet:w-1/2 h-[400px] rounded-lg py-16 px-20 bg-gray-800 grid place-items-center">
+        <div className="tablet:w-1/2 h-[400px] rounded-lg py-16 px-20 bg-gray-800 grid place-items-center relative">
+          <hr className="w-[40%] h-[0.5px] bg-white rotate-[90deg] absolute" />
+          <hr className="w-[80%] h-[0.5px] bg-white absolute" />
           <div className="w-20 h-20 bg-gradient-to-r from-green-600 to-green-800 rounded-[30%] grid place-items-center relative text-xl text-sky-300">
             <FaArrowUp className="rotate-[45deg] absolute top-[30%] right-[30%]" />
             <FaArrowLeft className="rotate-[45deg] absolute top-[30%] left-[30%]" />
