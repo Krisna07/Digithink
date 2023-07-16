@@ -38,7 +38,9 @@ const Teamspitch = () => {
   const handleOptionClick = (index: number) => {
     const width = setWidth(menuRefs[index]);
 
-    const position = menuRefs[index].current.offsetLeft;
+    const position = menuRefs[index].current
+      ? menuRefs[index].current.offsetLeft
+      : "";
     setBarW(width);
     setBtmbdr(position);
     setLeft(index * 100);

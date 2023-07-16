@@ -100,7 +100,7 @@ const Navbar = () => {
                 key={menu.navTitle}
                 onClick={() => handleOptionClick(navItems.indexOf(menu))}
                 ref={menuRefs[navItems.indexOf(menu)]}
-                className={`p-2 hover:text-gray-500 cursor-default text-sm font-semibold  ${
+                className={`p-2 hover:text-gray-500 cursor-default text-sm font-semibold transition-all  ${
                   navItems.indexOf(menu) == active ? "text-red-800" : ""
                 } `}>
                 {menu.navTitle}
@@ -110,7 +110,7 @@ const Navbar = () => {
 
           <div
             style={{ width: `${barW}`, left: `${btmbdr}px` }}
-            className={`h-[2px] absolute bottom-0 bg-gray-800  `}></div>
+            className={`h-[2px] absolute bottom-0 bg-gray-800 transition-all  `}></div>
         </div>
         <div>
           <Button
