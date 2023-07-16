@@ -5,48 +5,46 @@ import {
   FaChartLine,
   FaCode,
   FaDesktop,
-  FaDigitalOcean,
-  FaPaintBrush,
   FaShareAlt,
 } from "react-icons/fa";
-import { BiMedal, BiShareAlt, BiWallet } from "react-icons/bi";
+import { BiLike } from "react-icons/bi";
+import { SiGoogleads } from "react-icons/si";
 
 import { TfiBrush } from "react-icons/tfi";
 import { useState, useRef, useEffect } from "react";
 
 import Card from "../Card";
-import Button from "../Button";
 const Homeservices = () => {
   const services = [
     {
-      title: "Strategy",
-      des: "We develop comprehensive social media strategies tailored to your business goals. Our expert team will help you navigate the ever-changing landscape of social media platforms to maximize your online presence and reach your target audience.",
-      icon: <FaChartLine />,
+      title: "Social Meida",
+      des: "We do social media for the business. We can help you handle all the pisisbllities if the socuak media.",
+      icon: <BiLike color="black" />,
     },
     {
       title: "Web Design",
-      des: "Our talented designers transform your ideas into captivating and user-friendly website interfaces. We focus on creating visually appealing designs that enhance the overall user experience and leave a lasting impression on your visitors.",
-      icon: <FaDesktop />,
+      des: "We take the ideas from our customers and desiged it to interactive intefaces.",
+      icon: <FaDesktop color="black" />,
     },
     {
       title: "Web Development",
-      des: "Turn your vision into a fully functional website with our professional web development services. From building your first website to developing complex web applications, our skilled developers ensure clean and efficient code that brings your ideas to life.",
-      icon: <FaCode />,
+      des: "We can help you create your fist website which will bring your game online. The code we do is more ",
+      icon: <FaCode color="black" />,
     },
     {
-      title: "UI/UX Design",
-      des: "Our UI/UX design experts specialize in crafting intuitive and seamless user interfaces. By understanding your target audience and their needs, we create visually appealing designs with a focus on usability, resulting in a delightful user experience.",
-      icon: <FaPaintBrush />,
+      title: "Ads",
+      des: "We take the ideas from our customers and desiged it to interactive intefaces.",
+      icon: <SiGoogleads color="black" />,
     },
     {
-      title: "Social Media Management",
-      des: "Let us handle your social media presence while you focus on growing your business. We develop tailored social media strategies, curate engaging content, and manage your social media accounts to increase brand awareness and drive meaningful engagement.",
-      icon: <FaShareAlt />,
+      title: "Strategy",
+      des: "We do social media for the business. We can help you handle all the pisisbllities if the socuak medua",
+      icon: <FaShareAlt color="black" />,
     },
     {
       title: "Digital Marketing",
-      des: "Our digital marketing services encompass a wide range of strategies to promote your business effectively. From search engine optimization (SEO) to pay-per-click (PPC) advertising and email marketing, we employ the right tactics to boost your online visibility and attract valuable leads.",
-      icon: <FaBullhorn />,
+      des: "We take the ideas from our customers and desiged it to interactive intefaces.",
+      icon: <FaBullhorn color="black" />,
     },
   ];
 
@@ -68,13 +66,11 @@ const Homeservices = () => {
         <div
           className={`grid tablet:grid-cols-2 laptop:grid-cols-2 py-4 px-1 relative transition-all  overflow-hidden 
            gap-[20px]
-            `}
-        >
+            `}>
           {services.map((service) => (
             <div
               key={service.title}
-              className={`w-fit h-full relative transition-all ease-in-out bg-[#FFF] rounded-[20px] shadow-[0_0_3px_0px_gray] hover:shadow-[0_0_4px_0_gray]`}
-            >
+              className={`w-fit h-full relative transition-all ease-in-out bg-[#FFF] rounded-[20px] shadow-[0_0_3px_0px_gray] hover:shadow-[0_0_4px_0_gray]`}>
               <Card
                 cardTitle={service.title}
                 cardDes={service.des}
@@ -83,14 +79,6 @@ const Homeservices = () => {
             </div>
           ))}
         </div>
-      </div>
-      <div className="w-full grid place-items-center">
-        <Button
-          label="Learn more"
-          variant={"primary"}
-          size="sm"
-          className={undefined}
-        />
       </div>
     </div>
   );
