@@ -36,6 +36,10 @@ const Navbar = () => {
       navTitle: "Contact us",
       link: "./contact",
     },
+    {
+      navTitle: "Blog",
+      link: "./blog",
+    },
   ];
 
   const [isopen, setopen] = useState<boolean>();
