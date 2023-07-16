@@ -1,42 +1,13 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
+import Button from "../Components/Button";
 
 const page = () => {
   const [submitted, setSubmitted] = useState(false);
   const handleSubmit = (e: any) => {
     e.preventDefault();
   };
-
-  //   const inputs = e.target.elements;
-  //   const data = {};
-
-  //   for (let i = 0; i < inputs.length; i++) {
-  //     if (inputs[i].name) {
-  //       data[inputs[i].name] = inputs[i].value;
-  //     }
-  //   }
-
-  //   fetch(FORM_ENDPOINT, {
-  //     method: "POST",
-  //     headers: {
-  //       Accept: "application/json",
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(data),
-  //   })
-  //     .then((response) => {
-  //       if (!response.ok) {
-  //         throw new Error("Form response was not ok");
-  //       }
-
-  //       setSubmitted(true);
-  //     })
-  //     .catch((err) => {
-  //       // Submit the form manually
-  //       e.target.submit();
-  //     });
-  // };
 
   if (submitted) {
     return (
@@ -48,25 +19,32 @@ const page = () => {
   }
 
   return (
-    <div className="grid place-items-center box-border bg-gradient-to-b from-gray-500 to-white gap-8">
-      <div className="w-full bg-gradient-to-t from-red-500 to-red-300 grid place-items-center relative p-8">
-        <div className="grid gap-4 laptop:w-[1000px]">
-          <h2 className="text-lg  font-semibold">Contcat</h2>
-          <p className="w-4/6">
-            The light drops deep as does my teddy. I never nuzzle, 'cause to
-            nuzzle is the mate of ready. Beyond the walls of bananas, life is
-            defined. I think of buildings when I'm in a Devon state of mind.
-          </p>
+    <div className="grid place-items-center box-border  gap-8">
+      <div className="w-full grid place-items-center relative p-8">
+        <div className="laptop:w-[1000px] flex items-center justify-center">
+          <div className="w-full grid gap-4 ">
+            <h2 className="text-lg  font-semibold">Contcat</h2>
+            <p className="tablet:w-4/6">
+              The light drops deep as does my teddy. I never nuzzle, 'cause to
+              nuzzle is the mate of ready. Beyond the walls of bananas, life is
+              defined. I think of buildings when I'm in a Devon state of mind.
+            </p>
+            <Button
+              className={""}
+              label="Contact"
+              size={"sm"}
+              variant={"default"}
+              icon={undefined}
+            />
+          </div>
+          <Image
+            src={"/contact.png"}
+            width={500}
+            height={500}
+            alt=""
+            className=" tablet:grid hidden place-items-center"
+          />
         </div>
-        {/* <div className="w-[500px] h-[500px] bg-red-500 top-0 animate-pulse rounded-full"></div> */}
-
-        <Image
-          src={"/contact.png"}
-          width={500}
-          height={500}
-          alt=""
-          className="absoulte right-0  rounded-full bg-red-500"
-        />
       </div>
       <form
         className="laptop:w-[1000px]  w-full grid item-center text-center gap-4 bg-gray-100 p-4 rounded shadow"

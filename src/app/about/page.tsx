@@ -44,6 +44,7 @@ const page = () => {
       </div>
       <Teamspitch />
       <Teams />
+      <div></div>
     </div>
   );
 };
