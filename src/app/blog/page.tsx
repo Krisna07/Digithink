@@ -6,6 +6,7 @@ import {
   FaArrowRight,
   FaArrowUp,
 } from "react-icons/fa";
+import Blogpage from "./component/Blogpage";
 
 const page = () => {
   const blog = [
@@ -82,7 +83,7 @@ const page = () => {
   ];
 
   return (
-    <div className="w-full grid place-items-center ">
+    <div className="w-full grid place-items-center relative ">
       <div className="desktop:w-[1200px] py-8 px-4 box-border tablet:flex grid gap-12">
         <div className="tablet:w-1/2 h-[400px] rounded-lg py-16 px-20 bg-gray-800 grid place-items-center relative">
           <hr className="w-[40%] h-[0.5px] bg-white rotate-[90deg] absolute" />
@@ -152,6 +153,7 @@ const page = () => {
           ))}
         </div>
       </div>
+      <Blogpage />
     </div>
   );
 };
