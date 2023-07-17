@@ -50,7 +50,13 @@ const Footer = () => {
             Want to be the smartest in our office ?
           </span>
           <span>
-            <Button label="Apply now" variant={"default"} size="sm" />
+            <Button
+              label="Apply now"
+              variant={"default"}
+              size="sm"
+              icon={undefined}
+              className={undefined}
+            />
           </span>
           <span className="uppercase underline font-semibold">
             Sign up for our newsletters

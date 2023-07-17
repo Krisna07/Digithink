@@ -9,15 +9,14 @@ import Requestform from "./Components/Homepage/Requestform";
 import Social from "./Components/Homepage/social";
 
 export default function Home() {
-  //create the individual animation states for each section and animate on scroll
   const sectionRefs = [
-    useRef(null), // Ref for Herosection
-    useRef(null), // Ref for Goal
-    useRef(null), // Ref for Digital
-    useRef(null), // Ref for Homeservices
-    useRef(null), // Ref for Social
-    useRef(null), // Ref for Customers
-    useRef(null), // Ref for Requestform
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
   ];
 
   const [sectionIntersecting, setSectionIntersecting] = useState(

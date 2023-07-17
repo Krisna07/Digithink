@@ -15,9 +15,7 @@ import {
   FaRedditAlien,
   FaArrowRight,
   FaKickstarter,
-  FaDrawPolygon,
 } from "react-icons/fa";
-import { BiPolygon } from "react-icons/bi";
 
 const page = () => {
   const sectionRefs = [
@@ -116,7 +114,9 @@ const page = () => {
 
   return (
     <div className="w-full grid place-items-center gap-8">
-      <div className={sectioncss} ref={sectionRefs[0]}>
+      <div
+        className={sectioncss}
+        ref={sectionRefs[0]}>
         <div className="grid gap-8">
           <div className={sectiongrid}>
             <h3 className={subheading}>we provide</h3>
@@ -151,8 +151,7 @@ const page = () => {
               {socials.map((social) => (
                 <div
                   key={social.name}
-                  className="w-full grid items-center  shadow-sm bg-white text-black p-4 rounded-lg hover:scale-[1.05]"
-                >
+                  className="w-full grid items-center  shadow-sm bg-white text-black p-4 rounded-lg hover:scale-[1.05]">
                   <div className={`${subheading} flex justify-between`}>
                     {social.name} <div>{social.icon}</div>
                   </div>
@@ -189,7 +188,10 @@ const page = () => {
                     <h2 className={headings}>Headinngs</h2>
                   </div>
                   <div className="rounded-full bg-black p-4 text-white hover:bg-gray-800 hover:text-yellow-400 hover:shadow-[4px_0px_0px_1px_#f6ad55]">
-                    <FaArrowRight size={"20px"} className="rotate-[-45deg]" />
+                    <FaArrowRight
+                      size={"20px"}
+                      className="rotate-[-45deg]"
+                    />
                   </div>
                 </div>
                 <p>

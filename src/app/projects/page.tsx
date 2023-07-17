@@ -14,7 +14,6 @@ import {
   FaNetworkWired,
   FaFile,
   FaCode,
-  FaShopify,
 } from "react-icons/fa";
 import Image from "next/image";
 import Builts from "./Builts";
@@ -74,12 +73,14 @@ const page = () => {
             size={"sm"}
             variant={"default"}
             className={""}
+            icon={undefined}
           />
           <Button
             label="Start your project"
             size={"sm"}
             variant={"ghost"}
             className={""}
+            icon={undefined}
           />
         </div>
       </div>

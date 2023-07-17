@@ -166,6 +166,7 @@ const Navbar = () => {
             variant={"default"}
             size="sm"
             className={""}
+            icon={undefined}
           />
         </div>
       </div>
