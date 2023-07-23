@@ -7,11 +7,13 @@ import {
   FaArrowUp,
 } from "react-icons/fa";
 import Blogpage from "./component/Blogpage";
+import Link from "next/link";
 
 const page = () => {
   const blog = [
     {
       title: "Marking for business",
+
       des: "A business can be more with correct marketing. Level up the business and economy",
       date: "12 July 2022",
       readTime: "6 min",
@@ -19,6 +21,7 @@ const page = () => {
     },
     {
       title: "The Power of Social Media Marketing",
+
       des: "Harnessing the potential of social media platforms to reach a wider audience and drive business growth.",
       date: "25 September 2022",
       readTime: "8 min",
@@ -26,6 +29,7 @@ const page = () => {
     },
     {
       title: "SEO Strategies for Higher Search Engine Rankings",
+
       des: "Effective techniques and best practices to optimize your website for search engines and improve visibility.",
       date: "5 October 2022",
       readTime: "10 min",
@@ -83,7 +87,7 @@ const page = () => {
   ];
 
   return (
-    <div className="w-full grid place-items-center relative ">
+    <div className="w-full  fixed grid place-items-center relative ">
       <div className="desktop:w-[1200px] py-8 px-4 box-border tablet:flex grid gap-12">
         <div className="tablet:w-1/2 h-[400px] rounded-lg py-16 px-20 bg-gray-800 grid place-items-center relative">
           <hr className="w-[40%] h-[0.5px] bg-white rotate-[90deg] absolute" />
@@ -130,30 +134,35 @@ const page = () => {
       <div className="w-full grid place-items-center border-t border-px border-gray-300">
         <div className="desktop:w-[1200px] py-8 px-4 box-border grid gap-12 grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3  ">
           {blog.map((blog) => (
-            <div
+            <Link
               key={blog.title}
-              className="grid gap-2">
-              <div className="w-full h-[300px] rounded overflow-hidden bg-gradient-to-r from-sky-400 to-blue-500 shadow-[0_0_4px_0_gray]"></div>
-              <h2 className="font-semibold">{blog.title}</h2>
-              <p className="text-sm">{blog.des}</p>
-              <div className="flex gap-4 items-center text-[10px] font-semibold text-gray-600 leading-[130%]">
-                <span>{blog.date}</span>
-                <div className="w-2 h-2 rounded-full bg-gray-600/50"></div>
-                <span>{blog.readTime} read</span>
+              href={{
+                pathname: `/blog/${blog.title}`,
+                query: { title: blog.title },
+              }}>
+              <div className="grid gap-2">
+                <div className="w-full h-[300px] rounded overflow-hidden bg-gradient-to-r from-sky-400 to-blue-500 shadow-[0_0_4px_0_gray]"></div>
+                <h2 className="font-semibold">{blog.title}</h2>
+                <p className="text-sm">{blog.des}</p>
+                <div className="flex gap-4 items-center text-[10px] font-semibold text-gray-600 leading-[130%]">
+                  <span>{blog.date}</span>
+                  <div className="w-2 h-2 rounded-full bg-gray-600/50"></div>
+                  <span>{blog.readTime} read</span>
+                </div>
+                <div className="flex items-center">
+                  {blog.creator.map((creator, index) => (
+                    <div
+                      key={index}
+                      style={{ left: `-${index * 10}px` }}
+                      className={`h-10 w-10 bg-gradient-to-t from-red-400 to-indigo-300 rounded-full relative shadow-[0_0_4px_0_white] border-px hover:left-0 border-white`}></div>
+                  ))}
+                </div>
               </div>
-              <div className="flex items-center">
-                {blog.creator.map((creator, index) => (
-                  <div
-                    key={index}
-                    style={{ left: `-${index * 10}px` }}
-                    className={`h-10 w-10 bg-gradient-to-t from-red-400 to-indigo-300 rounded-full relative shadow-[0_0_4px_0_white] border-px hover:left-0 border-white`}></div>
-                ))}
-              </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
-      <Blogpage />
+      {/* <Blogpage /> */}
     </div>
   );
 };

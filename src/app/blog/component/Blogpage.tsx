@@ -2,13 +2,12 @@ import React from "react";
 
 const Blogpage = () => {
   return (
-    <div className="w-full h-full absolute top-0 grid place-items-center bg-gray-100/50">
+    <div className="w-full h-[100vh] fixed top-0 grid place-items-center bg-white py-20 overflow-auto z-20">
       <div className="laptop:w-[1000px]  bg-gradient-to-r from-white to-gray-100 py-8 px-4 grid gap-8 rounded-lg">
         <h2 className="text-2xl font-semibold">Title of the blog</h2>
         <div className="w-full h-[500px] bg-gradient-to-r from-green-500 to-green-600"></div>
         <div className="grid gap-4">
           <div>
-            {" "}
             <h2 className="text-xl font-semibold">Introduction</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
