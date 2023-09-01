@@ -44,7 +44,10 @@ const Navbar = () => {
 
   const [isopen, setopen] = useState<boolean>();
   const menuRefs = navItems.map(() => useRef(null));
-  const setWidth = async (ref: any) => {};
+  const setWidth = (ref: any) => {
+    const width = ref?.current?.getBoundingClientRect().width || 0;
+    return width;
+  };
 
   const [btmbdr, setBtmbdr] = useState(0);
   const [path, setPath] = useState<string>("./");
@@ -52,23 +55,25 @@ const Navbar = () => {
 
   const [barW, setBarW] = useState(setWidth(menuRefs[0]));
 
-  const handleOptionClick = (index: number) => {
+  const handleOptionClick = async (index: number) => {
     const width = setWidth(menuRefs[index]);
-
-    const position = menuRefs[index] ? menuRefs[index].current.offsetLeft : 0;
+    setPath(`.${router}`);
+    const position = (await menuRefs[index])
+      ? menuRefs[index].current.offsetLeft
+      : 0;
     setBarW(width);
     setBtmbdr(position);
+    const thisNav = navItems.find((item) => item.link === path);
+    const activeIndex = thisNav ? navItems.indexOf(thisNav) : -1;
+    setActive(index ? index : 0);
   };
   const router = usePathname();
+  console.log(barW);
 
-  useEffect(() => {
-    const currentPath = `.${router}`;
-    setPath(currentPath);
-    const thisNav = navItems.find((item) => item.link === currentPath);
-    const activeIndex = thisNav ? navItems.indexOf(thisNav) : -1;
-    setActive(activeIndex);
-    setBarW(setWidth(menuRefs[activeIndex]));
-  }, [handleOptionClick]);
+  // useEffect(() => {
+
+  //   setBarW(setWidth(menuRefs[activeIndex]));
+  // }, [path]);
 
   return (
     <div className="w-full text-black fixed z-[90] bg-gray-300  shadow-lg px-4 py-[10px] bg-secondary-Btn grid place-items-center">
@@ -101,7 +106,7 @@ const Navbar = () => {
           ))}
 
           <div
-            style={{ width: `${barW}`, left: `${btmbdr}px` }}
+            style={{ width: `${barW}px`, left: `${btmbdr}px` }}
             className={`h-[2px] absolute bottom-0 bg-gray-800 transition-all  `}></div>
         </div>
         <div>
@@ -150,7 +155,7 @@ const Navbar = () => {
               key={menu.navTitle}
               className="w-full p-2 hover:text-background-color hover:bg-accent-color cursor-default font-semibold"
               onClick={() => (isopen ? setopen(!isopen) : "")}>
-              <Link href={menu.link}> {menu.navTitle}</Link>
+              <a href={menu.link}> {menu.navTitle}</a>
             </div>
           ))}
           <Button
