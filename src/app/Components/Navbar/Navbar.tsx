@@ -44,8 +44,8 @@ const Navbar = () => {
 
   const [isopen, setopen] = useState<boolean>();
   const menuRefs = navItems.map(() => useRef(null));
-  const setWidth = (ref: any) => {
-    return ref.current ? ref.current.getBoundingClientRect().width + "px" : "0";
+  const setWidth = async (ref: any) => {
+    // return ref.current ? ref.current.getBoundingClientRect().width + "px" : "0";
   };
 
   const [btmbdr, setBtmbdr] = useState(0);
@@ -70,8 +70,8 @@ const Navbar = () => {
     const activeIndex = thisNav ? navItems.indexOf(thisNav) : -1;
     setActive(activeIndex);
     setBarW(setWidth(menuRefs[activeIndex]));
-    const position = menuRefs[activeIndex].current.offsetLeft;
-    setBtmbdr(position);
+    // const position = menuRefs[activeIndex].current.offsetLeft;
+    // setBtmbdr(position);
   }, [handleOptionClick]);
 
   useEffect(() => {});
