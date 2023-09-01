@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  FaArrowCircleUp,
-  FaArrowDown,
-  FaArrowLeft,
-  FaArrowRight,
-  FaArrowUp,
-} from "react-icons/fa";
-import Blogpage from "./component/Blogpage";
+import { FaArrowDown, FaArrowLeft, FaArrowUp } from "react-icons/fa";
 import Link from "next/link";
 
 const page = () => {
@@ -162,7 +155,6 @@ const page = () => {
           ))}
         </div>
       </div>
-      {/* <Blogpage /> */}
     </div>
   );
 };
