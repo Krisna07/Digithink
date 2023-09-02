@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 const Teams = () => {
   const leftRef = useRef(null);
 
-  globalThis.addEventListener("resize", handleResize);
+  // globalThis.addEventListener("resize", handleResize);
   const getLeft = (item: any) => {
     return item.current ? item.current.getBoundingClientRect().left : 0;
   };
