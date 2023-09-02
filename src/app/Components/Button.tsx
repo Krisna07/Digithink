@@ -24,11 +24,10 @@ const buttonVarients = cva("active:", {
       sm: "font-semibold text-sm p-[10px] py-[4px]",
       lg: "font-bold text-lg p-[12px]",
     },
-    color: {},
+
     defaultVariants: {
       variant: "default",
       size: "default",
-      color: "default",
     },
   },
 });
@@ -36,11 +35,10 @@ const buttonVarients = cva("active:", {
 export interface Btnprops
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVarients> {
-  label?: string;
-  className?: any;
-  icon?: any;
-  size?: string;
-  variant: string;
+  icon: any;
+  className?: string;
+  rightIcon?: any;
+  label: string;
 }
 
 const Button: React.FC<Btnprops> = ({
@@ -51,10 +49,12 @@ const Button: React.FC<Btnprops> = ({
   variant,
   className,
   icon,
+  ...props
 }) => {
   return (
     <button
       className={cn(buttonVarients({ variant, size, className }))}
+      {...props}
       onClick={onClick}
       disabled={disabled}
     >
