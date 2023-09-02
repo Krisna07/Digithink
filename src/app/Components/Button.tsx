@@ -1,8 +1,13 @@
 import React, { ButtonHTMLAttributes } from "react";
 import { cva, VariantProps } from "class-variance-authority";
-import clsx from "clsx";
 
-// Define the button variants and states
+import { ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
 const buttonVarients = cva("active:", {
   variants: {
     variant: {
@@ -28,15 +33,17 @@ const buttonVarients = cva("active:", {
   },
 });
 
-export interface btnProps
+export interface Btnprops
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVarients> {
-  label: string;
-  className: any;
-  icon: any;
+  label?: string;
+  className?: any;
+  icon?: any;
+  size?: string;
+  variant: string;
 }
 
-const Button: React.FC<btnProps> = ({
+const Button: React.FC<Btnprops> = ({
   label,
   onClick,
   size,
@@ -47,9 +54,10 @@ const Button: React.FC<btnProps> = ({
 }) => {
   return (
     <button
-      className={clsx(buttonVarients({ variant, size, className }))}
+      className={cn(buttonVarients({ variant, size, className }))}
       onClick={onClick}
-      disabled={disabled}>
+      disabled={disabled}
+    >
       {icon ? icon : ""} {label}
     </button>
   );
