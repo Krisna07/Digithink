@@ -3,7 +3,7 @@ import React, { useRef, useEffect, useState } from "react";
 import Button from "../Button";
 
 const Customers = () => {
-  const cardRef = useRef();
+  const cardRef: any = useRef();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -40,9 +40,7 @@ const Customers = () => {
           are what we thrive on.
         </p>
       </div>
-      <div
-        className="customers w-full"
-        ref={cardRef}>
+      <div className="customers w-full" ref={cardRef}>
         <div className="w-full grid laptop:grid-cols-4 tablet:grid-cols-2 gap-[20px]">
           {customerList.map((item, index) => (
             <div
@@ -50,7 +48,8 @@ const Customers = () => {
               style={{
                 transform: `translateX(${visible ? "0" : -(100 * index)}%)`,
               }}
-              className="grid place-items-left text-black text-left bg-gray-200 overflow-hidden rounded-lg hover:translate-y-[-4px] hover:translate-x-[-4px] transition-all duration-300 hover:shadow-[0_0px_4px_0px_rgba(0,0,0,0.3)]">
+              className="grid place-items-left text-black text-left bg-gray-200 overflow-hidden rounded-lg hover:translate-y-[-4px] hover:translate-x-[-4px] transition-all duration-300 hover:shadow-[0_0px_4px_0px_rgba(0,0,0,0.3)]"
+            >
               <div className="w-fit ">
                 <h2 className="text-xl font-bold px-4 py-2 bg-gray-300 ">
                   Name of the business

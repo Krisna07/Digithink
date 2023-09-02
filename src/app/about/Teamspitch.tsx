@@ -25,7 +25,7 @@ const Teamspitch = () => {
       image: "/teamsVids/image3.jpg",
     },
   ];
-  const menuRefs = [useRef(null), useRef(null), useRef(null)];
+  const menuRefs: any = [useRef(null), useRef(null), useRef(null)];
 
   const setWidth = (ref: any) => {
     return ref.current ? ref.current.getBoundingClientRect().width + "px" : "0";
@@ -57,7 +57,8 @@ const Teamspitch = () => {
       <div className="box-border tablet:max-w-[600px] rounded overflow-hidden shadow-[0_0_2px_0_gray]">
         <div
           style={{ left: `-${left}%` }}
-          className="  w-full h-[300px] bg-gray-200 relative flex transition-all">
+          className="  w-full h-[300px] bg-gray-200 relative flex transition-all"
+        >
           {teamspitchObj.map((image) => (
             <Image
               src={image.image}
@@ -85,7 +86,8 @@ const Teamspitch = () => {
                   : "opacity-60"
               } transition-all font-semibold`}
               onClick={() => handleOptionClick(teamspitchObj.indexOf(name))}
-              ref={menuRefs[teamspitchObj.indexOf(name)]}>
+              ref={menuRefs[teamspitchObj.indexOf(name)]}
+            >
               {name.name}
             </span>
           ))}
@@ -115,15 +117,15 @@ const Teamspitch = () => {
           </span> */}
           <span
             style={{ width: barW, left: btmbdr }}
-            className="w-auto h-px bg-gray-800 absolute bottom-0 transition-all ]"></span>
+            className="w-auto h-px bg-gray-800 absolute bottom-0 transition-all ]"
+          ></span>
         </div>
         <div
           style={{ left: `-${left}%` }}
-          className="w-full flex  relative transition-all box-border">
+          className="w-full flex  relative transition-all box-border"
+        >
           {teamspitchObj.map((pitch) => (
-            <div
-              className="min-w-[100%] grid gap-2"
-              key={pitch.title}>
+            <div className="min-w-[100%] grid gap-2" key={pitch.title}>
               <h2 className="font-bold text-xl">{pitch.title}</h2>
               <p>{pitch.des}</p>
               <span className="flex gap-2 place-items-center w-auto text-sm font-semibold bg-gray-200 hover:bg-gray-400 w-fit px-2 py-1 rounded-lg">

@@ -35,7 +35,7 @@ const buttonVarients = cva("active:", {
 export interface Btnprops
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVarients> {
-  icon: any;
+  icon?: any;
   className?: string;
   rightIcon?: any;
   label: string;
