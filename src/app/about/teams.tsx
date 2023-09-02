@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 const Teams = () => {
   const leftRef = useRef(null);
 
-  window.addEventListener("resize", handleResize);
+  globalThis.addEventListener("resize", handleResize);
   const getLeft = (item: any) => {
     return item.current ? item.current.getBoundingClientRect().left : 0;
   };
@@ -19,9 +19,7 @@ const Teams = () => {
 
   return (
     <div className="w-full  py-8 grid place-items-center overflow-hidden">
-      <div
-        className="laptop:w-[1200px] px-4 grid gap-4"
-        ref={leftRef}>
+      <div className="laptop:w-[1200px] px-4 grid gap-4" ref={leftRef}>
         <h2 className="font-semibold text-sm text-gray-600">Our Stories</h2>
         <h2 className="text-lg font-semibold">
           Tales{" "}
@@ -40,11 +38,13 @@ const Teams = () => {
         <div className=" relative overflow-x-scroll scrollbar-hide smooth grid items-center justifuy-center">
           <div
             style={{ left: left }}
-            className={`relative flex items-center gap-4 py-4`}>
+            className={`relative flex items-center gap-4 py-4`}
+          >
             {[...Array(20)].map((team, x) => (
               <div
                 className="min-w-[230px] bg-gray-100 rounded-lg grid gap-4 overflow-hidden"
-                key={x}>
+                key={x}
+              >
                 <div className="flex items-center gap-4 py-2 px-4 ">
                   <div className="w-10 h-10 bg-gradient-to-r from-indigo-200 to-indigo-600 rounded-full"></div>
                   <div className="grid">
