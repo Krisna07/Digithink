@@ -10,7 +10,7 @@ interface Navtypes {
   navItems: [
     {
       navItems: String;
-    }
+    },
   ];
 }
 
@@ -18,27 +18,27 @@ const Navbar = () => {
   const navItems = [
     {
       navTitle: "Home",
-      link: "./",
+      link: "/",
     },
     {
       navTitle: "Services",
-      link: "./services",
+      link: "/services",
     },
     {
       navTitle: "Projects",
-      link: "./projects",
+      link: "/projects",
     },
     {
       navTitle: "About us",
-      link: "./about",
+      link: "/about",
     },
     {
       navTitle: "Contact us",
-      link: "./contact",
+      link: "/contact",
     },
     {
       navTitle: "Blog",
-      link: "./blog",
+      link: "/blog",
     },
   ];
 
@@ -68,12 +68,6 @@ const Navbar = () => {
     setActive(index ? index : 0);
   };
   const router = usePathname();
-  console.log(barW);
-
-  // useEffect(() => {
-
-  //   setBarW(setWidth(menuRefs[activeIndex]));
-  // }, [path]);
 
   return (
     <div className="w-full text-black fixed z-[90] bg-gray-300  shadow-lg px-4 py-[10px] bg-secondary-Btn grid place-items-center">
@@ -90,15 +84,16 @@ const Navbar = () => {
         </div>
         <div className="flex w-fit text-black gap-2 relative">
           {navItems.map((menu) => (
-            <Link href={menu.link} key={menu.navTitle}>
+            <Link
+              href={menu.link}
+              key={menu.navTitle}>
               <div
                 key={menu.navTitle}
                 onClick={() => handleOptionClick(navItems.indexOf(menu))}
                 ref={menuRefs[navItems.indexOf(menu)]}
                 className={`p-2 hover:text-gray-500 cursor-default text-sm font-semibold transition-all  ${
                   navItems.indexOf(menu) == active ? "text-red-800" : ""
-                } `}
-              >
+                } `}>
                 {menu.navTitle}
               </div>
             </Link>
@@ -106,8 +101,7 @@ const Navbar = () => {
 
           <div
             style={{ width: `${barW}px`, left: `${btmbdr}px` }}
-            className={`h-[2px] absolute bottom-0 bg-gray-800 transition-all  `}
-          ></div>
+            className={`h-[2px] absolute bottom-0 bg-gray-800 transition-all  `}></div>
         </div>
         <div>
           <Button
@@ -130,25 +124,31 @@ const Navbar = () => {
               alt="Picture of the logo"
             />
           </div>
-          <div className="w-fit" onClick={() => setopen(!isopen)}>
+          <div
+            className="w-fit"
+            onClick={() => setopen(!isopen)}>
             {!isopen ? (
-              <Menu color="black" size={"40px"} />
+              <Menu
+                color="black"
+                size={"40px"}
+              />
             ) : (
-              <X color="black" size={"40px"} />
+              <X
+                color="black"
+                size={"40px"}
+              />
             )}
           </div>
         </div>
         <div
           className={`w-full gap-2 overflow-hidden ${
             isopen ? "grid" : "hidden"
-          }`}
-        >
+          }`}>
           {navItems.map((menu) => (
             <div
               key={menu.navTitle}
               className="w-full p-2 hover:text-background-color hover:bg-accent-color cursor-default font-semibold"
-              onClick={() => (isopen ? setopen(!isopen) : "")}
-            >
+              onClick={() => (isopen ? setopen(!isopen) : "")}>
               <a href={menu.link}> {menu.navTitle}</a>
             </div>
           ))}
