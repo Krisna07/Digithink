@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Button from "../Button";
 import { FaPhoneAlt } from "react-icons/fa";
+import Link from "next/link";
 
 const Digital = () => {
   return (
@@ -12,21 +13,24 @@ const Digital = () => {
           <h2 className="text-3xl font-bold ">
             A digital team for your business{" "}
           </h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur
-            porro hic velit vero! Placeat provident cumque iure impedit
-            praesentium. Iure!
+          <p className="text-sm">
+            We value the need and business of oir client. We focus more on
+            bringing the client and their customers together. <br />
+            Your goal is our goal
           </p>
           <div className="w-fit grid gap-2 grid-cols-4"></div>
         </div>
 
-        <Button
-          label="Contact us"
-          variant={"default"}
-          size={"sm"}
-          className="h-fit"
-          icon={<FaPhoneAlt />}
-        />
+        <Link href={"/contact"}>
+          {" "}
+          <Button
+            label="Contact us"
+            variant={"default"}
+            size={"sm"}
+            className="h-fit"
+            icon={<FaPhoneAlt />}
+          />
+        </Link>
       </div>
     </div>
   );

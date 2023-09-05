@@ -1,5 +1,5 @@
 "use client";
-import { Menu, X } from "lucide-react";
+import { Menu, Parentheses, X } from "lucide-react";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import Button from "../Button";
@@ -48,27 +48,33 @@ const Navbar = () => {
     const width = ref?.current?.getBoundingClientRect().width || 0;
     return width;
   };
+  const router = usePathname();
 
   const [btmbdr, setBtmbdr] = useState(0);
-  const [path, setPath] = useState<string>("./");
-  const [active, setActive] = useState<number>();
+  const [path, setPath] = useState<string>(`./`);
+  const [active, setActive] = useState<number>(0);
 
   const [barW, setBarW] = useState(setWidth(menuRefs[0]));
 
   const handleOptionClick = async (index: number) => {
     const width = setWidth(menuRefs[index]);
-    setPath(`.${router}`);
+    setPath(`${router}`);
     const position = (await menuRefs[index])
       ? menuRefs[index].current.offsetLeft
       : 0;
     setBarW(width);
     setBtmbdr(position);
-    const thisNav = navItems.find((item) => item.link === path);
+    const thisNav = navItems.find((item) => `.${item.link}` === path);
     const activeIndex = thisNav ? navItems.indexOf(thisNav) : -1;
     setActive(index ? index : 0);
   };
-  const router = usePathname();
 
+  useEffect(() => {
+    setPath(`${router}`);
+    const actnav: any = navItems.find((item) => `.${item.link}` === path);
+    const activeThis = actnav ? navItems.indexOf(actnav) : -1;
+    handleOptionClick(activeThis);
+  }, []);
   return (
     <div className="w-full text-black fixed z-[90] bg-gray-300  shadow-lg px-4 py-[10px] bg-secondary-Btn grid place-items-center">
       <div className="hidden  desktop:w-[1024px] tablet:w-full tablet:flex items-center justify-between">

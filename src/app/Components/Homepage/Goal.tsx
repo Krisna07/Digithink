@@ -1,6 +1,7 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import Button from "../Button";
+import Link from "next/link";
 
 const Goal = () => {
   return (
@@ -14,17 +15,20 @@ const Goal = () => {
         </h2>
       </div>
       <div className="grid gap-[20px] text-left ">
-        <p className="font-semibold">
-          Some of the fundamental and the direction we follow are always. You
-          got all our 100% attention for the task. Take the lorem and give the
-          epsum.
+        <p className="font-semibold text-sm">
+          Explore our innovative solutions that help you navigate in the
+          ever-changing digital landscape.
         </p>
-        <Button
-          label="Learn more"
-          className={""}
-          variant={"default"}
-          size="sm"
-        />
+
+        <Link href={"/about"}>
+          {" "}
+          <Button
+            label="Learn more"
+            className={""}
+            variant={"primary"}
+            size="sm"
+          />
+        </Link>
       </div>
     </div>
   );
