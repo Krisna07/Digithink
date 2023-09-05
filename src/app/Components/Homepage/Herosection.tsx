@@ -11,11 +11,12 @@ const Herosection = () => {
           We Help You Take A Step In Digitial
         </h1>
         <p>
-          Our team with the excellent work ae alwasyes on tje merhis theris
-          iskabchr so that we shoud ne ayl least me a so sometime payraise of
-          course they both told him they cannot inscreadte the paysue some
-          people salary has cut{" "}
+          Our team consistently delivers excellent work and consistently
+          performs at the highest level. There is no risk involved, so we should
+          be due for a well-deserved pay raise. However, they both told him they
+          cannot increase the pay, as some people's salaries have been reduced.
         </p>
+
         <Button
           variant={"primary"}
           label={"Learn More"}

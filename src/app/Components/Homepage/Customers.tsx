@@ -12,7 +12,7 @@ const Customers = () => {
         if (entry.isIntersecting) {
           return setVisible(true);
         } else {
-          // setVisible(false);
+          setVisible(false);
         }
       });
     });
@@ -26,7 +26,29 @@ const Customers = () => {
     };
   }, []);
 
-  const customerList = Array.from({ length: 4 });
+  const customerList = [
+    {
+      id: 1,
+      name: "App and Co.Inc.",
+      description:
+        "Innovators of cutting-edge technology, including the iconic iPhone, iPad, and Mac.",
+    },
+    {
+      id: 2,
+      name: "Acme Corporation",
+      description: "A leading provider of widgets and gadgets.",
+    },
+    {
+      id: 3,
+      name: " Innovators Ltd.",
+      description: "Pioneers in cutting-edge technology solutions.",
+    },
+    {
+      id: 4,
+      name: "Global  Inc.",
+      description: "Your trusted partner in worldwide logistics and shipping.",
+    },
+  ];
 
   return (
     <div className="laptop:w-[1000px] grid gap-4 p-8 skew-y-[2deg]">
@@ -40,7 +62,9 @@ const Customers = () => {
           are what we thrive on.
         </p>
       </div>
-      <div className="customers w-full" ref={cardRef}>
+      <div
+        className="customers w-full"
+        ref={cardRef}>
         <div className="w-full grid laptop:grid-cols-4 tablet:grid-cols-2 gap-[20px]">
           {customerList.map((item, index) => (
             <div
@@ -48,17 +72,12 @@ const Customers = () => {
               style={{
                 transform: `translateX(${visible ? "0" : -(100 * index)}%)`,
               }}
-              className="grid place-items-left text-black text-left bg-gray-200 overflow-hidden rounded-lg hover:translate-y-[-4px] hover:translate-x-[-4px] transition-all duration-300 hover:shadow-[0_0px_4px_0px_rgba(0,0,0,0.3)]"
-            >
+              className="grid place-items-left text-black text-left bg-gray-200 overflow-hidden rounded-lg hover:translate-y-[-4px] hover:translate-x-[-4px] transition-all duration-300 hover:shadow-[0_0px_4px_0px_rgba(0,0,0,0.3)]">
               <div className="w-fit ">
                 <h2 className="text-xl font-bold px-4 py-2 bg-gray-300 ">
-                  Name of the business
+                  {item.name}
                 </h2>
-                <p className="text-sm px-4 py-2">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Laborum placeat id in dolorum veritatis eligendi nesciunt ab
-                  unde ullam fugit.
-                </p>
+                <p className="text-sm px-4 py-2">{item.description}</p>
               </div>
             </div>
           ))}

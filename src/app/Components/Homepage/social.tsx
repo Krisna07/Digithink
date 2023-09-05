@@ -97,7 +97,7 @@ const Social = () => {
         We do the social meida campign every now and then. Subscribe our channel
         and get 10% off in our next campgin.
       </h2>
-      <div className="laptop:w-[1000px] w-full flex items-start justify-start gap-4 py-4 overflow-x-scroll">
+      <div className="laptop:w-[1000px] w-full flex items-start justify-start gap-4 py-4 overflow-x-scroll scrollbar-hide">
         {campign.map((item) => (
           <div
             key={item.title}
