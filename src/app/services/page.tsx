@@ -16,6 +16,7 @@ import {
   FaArrowRight,
   FaKickstarter,
 } from "react-icons/fa";
+import Social from "./Social";
 
 const page = () => {
   const sectionRefs = [
@@ -69,54 +70,68 @@ const page = () => {
       name: "Facebook",
       icon: <FaFacebook />,
       des: "We provide comprehensive Facebook marketing solutions, including managing ads, creating engaging posts, and offering personalized guidance to help businesses succeed on the platform.",
+      shortDes:
+        "Comprehensive Facebook marketing - ads, posts, guidance for success.",
     },
     {
       name: "Twitter",
       icon: <FaTwitter />,
       des: "Our Twitter marketing services encompass running targeted ad campaigns, managing Twitter profiles, and delivering one-on-one guidance to optimize engagement and growth on the platform.",
+      shortDes:
+        "Targeted ads, profile management, guidance for Twitter growth.",
     },
     {
       name: "Instagram",
       icon: <FaInstagram />,
       des: "We specialize in Instagram marketing, assisting clients in managing ads, creating compelling posts, and providing tailored strategies to increase brand visibility and engagement on the platform.",
+      shortDes: "Instagram expertise - ads, posts, strategies for visibility.",
     },
     {
       name: "LinkedIn",
       icon: <FaLinkedin />,
       des: "We specialize in LinkedIn marketing services. Our team manages LinkedIn advertising campaigns, creates engaging posts, and provides personalized guidance for leveraging the platform's professional network.",
+      shortDes: "LinkedIn marketing - ads, posts, guidance for networking.",
     },
     {
       name: "YouTube",
       icon: <FaYoutube />,
       des: "We offer comprehensive YouTube marketing solutions to help businesses succeed on the world's largest video platform. From optimizing video content to running targeted ads, we help maximize visibility and engagement.",
+      shortDes:
+        "YouTube success - optimized content, targeted ads, enhanced visibility.",
     },
     {
       name: "Pinterest",
       icon: <FaPinterest />,
       des: "Our Pinterest experts assist clients in utilizing the visual discovery platform effectively. We optimize Pinterest profiles, curate engaging boards, and implement strategies to drive traffic and conversions.",
+      shortDes:
+        "Pinterest mastery - profile optimization, engaging boards, traffic-driving strategies.",
     },
     {
       name: "TikTok",
       icon: <FaTiktok />,
       des: "Our TikTok marketing services focus on creating viral content, managing influencer partnerships, and implementing strategies to increase brand awareness and engagement on the popular short-form video platform.",
+      shortDes:
+        "TikTok success - viral content, influencer management, brand engagement.",
     },
     {
       name: "Snapchat",
       icon: <FaSnapchatGhost />,
       des: "With our Snapchat marketing solutions, we help businesses reach a younger demographic through engaging ads, sponsored filters, and interactive campaigns tailored to the platform's unique features.",
+      shortDes:
+        "Snapchat solutions - engage the younger demographic with interactive campaigns.",
     },
     {
       name: "Reddit",
       icon: <FaRedditAlien />,
       des: "Our Reddit marketing expertise includes running targeted ad campaigns, leveraging relevant subreddits, and engaging with the Reddit community to drive brand awareness and foster meaningful discussions.",
+      shortDes:
+        "Reddit marketing - targeted ads, community engagement, brand awareness.",
     },
   ];
 
   return (
     <div className="w-full grid place-items-center gap-8">
-      <div
-        className={sectioncss}
-        ref={sectionRefs[0]}>
+      <div className={sectioncss} ref={sectionRefs[0]}>
         <div className="grid gap-8">
           <div className={sectiongrid}>
             <h3 className={subheading}>we provide</h3>
@@ -149,14 +164,7 @@ const page = () => {
             <p className={subheading}>Associated apps</p>
             <div className="w-full grid tablet:grid-cols-2 laptop:grid-cols-3 gap-[20px]">
               {socials.map((social) => (
-                <div
-                  key={social.name}
-                  className="w-full grid items-center  shadow-sm bg-white text-black p-4 rounded-lg hover:scale-[1.05]">
-                  <div className={`${subheading} flex justify-between`}>
-                    {social.name} <div>{social.icon}</div>
-                  </div>
-                  <div>{social.des}</div>
-                </div>
+                <Social social={social} classn={subheading} />
               ))}
             </div>
           </div>
@@ -188,10 +196,7 @@ const page = () => {
                     <h2 className={headings}>Headinngs</h2>
                   </div>
                   <div className="rounded-full bg-black p-4 text-white hover:bg-gray-800 hover:text-yellow-400 hover:shadow-[4px_0px_0px_1px_#f6ad55]">
-                    <FaArrowRight
-                      size={"20px"}
-                      className="rotate-[-45deg]"
-                    />
+                    <FaArrowRight size={"20px"} className="rotate-[-45deg]" />
                   </div>
                 </div>
                 <p>
