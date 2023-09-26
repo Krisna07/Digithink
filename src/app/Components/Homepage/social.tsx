@@ -113,9 +113,7 @@ const Social = () => {
                 {item.icon}
               </div>
             </div>
-            {/* <div>
-            {item.description}
-          </div> */}
+
             <Button
               variant={"default"}
               size={"sm"}
