@@ -69,12 +69,15 @@ const Navbar = () => {
     setActive(index ? index : 0);
   };
 
-  useEffect(() => {
-    setPath(`${router}`);
-    const actnav: any = navItems.find((item) => `.${item.link}` === path);
-    const activeThis = actnav ? navItems.indexOf(actnav) : -1;
-    handleOptionClick(activeThis);
-  });
+  useEffect(() =>
+    navItems.forEach((item) => {
+      if (item.link === router) {
+        const activeThis = navItems.indexOf(item);
+        handleOptionClick(activeThis);
+      }
+    }),
+  );
+
   return (
     <div className="w-full text-black fixed z-[90] bg-gray-300  shadow-lg px-4 py-[10px] bg-secondary-Btn grid place-items-center">
       <div className="hidden  desktop:w-[1024px] tablet:w-full tablet:flex items-center justify-between">

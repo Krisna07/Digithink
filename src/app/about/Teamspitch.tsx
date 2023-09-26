@@ -7,24 +7,24 @@ const Teamspitch = () => {
   const teamspitchObj = [
     {
       name: "Michale",
-      title: "Listen what Michale say",
-      des: "lorem is a kind sota thing. I can move with the policy of the comapony so freely that I respire. Digi is a think to not think less. I guess I am a rocket man",
+      title: "Listen to What Michale Says",
+      des: "I've had the privilege of working at our company, where creativity knows no bounds. The company's policies foster an environment of freedom and innovation. Being part of this team is a joy, and we take digital innovation seriously. I feel like I'm soaring to new heights in this field.",
       image: "/teamsVids/image1.jpg",
     },
     {
       name: "Ronald",
-      title: "Never too late to Start",
-      des: "I start to think, and then I sink Into the paper like I was ink When I’m writing, I’m trapped in between the lines I escape when I finish the rhyme.",
+      title: "Never Too Late to Start",
+      des: "Writing is my passion, and I'm dedicated to perfecting my craft. I find solace in the world of words, where creativity flows freely. Every piece I write is a journey, and I invite you to embark on it with me.",
       image: "/teamsVids/image2.jpg",
     },
     {
       name: "Mitchel",
-      title:
-        "Have you ever seen a man whose toe blown off, I mean like a flower",
-      des: "One aspect that makes rap music so special is that one song alone can include a multitude of messages by the artist. In comparison to traditional types of music, a rapper is able ",
+      title: "Have You Ever Seen a Man Whose Toe Was Blown Off, Like a Flower?",
+      des: "Rap music is a versatile art form that allows artists to convey a multitude of messages in a single song. It's a medium where storytelling and self-expression collide. Join me on this musical journey as we explore the depth of emotions and experiences.",
       image: "/teamsVids/image3.jpg",
     },
   ];
+
   const menuRefs: any = [useRef(null), useRef(null), useRef(null)];
 
   const setWidth = (ref: any) => {
@@ -57,8 +57,7 @@ const Teamspitch = () => {
       <div className="box-border tablet:max-w-[600px] rounded overflow-hidden shadow-[0_0_2px_0_gray]">
         <div
           style={{ left: `-${left}%` }}
-          className="  w-full h-[300px] bg-gray-200 relative flex transition-all"
-        >
+          className="  w-full h-[300px] bg-gray-200 relative flex transition-all">
           {teamspitchObj.map((image) => (
             <Image
               src={image.image}
@@ -86,46 +85,22 @@ const Teamspitch = () => {
                   : "opacity-60"
               } transition-all font-semibold`}
               onClick={() => handleOptionClick(teamspitchObj.indexOf(name))}
-              ref={menuRefs[teamspitchObj.indexOf(name)]}
-            >
+              ref={menuRefs[teamspitchObj.indexOf(name)]}>
               {name.name}
             </span>
           ))}
-          {/* <span
-            className={` py-2 p-4 hover:opacity-1 ${
-              left == 0 ? "opacity-1" : "opacity-60"
-            } transition-all font-semibold`}
-            onClick={() => handleOptionClick(0)}
-            ref={menuRefs[0]}>
-            Ronaldo
-          </span>
-          <span
-            className={` py-2 p-4 hover:opacity-100 ${
-              left == 100 ? "opacity-100" : "opacity-60"
-            } transition-all font-semibold`}
-            onClick={() => handleOptionClick(1)}
-            ref={menuRefs[1]}>
-            Messi
-          </span> */}
-          {/* <span
-            className={`opacity-60 py-2 p-4 hover:opacity-100 ${
-              left == 200 ? "opacity-100" : ""
-            } transition-all font-semibold`}
-            onClick={() => handleOptionClick(2)}
-            ref={menuRefs[2]}>
-            Michale
-          </span> */}
+
           <span
             style={{ width: barW, left: btmbdr }}
-            className="w-auto h-px bg-gray-800 absolute bottom-0 transition-all ]"
-          ></span>
+            className="w-auto h-px bg-gray-800 absolute bottom-0 transition-all ]"></span>
         </div>
         <div
           style={{ left: `-${left}%` }}
-          className="w-full flex  relative transition-all box-border"
-        >
+          className="w-full flex  relative transition-all box-border">
           {teamspitchObj.map((pitch) => (
-            <div className="min-w-[100%] grid gap-2" key={pitch.title}>
+            <div
+              className="min-w-[100%] grid gap-2"
+              key={pitch.title}>
               <h2 className="font-bold text-xl">{pitch.title}</h2>
               <p>{pitch.des}</p>
               <span className="flex gap-2 place-items-center w-auto text-sm font-semibold bg-gray-200 hover:bg-gray-400 w-fit px-2 py-1 rounded-lg">

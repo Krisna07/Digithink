@@ -63,9 +63,11 @@ const page = () => {
             Scale the business
           </h2>
         </div>
-        <p className="tablet:w-[400px] text-center">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, omnis.
-          Quia at vero repudiandae numquam recusandae quos officiis vel placeat?
+        <p className="tablet:w-[600px] text-center">
+          Our team has successfully completed several projects that have had a
+          significant impact on our clients' businesses. From optimizing supply
+          chains to creating innovative software solutions, our work has driven
+          growth and efficiency.
         </p>
         <div className="flex gap-4">
           <Button
@@ -150,10 +152,10 @@ const page = () => {
                 A organic beeswax product company
               </h2>
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Obcaecati ex aspernatur tempora mollitia sint eveniet laboriosam
-                provident quod impedit ipsam. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Corrupti, natus.
+                At Oz Beeswax, we take pride in being your trusted source for
+                premium organic beeswax products. Our mission is to provide you
+                with the purest and most sustainable beeswax items available,
+                meticulously crafted to meet the highest quality standards.
               </p>
               <Button
                 label="Visit"

@@ -2,13 +2,16 @@ import React from "react";
 import Button from "../Components/Button";
 import {
   FaAssistiveListeningSystems,
+  FaBook,
   FaChevronRight,
   FaComment,
   FaCommentAlt,
   FaMeetup,
+  FaReadme,
 } from "react-icons/fa";
 import Teamspitch from "./Teamspitch";
 import Teams from "./teams";
+import Image from "next/image";
 
 const page = () => {
   return (
@@ -44,7 +47,48 @@ const page = () => {
       </div>
       <Teamspitch />
       <Teams />
-      <div></div>
+      <div className="w-[1200px] grid gap-4 place-items-center">
+        <h2 className="w-full text-3xl text-center font-semibold">
+          We Have a <span className="text-transparent textStroke">Space</span>{" "}
+          for <span className="text-transparent textStroke">Growth</span>
+        </h2>
+        <p className="w-[800px] text-center">
+          In this era of inspiring AI advancements, we prioritize the human
+          perspective in technology. At our core, we believe that technology
+          should serve and empower humanity. It's not just about innovation;
+          it's about enhancing lives and shaping a brighter future.
+        </p>
+        <div className="w-full grid tablet:grid-cols-[60%_40%]">
+          <div className="flex flex-col gap-2  justify-center">
+            <h3 className=" font-semibold text-gray-700">Task Handling</h3>
+            <h2 className=" text-xl font-bold">AI Automation and Auto-bots</h2>
+            <p className="w-3/4 text-sm">
+              In today's fast-paced world, effective task handling is crucial
+              for productivity. Our solution leverages the power of AI
+              automation and auto-bots to streamline your workflow. From
+              automating repetitive tasks to intelligent decision-making, our
+              system ensures efficiency and accuracy, allowing you to focus on
+              what matters most—achieving your goals.
+            </p>
+            <Button
+              label="Read"
+              size={"sm"}
+              variant={"primary"}
+              className={""}
+              icon={<FaChevronRight />}
+            />
+          </div>
+
+          <div className="">
+            <Image
+              src={"/projectsImage/tech.webp"}
+              width={400}
+              height={400}
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
