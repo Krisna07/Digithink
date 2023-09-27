@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Button from "../Components/Button";
 import {
   FaAssistiveListeningSystems,
@@ -14,6 +15,12 @@ import Teams from "./teams";
 import Image from "next/image";
 
 const page = () => {
+  const runthis = () => {
+    for (let i = 0; i > 0; i++) {
+      return console.log("I love you");
+    }
+  };
+  runthis;
   return (
     <div className="grid place-items-center gap-8">
       <div className="tablet:w-[600px] w-full grid text-center gap-6 place-items-center py-16 px-4">
@@ -58,7 +65,7 @@ const page = () => {
           should serve and empower humanity. It's not just about innovation;
           it's about enhancing lives and shaping a brighter future.
         </p>
-        <div className="w-full grid tablet:grid-cols-[60%_40%]">
+        <div className="w-full grid tablet:grid-cols-[60%_40%] relative ">
           <div className="flex flex-col gap-2  justify-center">
             <h3 className=" font-semibold text-gray-700">Task Handling</h3>
             <h2 className=" text-xl font-bold">AI Automation and Auto-bots</h2>
@@ -79,13 +86,29 @@ const page = () => {
             />
           </div>
 
-          <div className="">
-            <Image
+          <div className="relative w-full">
+            <section className="relative w-full grid  p-8">
+              <div
+                style={{ mixBlendMode: "multiply" }}
+                className="absolute w-[150%] h-1/2 -bottom-[10px] left-[-85%] transform-[rotateZ(7deg)]">
+                <div className="absolute bottom-0 w-[100%] h-[100%]  elipsegrains"></div>
+              </div>
+              <div className="relative flex items-center justify-center h-96 w-96 rounded-full overflow-hidden z-20">
+                <div className="isolate absolute top-0 w-full h-full">
+                  <div className="h-full grainyfilter ball-shadow"></div>
+                  <div
+                    style={{ mixBlendMode: "multiply" }}
+                    className="absolute top-0 w-96 h-96 bg-gradient-radial  from-gray-600 via-gray-400 to-transparent "></div>
+                </div>
+              </div>
+            </section>
+
+            {/* <Image
               src={"/projectsImage/tech.webp"}
               width={400}
               height={400}
               alt=""
-            />
+            />*/}
           </div>
         </div>
       </div>

@@ -30,3 +30,18 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+.grainyfilter {
+  background: radial-gradient(circle at 65% 35%, rgba(0, 0, 0, 0), black),
+    url(https://grainy-gradients.vercel.app/noise.svg);
+  filter: contrast(120%) brightness(900%);
+}
+.elipsegrains {
+  background: radial-gradient(
+      ellipse at 70%,
+      rgba(117, 11, 8, 0.801),
+      rgba(0, 0, 0, 0)
+    ),
+    url(https://grainy-gradients.vercel.app/noise.svg);
+  filter: contrast(150%) brightness(700%);
+}
