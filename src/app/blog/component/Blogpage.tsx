@@ -1,3 +1,4 @@
+import { Image } from "lucide";
 import React from "react";
 
 const Blogpage = ({ blog }:any) => {
@@ -13,7 +14,10 @@ const Blogpage = ({ blog }:any) => {
                   key={index}
                   style={{ left: `-${index * 10}px` }}
                   className={`h-10 w-10 bg-gradient-to-t from-red-400 to-indigo-300 rounded-full relative shadow-[0_0_4px_0_white] border-px hover:left-0 border-white`}
-                ></div>
+                >
+
+
+                </div>
               ))}
             </div>
             <div className="leading-[120%]">
@@ -23,7 +27,10 @@ const Blogpage = ({ blog }:any) => {
             </div>
           </div>
         </div>
-        <div className="w-full h-[500px] bg-gradient-to-r from-green-500 to-green-600"></div>
+        <div className="w-full h-[500px] overflow-hidden bg-gradient-to-r from-green-500 to-green-600">
+                  {blog.image? <img src={blog.image} alt={blog.title}  /> : ''}
+
+        </div>
         <div className="grid gap-4">
           <div>
             <h2 className="text-xl font-semibold">Introduction</h2>
