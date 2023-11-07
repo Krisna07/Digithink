@@ -60,7 +60,7 @@ const page = () => {
               <div className="grid gap-2">
                 <div className="w-full h-[300px] rounded overflow-hidden bg-gradient-to-r from-sky-400 to-blue-500 shadow-[0_0_4px_0_gray]"></div>
                 <h2 className="font-semibold">{blog.title}</h2>
-                <p className="text-sm">{blog.des}</p>
+                <p className="text-sm">{blog.description}</p>
                 <div className="flex gap-4 items-center text-[10px] font-semibold text-gray-600 leading-[130%]">
                   <span>{blog.date}</span>
                   <div className="w-2 h-2 rounded-full bg-gray-600/50"></div>

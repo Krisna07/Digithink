@@ -63,7 +63,7 @@ const Customers = () => {
         </p>
       </div>
       <div
-        className="customers w-full"
+        className="customers w-full grid place-items-center gap-4"
         ref={cardRef}>
         <div className="w-full grid laptop:grid-cols-4 tablet:grid-cols-2 gap-[20px]">
           {customerList.map((item, index) => (
@@ -82,6 +82,7 @@ const Customers = () => {
             </div>
           ))}
         </div>
+        <Button label='Help us grow' variant={'primary'} size={'sm'}/>
       </div>
     </div>
   );
