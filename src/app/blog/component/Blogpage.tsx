@@ -1,7 +1,7 @@
 import { Image } from "lucide";
 import React from "react";
-
-const Blogpage = ({ blog }:any) => {
+import { BlogPost } from '../dummydata';
+const Blogpage = ({ blog }:BlogPost) => {
   return (
     <div className="w-full h-[100vh] fixed top-0 grid place-items-center bg-white py-20 overflow-auto z-20">
       <div className="laptop:w-[1000px] bg-gradient-to-r from-white to-gray-100 py-8 px-4 grid gap-8 rounded-lg">
