@@ -1,4 +1,20 @@
-const blog:any = [
+interface BlogPost {
+  title: string;
+  description: string;
+  date: string;
+  readTime: string;
+  creator: string[];
+  image: string;
+  blogBody: {
+    introduction: string;
+    sections: {
+      title: string;
+      content: string;
+    }[];
+    conclusion: string;
+  };
+}
+const blog:BlogPost[] = [
   {
     title: "Revolutionizing E-Commerce with Personalization Technology",
     description: "Exploring the impact of personalization technology on enhancing the e-commerce experience for consumers.",
