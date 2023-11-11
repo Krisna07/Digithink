@@ -1,4 +1,4 @@
-const blog = [
+const blog:any = [
   {
     title: "Revolutionizing E-Commerce with Personalization Technology",
     description: "Exploring the impact of personalization technology on enhancing the e-commerce experience for consumers.",
