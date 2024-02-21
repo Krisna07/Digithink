@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { FaArrowDown, FaArrowLeft, FaArrowUp } from "react-icons/fa";
 import Link from "next/link";
 import blog from "./dummydata";
 
@@ -14,7 +13,7 @@ const page = () => {
     const interval = setInterval(() => {
       if (counter < blogItem.length) {
         setIndex(counter);
-        setCounter((prevCounter) => prevCounter + 1); // Update counter for the next iteration
+        setCounter((prevCounter: number) => prevCounter + 1); // Update counter for the next iteration
       } else {
         clearInterval(interval); // Stop the interval when all elements have been processed
       }

@@ -1,9 +1,9 @@
 "use client";
 import { useParams, usePathname, useRouter } from "next/navigation";
 import Blogpage from "../component/Blogpage";
-import blog from "../dummydata";
+import blog, { BlogPost } from "../dummydata";
 
-const page = ({}) => {
+const page = () => {
   const router = usePathname();
 
   const thisblog = router.split("/")[2].split("%20").join(" ");
@@ -12,7 +12,7 @@ const page = ({}) => {
 
   return (
     <div>
-      <Blogpage blog={openBlog} />
+      <Blogpage Blog={openBlog} />
     </div>
   );
 };
