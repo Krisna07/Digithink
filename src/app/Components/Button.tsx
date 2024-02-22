@@ -41,7 +41,7 @@ export interface Btnprops
   rightIcon?: boolean;
   label: string;
 }
-const rightIcon = () => {};
+// const rightIcon = () => {};
 const Button: React.FC<Btnprops> = ({
   label,
   onClick,
