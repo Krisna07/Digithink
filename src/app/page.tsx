@@ -9,103 +9,82 @@ import Requestform from "./Components/Homepage/Requestform";
 import Social from "./Components/Homepage/social";
 
 export default function Home() {
-  const sectionRefs = [
-    useRef(null),
-    useRef(null),
-    useRef(null),
-    useRef(null),
-    useRef(null),
-    useRef(null),
-    useRef(null),
-  ];
+  // const sectionRefs = [
+  //   useRef(null),
+  //   useRef(null),
+  //   useRef(null),
+  //   useRef(null),
+  //   useRef(null),
+  //   useRef(null),
+  //   useRef(null),
+  // ];
 
-  const [sectionIntersecting, setSectionIntersecting] = useState(
-    Array(sectionRefs.length).fill(false)
-  );
+  // const [sectionIntersecting, setSectionIntersecting] = useState(
+  //   Array(sectionRefs.length).fill(false)
+  // );
 
-  useEffect(() => {
-    const observerOptions = {
-      rootMargin: "-300px",
-    };
+  // useEffect(() => {
+  //   const observerOptions = {
+  //     rootMargin: "-300px",
+  //   };
 
-    const sectionObservers = sectionRefs.map((ref: any, index: any) => {
-      return new IntersectionObserver(([entry]) => {
-        if (entry.isIntersecting) {
-          setSectionIntersecting((prevState) => {
-            const newState = [...prevState];
-            newState[index] = true;
-            return newState;
-          });
-          sectionObservers[index].unobserve(ref.current);
-        }
-      }, observerOptions);
-    });
+  //   const sectionObservers = sectionRefs.map((ref: any, index: any) => {
+  //     return new IntersectionObserver(([entry]) => {
+  //       if (entry.isIntersecting) {
+  //         setSectionIntersecting((prevState) => {
+  //           const newState = [...prevState];
+  //           newState[index] = true;
+  //           return newState;
+  //         });
+  //         sectionObservers[index].unobserve(ref.current);
+  //       }
+  //     }, observerOptions);
+  //   });
 
-    sectionRefs.forEach((ref: any, index: any) =>
-      sectionObservers[index].observe(ref.current)
-    );
+  //   sectionRefs.forEach((ref: any, index: any) =>
+  //     sectionObservers[index].observe(ref.current)
+  //   );
 
-    return () => {
-      sectionObservers.forEach((observer) => observer.disconnect());
-    };
-  }, []);
+  //   return () => {
+  //     sectionObservers.forEach((observer) => observer.disconnect());
+  //   };
+  // }, []);
 
   return (
     <main className="w-full grid-place-items-center ">
       <div
-        ref={sectionRefs[0]}
-        className={`w-full py-[40px] ${
-          !sectionIntersecting[0] ? "opacity-0" : "opacity-1"
-        }   p-4  min-h-[100vh] grid place-items-center box-border text-center gap-4 relative transition-opacity ease-in-out duration-1000 bg-[#2A2727] `}
+        className={`w-full py-[40px] }   p-4  min-h-[100vh] grid place-items-center box-border text-center gap-4 relative transition-opacity ease-in-out duration-1000 bg-[#2A2727] `}
       >
         <Herosection />
       </div>
       <div
-        ref={sectionRefs[1]}
-        className={`w-full py-[40px] ${
-          !sectionIntersecting[1] ? "opacity-0" : "opacity-1"
-        }   laptop:p-4 grid place-items-center box-border text-center gap-4 relative transition-opacity ease-in-out duration-1000 min-h-[40vh] tablet:h-[60vh] bg-cover bg-no-repeat bg-center `}
+        className={`w-full py-[40px]   laptop:p-4 grid place-items-center box-border text-center gap-4 relative transition-opacity ease-in-out duration-1000 min-h-[40vh] tablet:h-[60vh] bg-cover bg-no-repeat bg-center `}
         style={{ backgroundImage: "url(/Homepage/Goals.jfif)" }}
       >
         <Goal />
       </div>
       <div
-        ref={sectionRefs[2]}
-        className={`w-full py-[40px] ${
-          !sectionIntersecting[2] ? "opacity-0" : "opacity-1"
-        }   p-4 grid place-items-center box-border text-center gap-4 relative transition-opacity ease-in-out duration-1000`}
+        className={`w-full py-[40px]   p-4 grid place-items-center box-border text-center gap-4 relative transition-opacity ease-in-out duration-1000`}
       >
         <Digital />
       </div>
       <div
-        ref={sectionRefs[3]}
-        className={`w-full py-[40px] ${
-          !sectionIntersecting[3] ? "opacity-0" : "opacity-1"
-        }   p-4 grid place-items-center box-border text-center gap-4 relative transition-opacity ease-in-out duration-1000 bg-white`}
+        className={`w-full py-[40px]   p-4 grid place-items-center box-border text-center gap-4 relative transition-opacity ease-in-out duration-1000 bg-white`}
       >
         <Homeservices />
       </div>
       <div
-        ref={sectionRefs[4]}
-        className={`w-full overflow-hidden py-[40px] ${
-          !sectionIntersecting[4] ? "opacity-0" : "opacity-1"
-        }   p-4 grid place-items-center box-border text-center gap-4 relative transition-opacity ease-in-out duration-1000`}
+        className={`w-full overflow-hidden py-[40px]  p-4 grid place-items-center box-border text-center gap-4 relative transition-opacity ease-in-out duration-1000`}
       >
         <Social />
       </div>
       <div
-        ref={sectionRefs[5]}
-        className={`w-full py-[40px] ${
-          !sectionIntersecting[5] ? "opacity-0" : "opacity-1"
-        }   p-4 grid place-items-center box-border text-center gap-4 relative transition-opacity skew-y-[-2deg] bg-slate-900 text-white ease-in-out duration-1000`}
+        className={`w-full py-[40px]  p-4 grid place-items-center box-border text-center gap-4 relative transition-opacity skew-y-[-2deg] bg-slate-900 text-white ease-in-out duration-1000`}
       >
         <Customers />
       </div>
       <div
-        ref={sectionRefs[6]}
-        className={`w-full py-[40px] pb-20 ${
-          !sectionIntersecting[6] ? "opacity-0" : "opacity-1"
-        }   p-4 grid place-items-center box-border text-center gap-4 relative transition-opacity ease-in-out duration-1000`}
+        className={`w-full py-[40px] pb-20   p-4 grid place-items-center box-border text-center gap-4 relative transition-opacity ease-in-out duration-1000`}
       >
         <Requestform />
       </div>
