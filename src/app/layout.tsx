@@ -22,7 +22,7 @@ export default function RootLayout({
         content="width=device-width, initial-scale=1.0"></meta>
       <body className={inter.className}>
         <Navbar />
-        <div className="py-[66px] relative min-h-[100vh] ">{children}</div>
+        <div className="py-[66px] relative min-h-[100vh]   ">{children}</div>
         <Footer />
       </body>
     </html>

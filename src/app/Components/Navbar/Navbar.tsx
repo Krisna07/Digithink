@@ -20,10 +20,10 @@ const Navbar = () => {
       navTitle: "Home",
       link: "/",
     },
-    {
-      navTitle: "Services",
-      link: "/services",
-    },
+    // {
+    //   navTitle: "Services",
+    //   link: "/services",
+    // },
     {
       navTitle: "Projects",
       link: "/projects",
@@ -32,10 +32,10 @@ const Navbar = () => {
       navTitle: "About us",
       link: "/about",
     },
-    {
-      navTitle: "Contact us",
-      link: "/contact",
-    },
+    // {
+    //   navTitle: "Contact us",
+    //   link: "/contact",
+    // },
     {
       navTitle: "Blog",
       link: "/blog",
@@ -79,8 +79,9 @@ const Navbar = () => {
   );
 
   return (
-    <div className="w-full text-black fixed z-[90] bg-gray-300  shadow-lg px-4 py-[10px] bg-secondary-Btn grid place-items-center">
-      <div className="hidden  desktop:w-[1024px] tablet:w-full tablet:flex items-center justify-between">
+    <div className="w-full h-fit text-black fixed z-[90]  shadow-lg  px-4 py-[10px] bg-secondary-Btn grid place-items-center">
+      <div className="absolute h-full bg-gray-100/50 w-full z-[80] blur"></div>
+      <div className="hidden relative z-[90] desktop:w-[1024px] tablet:w-full tablet:flex items-center justify-between">
         <div className="">
           <div className="w-[50px] h-[50px] rounded-full flex items-center justify-center overflow-hidden">
             <Image
@@ -123,7 +124,7 @@ const Navbar = () => {
           />
         </div>
       </div>
-      <div className="w-full tablet:hidden px-4 box-border grid gap-4 overflow-hidden">
+      <div className="w-full h-fit tablet:hidden relative- z-[90] px-4 box-border grid gap-4 overflow-hidden">
         <div className="w-full box-border flex items-center justify-between">
           <div className="w-[50px] h-[50px] bg-hover-Text rounded-full flex items-center justify-center overflow-hidden">
             <Image

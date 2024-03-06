@@ -6,31 +6,31 @@ import React from "react";
 
 const Digital = () => {
   return (
-    <div className="w-full grid place-items-center relative ">
-      <div className="w-[1000px] grid grid-cols-3 gap-2 text-left tablet:text-left  tablet:place-items-start relative z-20  p-4 rounded ">
+    <div className="w-full grid place-items-center relative h-screen ">
+      <div className="md:w-[1000px] grid gap-2 text-left place-items-center tablet:text-left  tablet:place-items-start relative z-20  p-4 rounded ">
         <div className="grid gap-2 leading-[120%]">
           {/* <h4 className="font-semibold text-hover-Text">Go Digital</h4> */}
           <h2 className="text-3xl font-bold ">
             A digital team for your business{" "}
           </h2>
           <p className="text-sm max-w-[50ch]">
-            We{" "}
+            We
             <span className="underline italic font-bold text-blue-800">
               value
-            </span>{" "}
-            the need and business of oir client. We{" "}
+            </span>
+            the need and business of oir client. We
             <span className="underline italic font-bold text-red-800">
               focus
-            </span>{" "}
+            </span>
             more on bringing the client and their customers together. <br />
           </p>
           <div className="w-fit grid gap-2 grid-cols-4"></div>
         </div>
+        {/* <div className="w-[200px] h-[150px] bg-gray-200 rounded-full"></div>
         <div className="w-[200px] h-[150px] bg-gray-200 rounded-full"></div>
         <div className="w-[200px] h-[150px] bg-gray-200 rounded-full"></div>
         <div className="w-[200px] h-[150px] bg-gray-200 rounded-full"></div>
-        <div className="w-[200px] h-[150px] bg-gray-200 rounded-full"></div>
-        <div className="w-[200px] h-[150px] bg-gray-200 rounded-full"></div>
+        <div className="w-[200px] h-[150px] bg-gray-200 rounded-full"></div> */}
 
         {/* <Link href={"/contact"}>
           {" "}
@@ -43,7 +43,6 @@ const Digital = () => {
           />
         </Link> */}
       </div>
-      <div className="w-full "></div>
     </div>
   );
 };
