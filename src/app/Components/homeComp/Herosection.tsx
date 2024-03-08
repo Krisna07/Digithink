@@ -19,12 +19,13 @@ const Herosection = () => {
   });
 
   return (
-    <div className="w-fit h-full top-0  grid place-items-center  relative">
+    <div className="w-fit h-screen  top-0  grid place-items-center  relative">
       <div className="text-[40px] md:text-[100px] relative h-fit">
         <div
           className={` leading-[90%] text-red-600 font-[800] relative transition-bottom duration-700 ${
             !load ? "-bottom-[100px]" : "bottom-0"
-          }`}>
+          }`}
+        >
           We Are Digithink
         </div>
         <div className=" leading-[90%] text-yellow-600 font-[800] relative inline-flex gap-8">
@@ -32,7 +33,8 @@ const Herosection = () => {
             <div
               className={`${word ? "opacity-1" : "opacity-0"} ${
                 rotate ? "skew-x-[20deg]" : ""
-              } transition-all  top-0 md:h-[50px] h-[20px] overflow-hidden  absolute `}>
+              } transition-all  top-0 md:h-[50px] h-[20px] overflow-hidden  absolute `}
+            >
               We Are Digithink
             </div>
             <div className={`opacity-0 transition-all bg-gray-200 relative  `}>
@@ -41,7 +43,8 @@ const Herosection = () => {
             <div
               className={`${word ? "opacity-1" : "opacity-0"} ${
                 rotate ? "-skew-x-[20deg]" : ""
-              } transition-all md:h-[50px] h-[20px]  md:-bottom-2 bottom-[-4px] overflow-hidden absolute `}>
+              } transition-all md:h-[50px] h-[20px]  md:-bottom-2 bottom-[-4px] overflow-hidden absolute `}
+            >
               <div className="h-[100px] md:top-[-50px] top-[-20px] relative">
                 {" "}
                 We Are Digithink
@@ -52,7 +55,8 @@ const Herosection = () => {
         <div
           className={` leading-[90%] text-sky-600 font-[800] relative transition-all duration-700 ${
             !load ? "-top-[100px]" : "top-0"
-          }`}>
+          }`}
+        >
           We Are Digithink
         </div>
       </div>

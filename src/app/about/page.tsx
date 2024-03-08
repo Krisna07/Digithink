@@ -96,7 +96,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      <section className="laptop:w-[1000px] relative grid tablet:grid-cols-2">
+      {/* <section className="laptop:w-[1000px] relative grid tablet:grid-cols-2">
         <section className="tablet:relative w-full grid absolute z-10 left-20 -rotate-[0deg]">
           <div
             style={{ mixBlendMode: "multiply" }}
@@ -132,7 +132,7 @@ const page = () => {
             />
           </div>
         </section>
-      </section>
+      </section> */}
     </div>
   );
 };
