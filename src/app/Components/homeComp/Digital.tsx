@@ -35,13 +35,13 @@ const Digital = () => {
           <h2 className="text-3xl font-bold ">
             A digital team for your business{" "}
           </h2>
-          <p className="text-sm max-w-[50ch]">
+          <p className="text-sm max-w-[50ch] ">
             We
-            <span className="underline italic font-bold text-blue-800">
+            <span className="underline italic font-bold text-blue-800 px-1">
               value
             </span>
             the need and business of oir client. We
-            <span className="underline italic font-bold text-red-800">
+            <span className="underline italic font-bold text-red-800 px-1">
               focus
             </span>
             more on bringing the client and their customers together. <br />
