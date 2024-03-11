@@ -1,6 +1,7 @@
 "use client";
 // import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { ThreeDCardDemo } from "../Home/Card";
 // import Button from "../Button";
 // import { FaPhoneAlt } from "react-icons/fa";
 // import Link from "next/link";
@@ -29,8 +30,8 @@ const Digital = () => {
           <div className="w-full h-full  border-2 border-blue-300 hover:scale-[1.02] transition-all"></div>
         </div>
       </div> */}
-      <div className="md:w-[1000px] grid gap-2 text-left place-items-center tablet:text-left  tablet:place-items-start relative z-20  p-4 rounded ">
-        <div className="grid gap-2 leading-[120%]">
+      <div className="md:w-[1000px] grid md:container md:grid-cols-2 gap-2 text-left place-items-center tablet:text-left  tablet:place-items-start relative z-20  p-4 rounded ">
+        <div className="grid gap-2  leading-[120%]">
           {/* <h4 className="font-semibold text-hover-Text">Go Digital</h4> */}
           <h2 className="text-3xl font-bold ">
             A digital team for your business{" "}
@@ -47,6 +48,9 @@ const Digital = () => {
             more on bringing the client and their customers together. <br />
           </p>
           <div className="w-fit grid gap-2 grid-cols-4"></div>
+        </div>
+        <div>
+          <ThreeDCardDemo />
         </div>
         {/* <div className="w-[200px] h-[150px] bg-gray-200 rounded-full"></div>
         <div className="w-[200px] h-[150px] bg-gray-200 rounded-full"></div>

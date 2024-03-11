@@ -3,6 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 import Herosection from "../homeComp/Herosection";
 import Digital from "../homeComp/Digital";
 import { observe } from "react-intersection-observer";
+import Services from "./Services";
+import Link from "next/link";
 
 const HomePage = () => {
   const [show, setShow] = useState<boolean>(false);
@@ -36,7 +38,7 @@ const HomePage = () => {
       if (top) {
         setHero(top - prevTop);
         // setPrevTop(top);
-        console.log(hero);
+        // console.log(hero);
       }
     };
 
@@ -48,7 +50,7 @@ const HomePage = () => {
     };
   }, [top, hero]);
 
-  console.log(show);
+  // console.log(show);
 
   return (
     <div className="grid place-items-center ">
@@ -63,7 +65,7 @@ const HomePage = () => {
           <div className="absolute bottom-0"></div>
         </div>
       </div>
-      <div className="w-full bg-gray-100 z-20 overflow-hidden relative grid place-items-center">
+      <div className="w-full min-h-screen bg-gray-100 z-20 overflow-hidden relative grid place-items-center">
         <div
           style={{
             height: `${show == true ? 200 : 0}%`,
@@ -78,40 +80,11 @@ const HomePage = () => {
           <div className="w-2 h-4 bg-red-400 absolute top-2 rounded"></div>
         </div>
 
-        <div className="text-white">
+        <div className={show ? "text-white" : "text-black"}>
           <Digital />
         </div>
       </div>
-      <section className="w-full h-screen grid  place-items-center py-10 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8">Our Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">
-                Website Design and Development
-              </h3>
-              <p className="text-gray-700">
-                Create stunning, user-friendly websites that captivate audiences
-                and drive conversions.
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">Digital Marketing</h3>
-              <p className="text-gray-700">
-                Boost your online visibility and attract qualified leads through
-                strategic SEO, PPC, and social media campaigns.
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">Content Creation</h3>
-              <p className="text-gray-700">
-                Engage your audience with compelling content, including
-                copywriting, graphic design, and video production.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Services />
 
       <section
         id="cta"
@@ -121,16 +94,20 @@ const HomePage = () => {
           Explore our services, learn more about our team, or get in touch with
           us today.
         </p>
-        <div className="flex justify-center flex-col gap-2 px-2 space-x-4">
+        <div className="md:flex justify-center grid place-items-center gap-2 px-2 space-x-4">
           <button className="bg-white text-blue-500 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-400">
             Explore Our Services
           </button>
-          <button className="bg-white text-blue-500 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-400">
+          <Link
+            href={"./about"}
+            className="bg-white text-blue-500 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-400">
             Meet Our Team
-          </button>
-          <button className="bg-white text-blue-500 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-400">
+          </Link>
+          <Link
+            href="./contact"
+            className="bg-white text-blue-500 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-400">
             Contact Us
-          </button>
+          </Link>
         </div>
       </section>
     </div>

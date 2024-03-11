@@ -1,92 +1,85 @@
 "use client";
-import Image from "next/image";
 import React, { useState } from "react";
+import Image from "next/image";
 import Button from "../Components/Button";
+import { FaPaperPlane } from "react-icons/fa";
 
-const page = () => {
+const ContactPage = () => {
   const [submitted, setSubmitted] = useState(false);
-  const handleSubmit = (e: any) => {
+
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    // Here you can add logic to handle form submission, such as sending data to a backend server
+    setSubmitted(true);
   };
 
   if (submitted) {
     return (
-      <>
-        <div className="text-2xl">Thank you!</div>
-        <div className="text-md">We'll be in touch soon.</div>
-      </>
+      <div className="container mx-auto py-8 px-4">
+        <div className="text-center">
+          <div className="text-2xl font-semibold mb-4">Thank you!</div>
+          <div className="text-md">
+            We appreciate your interest. Our team will get back to you soon.
+          </div>
+        </div>
+      </div>
     );
   }
 
   return (
-    <div className="grid place-items-center box-border  gap-8">
-      <div className="w-full grid place-items-center relative p-8">
-        <div className="laptop:w-[1000px] flex items-center justify-center">
-          <div className="w-full grid gap-4 ">
-            <h2 className="text-lg  font-semibold">Contcat</h2>
-            <p className="tablet:w-4/6">
-              The light drops deep as does my teddy. I never nuzzle, 'cause to
-              nuzzle is the mate of ready. Beyond the walls of bananas, life is
-              defined. I think of buildings when I'm in a Devon state of mind.
-            </p>
-            <Button
-              className={""}
-              label="Contact"
-              size={"sm"}
-              variant={"default"}
-              icon={undefined}
-            />
-          </div>
-          <Image
-            src={"/contact.png"}
-            width={500}
-            height={500}
-            alt=""
-            className=" tablet:grid hidden place-items-center"
-          />
-        </div>
-      </div>
+    <div className="min-h-screen w-full grid place-items-center mx-auto py-8 px-4 relative">
+      <div className="w-full h-full absolute -top-1/2 skew-y-[-25deg] bg-red-200 z-0"></div>
       <form
-        className="laptop:w-[1000px]  w-full grid item-center text-center gap-4 bg-gray-100 p-4 rounded shadow"
         onSubmit={handleSubmit}
-        method="POST">
-        <h2 className=" text-lg font-semibold">Contact Us</h2>
-        <div className="mb-3 pt-0">
+        className="mt-8 relative z-10">
+        <div className="text-center md:text-left">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4">
+            Get In Touch
+          </h2>
+          <p className="text-base md:text-lg text-gray-700 mb-6 w-[40ch]">
+            Have questions or need assistance? Feel free to reach out to us.
+            We're here to help!
+          </p>
+        </div>
+
+        <div className="mb-4 w-full">
           <input
             type="text"
             placeholder="Your name"
             name="name"
-            className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+            className="outline-none shadow-[0_0_2px_0_gray] py-1 px-2 w-full rounded text-sm "
             required
           />
         </div>
-        <div className="mb-3 pt-0">
+        <div className="mb-4 w-full">
           <input
             type="email"
             placeholder="Email"
             name="email"
-            className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+            className="outline-none shadow-[0_0_2px_0_gray] py-1 px-2 w-full rounded text-sm"
             required
           />
         </div>
-        <div className="mb-3 pt-0">
+        <div className="mb-4 w-full">
           <textarea
             placeholder="Your message"
             name="message"
-            className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
-            required
-          />
+            rows={4}
+            className="outline-none shadow-[0_0_2px_0_gray] py-1 px-2 w-full rounded text-sm"
+            required></textarea>
         </div>
-        <div className="mb-3 pt-0">
-          <button
-            className="bg-blue-500 text-white active:bg-blue-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-            type="submit">
-            Send a message
-          </button>
+        <div className="text-center">
+          <Button
+            label="Send Message"
+            size="sm"
+            variant="primary"
+            type="submit"
+            icon={<FaPaperPlane />}
+          />
         </div>
       </form>
     </div>
   );
 };
 
-export default page;
+export default ContactPage;
