@@ -7,7 +7,7 @@ import { FaPaperPlane } from "react-icons/fa";
 const ContactPage = () => {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSubmit = (e:any) => {
     e.preventDefault();
     // Here you can add logic to handle form submission, such as sending data to a backend server
     setSubmitted(true);
