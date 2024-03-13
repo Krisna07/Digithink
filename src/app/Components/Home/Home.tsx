@@ -54,13 +54,18 @@ const HomePage = () => {
 
   return (
     <div className="grid place-items-center ">
-      <div className="w-full h-screen grid place-items-center">
+      <div
+        // style={{ backgroundImage: `url(${image})` }}
+        className="w-full h-screen grid place-items-center "
+      >
         <div
           style={{
             top: `-${hero}px`,
-            position: `fixed`,
+            fontSize: `${hero / 10}px`,
+            // position: `fixed`,
           }}
-          className={`z-10 transition-all`}>
+          className={`z-10 transition-all`}
+        >
           <Herosection />
           <div className="absolute bottom-0"></div>
         </div>
@@ -73,10 +78,12 @@ const HomePage = () => {
           }}
           className={`absolute w-full -top-20 transition-all duration-[2s] rounded-full  ${
             show ? "bg-blue-600 text-white" : "bg-blue-600/50 text-blue-600"
-          }`}></div>
+          }`}
+        ></div>
         <div
           className="absolute w-[50px] h-[100px] bg-blue-600/50 rounded-[80px] top-4 grid place-items-center"
-          ref={digiref}>
+          ref={digiref}
+        >
           <div className="w-2 h-4 bg-red-400 absolute top-2 rounded"></div>
         </div>
 
@@ -86,9 +93,7 @@ const HomePage = () => {
       </div>
       <Services />
 
-      <section
-        id="cta"
-        className="w-full py-10 bg-blue-500 text-white text-center">
+      <section className="w-full py-10 bg-blue-500 text-white text-center">
         <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
         <p className="text-lg mb-6">
           Explore our services, learn more about our team, or get in touch with
@@ -100,12 +105,14 @@ const HomePage = () => {
           </button>
           <Link
             href={"./about"}
-            className="bg-white text-blue-500 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            className="bg-white text-blue-500 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          >
             Meet Our Team
           </Link>
           <Link
             href="./contact"
-            className="bg-white text-blue-500 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            className="bg-white text-blue-500 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          >
             Contact Us
           </Link>
         </div>
