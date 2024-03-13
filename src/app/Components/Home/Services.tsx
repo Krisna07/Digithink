@@ -36,7 +36,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="w-full min-h-screen grid place-items-center py-10 bg-gray-100">
+    <section className="w-full min-h-screen grid place-items-center py-10 bg-gray-100/25">
       <div className=" md:container lg:w-[1200px] mx-auto px-4 grid gap-8">
         <h2 className="text-3xl font-bold text-center ">
           Website Design and Development

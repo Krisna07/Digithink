@@ -5,7 +5,7 @@ import Digital from "../homeComp/Digital";
 import { observe } from "react-intersection-observer";
 import Services from "./Services";
 import Link from "next/link";
-
+import Image from "next/image";
 const HomePage = () => {
   const [show, setShow] = useState<boolean>(false);
   const digiref: any = useRef();
@@ -56,18 +56,20 @@ const HomePage = () => {
     <div className="grid place-items-center ">
       <div
         // style={{ backgroundImage: `url(${image})` }}
-        className="w-full h-screen grid place-items-center "
+        className="w-full min-h-screen grid place-items-center  "
       >
+           <div className="fixed bottom-0 min-w-full min-h-full z-10 bg-[url('/Homepage/image.jpg')] -z-10 bg-cover">
+          </div>
         <div
           style={{
             top: `-${hero}px`,
             fontSize: `${hero / 10}px`,
             // position: `fixed`,
           }}
-          className={`z-10 transition-all`}
+          className={`z-10 transition-all relative z-20`}
         >
           <Herosection />
-          <div className="absolute bottom-0"></div>
+       
         </div>
       </div>
       <div className="w-full min-h-screen bg-gray-100 z-20 overflow-hidden relative grid place-items-center">
@@ -91,7 +93,31 @@ const HomePage = () => {
           <Digital />
         </div>
       </div>
-      <Services />
+      <div className="w-full h-full relative z-20 overflow-hidden">
+        <div className="w-[200%] h-[200%] absolute top-0 -left-[50%] bg-gray-200 grid gap-8 z-10">
+          <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
+          <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
+          <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
+          <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
+          <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
+          <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
+          <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
+          <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
+          <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
+            <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
+          <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
+          <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
+          <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
+          <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
+          <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
+          <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
+          <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
+          <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
+          
+
+        </div>
+         <div className="relative z-20"><Services />   </div>     
+     </div>
 
       <section className="w-full py-10 bg-blue-500 text-white text-center">
         <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
