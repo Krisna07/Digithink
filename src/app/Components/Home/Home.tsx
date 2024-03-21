@@ -54,16 +54,12 @@ const HomePage = () => {
 
   return (
     <div className="grid place-items-center relative z-[20] ">
-      <div
-        // style={{ backgroundImage: `url(${image})` }}
-        className="w-full min-h-screen grid place-items-center  "
-      >
-        <div className="fixed bottom-0 min-w-full min-h-full z-10 bg-[url('/Homepage/image.jpg')] -z-10 bg-cover"></div>
+      <div className="w-full min-h-screen grid place-items-center relative ">
+        <div className="fixed bottom-0 min-w-full min-h-full z-10 bg-[url('/Homepage/image.jpg')] z-[10] bg-cover"></div>
         <div
           style={{
             top: `-${hero}px`,
             fontSize: `${hero / 10}px`,
-            // position: `fixed`,
           }}
           className={`z-10 transition-all relative z-20`}
         >
@@ -117,7 +113,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <section className="w-full py-10 bg-blue-500 text-white text-center">
+      <section className="w-full py-10 bg-blue-500 text-white text-center relative z-40">
         <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
         <p className="text-lg mb-6">
           Explore our services, learn more about our team, or get in touch with

@@ -24,7 +24,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <Navbar />
         <div className="relative min-h-[100vh] z-[20]">{children}</div>
-        <Footer />
+        <div className="w-full">
+          Digithink media @ all rightts reserved
+          <Footer />
+        </div>
       </body>
     </html>
   );
