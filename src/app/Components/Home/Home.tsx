@@ -53,13 +53,12 @@ const HomePage = () => {
   // console.log(show);
 
   return (
-    <div className="grid place-items-center ">
+    <div className="grid place-items-center relative z-[20] ">
       <div
         // style={{ backgroundImage: `url(${image})` }}
         className="w-full min-h-screen grid place-items-center  "
       >
-           <div className="fixed bottom-0 min-w-full min-h-full z-10 bg-[url('/Homepage/image.jpg')] -z-10 bg-cover">
-          </div>
+        <div className="fixed bottom-0 min-w-full min-h-full z-10 bg-[url('/Homepage/image.jpg')] -z-10 bg-cover"></div>
         <div
           style={{
             top: `-${hero}px`,
@@ -69,7 +68,6 @@ const HomePage = () => {
           className={`z-10 transition-all relative z-20`}
         >
           <Herosection />
-       
         </div>
       </div>
       <div className="w-full min-h-screen bg-gray-100 z-20 overflow-hidden relative grid place-items-center">
@@ -104,7 +102,6 @@ const HomePage = () => {
           <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
           <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
           <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
-            <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
           <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
           <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
           <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
@@ -113,11 +110,12 @@ const HomePage = () => {
           <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
           <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
           <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
-          
-
+          <div className="relative h-2 bg-indigo-400 w-[200%] rotate-[15deg]"></div>
         </div>
-         <div className="relative z-20"><Services />   </div>     
-     </div>
+        <div className="relative z-20">
+          <Services />{" "}
+        </div>
+      </div>
 
       <section className="w-full py-10 bg-blue-500 text-white text-center">
         <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>

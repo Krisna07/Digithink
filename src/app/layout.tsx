@@ -23,7 +23,7 @@ export default function RootLayout({
       ></meta>
       <body className={inter.className}>
         <Navbar />
-        <div className="relative min-h-[100vh]   ">{children}</div>
+        <div className="relative min-h-[100vh] z-[20]">{children}</div>
         <Footer />
       </body>
     </html>
