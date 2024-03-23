@@ -19,13 +19,11 @@ export default function RootLayout({
     <html lang="en">
       <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0"
-      ></meta>
+        content="width=device-width, initial-scale=1.0"></meta>
       <body className={inter.className}>
         <Navbar />
         <div className="relative min-h-[100vh] z-[20]">{children}</div>
-        <div className="w-full">
-          Digithink media @ all rightts reserved
+        <div className="w-full grid place-items-center relative bottom-0 z-[40] bg-white">
           <Footer />
         </div>
       </body>

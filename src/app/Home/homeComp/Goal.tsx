@@ -1,6 +1,6 @@
 import React from "react";
 
-import Button from "../Button";
+import Button from "../../Components/Button";
 import Link from "next/link";
 import { FaChevronRight } from "react-icons/fa";
 
@@ -24,8 +24,7 @@ const Goal = () => {
 
           <Link
             href={"/about"}
-            className="w-full grid tablet:place-items-center"
-          >
+            className="w-full grid tablet:place-items-center">
             {" "}
             <Button
               label="Learn more"

@@ -1,6 +1,6 @@
 import { Facebook, Instagram, Slack, Twitter, Youtube } from "lucide-react";
 import React from "react";
-import Button from "../Button";
+import Button from "../../Components/Button";
 import {
   FaBook,
   FaFacebook,

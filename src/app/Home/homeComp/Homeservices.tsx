@@ -3,7 +3,7 @@ import { FaBullhorn, FaCode, FaDesktop, FaShareAlt } from "react-icons/fa";
 import { BiLike } from "react-icons/bi";
 import { SiGoogleads } from "react-icons/si";
 
-import Card from "../Card";
+import Card from "../../Components/Card";
 const Homeservices = () => {
   const services = [
     {
@@ -56,13 +56,11 @@ const Homeservices = () => {
         <div
           className={`grid tablet:grid-cols-2 laptop:grid-cols-2 py-4 px-1 relative transition-all  overflow-hidden 
            gap-[20px]
-            `}
-        >
+            `}>
           {services.map((service) => (
             <div
               key={service.title}
-              className={`w-fit h-full relative transition-all ease-in-out bg-[#FFF] rounded-[20px] shadow-[0_0_3px_0px_gray] hover:shadow-[0_0_4px_0_gray]`}
-            >
+              className={`w-fit h-full relative transition-all ease-in-out bg-[#FFF] rounded-[20px] shadow-[0_0_3px_0px_gray] hover:shadow-[0_0_4px_0_gray]`}>
               <Card
                 cardTitle={service.title}
                 cardDes={service.des}

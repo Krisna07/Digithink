@@ -8,8 +8,8 @@ import Button from "./Button";
 
 const Footer = () => {
   return (
-    <div className="w-full  grid place-items-center text-white bg-slate-800 relative z-[80]">
-      {/* <div className="laptop:w-[1080px] flex  justify-between flex-wrap gap-4">
+    <div className="w-full  grid place-items-center text-white bg-slate-800 relative z-[80] p-4">
+      <div className="laptop:w-[1080px] flex  justify-between flex-wrap gap-4">
         <div className="flex justify-start">
           <div className="w-20 h-20 rounded-lg overflow-hidden">
             {" "}
@@ -68,7 +68,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

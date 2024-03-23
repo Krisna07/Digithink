@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
-import Button from "../Button";
+import Button from "../../Components/Button";
 
 const Customers = () => {
   const cardRef: any = useRef();
@@ -82,7 +82,11 @@ const Customers = () => {
             </div>
           ))}
         </div>
-        <Button label='Help us grow' variant={'primary'} size={'sm'}/>
+        <Button
+          label="Help us grow"
+          variant={"primary"}
+          size={"sm"}
+        />
       </div>
     </div>
   );
