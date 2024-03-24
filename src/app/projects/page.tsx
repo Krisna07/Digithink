@@ -101,7 +101,8 @@ const page = () => {
           {projectArray.map((items) => (
             <div
               className=" w-fit grid gap-4 p-4 bg-gray-100"
-              key={items.title}>
+              key={items.title}
+            >
               <div className="flex items-center gap-2 font-semibold">
                 <div className="p-2 rounded bg-black text-white  hover:animate-pulse ">
                   {items.icons}

@@ -37,17 +37,19 @@ const Services = () => {
   ];
 
   return (
-    <section className="h-[600px] grid place-items-center w-full relative  border boreder-x border-dashed">
-      <div className="w-full h-full px-4 grid gap-8 relative">
-        <h2 className="text-3xl font-bold text-center ">
+    <section className="w-full h-full grid place-items-center  relative  ">
+      <div className="w-full h-full absolute grid grid-cols-3 divide-x divide-black/25 divide-dashed border-x border-1 border-dashed border-black/25">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div className="w-full h-fit px-4 grid gap-8 relative">
+        <h2 className="text-3xl font-bold text-left ">
           Website Design and Development
         </h2>
         <div className="w-full grid h-fit md:grid-cols-2 lg:grid-cols-3  gap-8">
           {servicesData.map((service, index) => (
-            <ThreeDCardDemo
-              title={service.heading}
-              des={service.description}
-            />
+            <ThreeDCardDemo title={service.heading} des={service.description} />
             // <div
             //   key={index}
             //   className="bg-white grid gap-4 p-4 rounded-lg shadow-md relative hover:bg-gray-200 ">

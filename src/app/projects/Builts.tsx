@@ -93,7 +93,8 @@ const Builts = () => {
         {projects.map((project, x) => (
           <div
             key={x}
-            className="h-full grid text-sm bg border-[1px] border-gray-200  rounded ">
+            className="h-full grid text-sm bg border-[1px] border-gray-200  rounded "
+          >
             <div className="p-4  relative overflow-hidden z-20">
               <div className="grid min-h-[150px] gap-[8px] relative z-20">
                 <div className="font-bold">{project.title}</div>
@@ -104,7 +105,8 @@ const Builts = () => {
                 </div>
               </div>
               <div
-                className={`w-full h-full absolute bg-gradient-to-tr ${project.userIconColor} scale-[2]  top-[70%]  -right-20 rotate-[-20deg] z-10`}></div>
+                className={`w-full h-full absolute bg-gradient-to-tr ${project.userIconColor} scale-[2]  top-[70%]  -right-20 rotate-[-20deg] z-10`}
+              ></div>
             </div>
             <div className="grid p-4 gap-4 bg-gray-200/75">
               <span className="flex place-items-center gap-2">
@@ -113,7 +115,8 @@ const Builts = () => {
                     project.CEOName.length > 1
                       ? "grid text-[12px] leading-[120%]"
                       : ""
-                  }>
+                  }
+                >
                   {project.CEOName.map((ceo) => (
                     <span>{ceo}</span>
                   ))}

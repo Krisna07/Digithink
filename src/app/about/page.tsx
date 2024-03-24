@@ -57,7 +57,7 @@ const page = () => {
       </div>
       <Teamspitch />
       <Teams />
-      <div className="laptop:w-[1000px] grid gap-4 p-4 place-items-center ">
+      <div className="laptop:w-[1200px]  grid gap-4 p-4 place-items-center ">
         <h2 className="w-full text-3xl text-center font-semibold">
           We Have a <span className="text-transparent textStroke">Space</span>{" "}
           for <span className="text-transparent textStroke">Growth</span>
@@ -68,7 +68,7 @@ const page = () => {
           should serve and empower humanity. It's not just about innovation;
           it's about enhancing lives and shaping a brighter future.
         </p>
-        <div className="w-full grid tablet:grid-cols-[60%_40%] relative shadow p-4  ">
+        <div className="w-full grid tablet:grid-cols-[60%_40%] relative  p-4  ">
           <div className="w-full flex flex-col gap-2  justify-center relative z-40">
             <h3 className=" font-semibold text-gray-700">Task Handling</h3>
             <h2 className=" text-xl font-bold">AI Automation and Auto-bots</h2>
@@ -85,57 +85,47 @@ const page = () => {
               size={"sm"}
               variant={"primary"}
               className={""}
-              icon={<FaChevronRight />}
+              rightIcon={true}
             />
           </div>
 
-          <div className="tablet:relative tablet:block w-full p-4 hidden absolute z-10 ">
+          <div className="w-full p-4  ">
             <Image
               src={"/projectsImage/tech.webp"}
-              width={400}
-              height={400}
+              width={600}
+              height={600}
               alt=""
             />
           </div>
         </div>
       </div>
-      {/* <section className="laptop:w-[1000px] relative grid tablet:grid-cols-2">
-        <section className="tablet:relative w-full grid absolute z-10 left-20 -rotate-[0deg]">
-          <div
-            style={{ mixBlendMode: "multiply" }}
-            className="absolute w-[150%] h-1/2 -bottom-[10px] left-[-85%] transform-[rotateZ(7deg)]">
-            <div className="absolute bottom-0 w-[100%] h-[100%]  elipsegrains"></div>
-          </div>
-          <div className="relative flex items-center justify-center h-40 w-40 rounded-full overflow-hidden z-20 ">
-            <div className="isolate absolute top-0 w-full h-full">
-              <div className="h-full grainyfilter ball-shadow  "></div>
-              <div
-                style={{ mixBlendMode: "multiply" }}
-                className="absolute top-0 w-full h-full bg-gradient-radial scale-[2] from-gray-500 via-gray-400 to-transparent "></div>
+      <div className="laptop:w-full  grid place-items-center  place-items-center  ">
+        <div className="lg:w-[1200px] grid md:grid-cols-2 place-item-center gap-4 p-8">
+          <div>
+            <div className="w-full flex flex-col gap-2  justify-center relative z-40">
+              <h3 className=" font-semibold text-gray-700">Handling tech</h3>
+              <h2 className=" text-xl font-bold">
+                Lets Tackle the tech with us{" "}
+              </h2>
+              <p className="tablet:w-3/4 text-sm">
+                In today's fast-paced world, effective task handling is crucial
+                for productivity. Our solution leverages the power of AI
+                automation and auto-bots to streamline your workflow.
+              </p>
+              <Button
+                label="Read"
+                size={"sm"}
+                variant={"primary"}
+                className={""}
+                rightIcon={true}
+              />
             </div>
           </div>
-        </section>
-        <section>
-          <div className="w-full flex flex-col gap-2  justify-center relative z-40">
-            <h3 className=" font-semibold text-gray-700">Handling tech</h3>
-            <h2 className=" text-xl font-bold">
-              Lets Tackle the tech with us{" "}
-            </h2>
-            <p className="tablet:w-3/4 text-sm">
-              In today's fast-paced world, effective task handling is crucial
-              for productivity. Our solution leverages the power of AI
-              automation and auto-bots to streamline your workflow.
-            </p>
-            <Button
-              label="Read"
-              size={"sm"}
-              variant={"primary"}
-              className={""}
-              icon={<FaChevronRight />}
-            />
+          <div className="w-full p-4  ">
+            <Image src={"/task.png"} width={600} height={600} alt="task" />
           </div>
-        </section>
-      </section> */}
+        </div>
+      </div>
     </div>
   );
 };

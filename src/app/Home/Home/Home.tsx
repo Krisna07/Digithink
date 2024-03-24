@@ -6,6 +6,7 @@ import { observe } from "react-intersection-observer";
 import Services from "./Services";
 import Link from "next/link";
 import Image from "next/image";
+import { FaPaintBrush } from "react-icons/fa";
 const HomePage = () => {
   const [show, setShow] = useState<boolean>(false);
   const digiref: any = useRef();
@@ -61,7 +62,8 @@ const HomePage = () => {
             top: `-${hero}px`,
             fontSize: `${hero / 10}px`,
           }}
-          className={`z-10 transition-all relative z-20`}>
+          className={`z-10 transition-all relative z-20`}
+        >
           <Herosection />
         </div>
       </div>
@@ -84,16 +86,11 @@ const HomePage = () => {
           <Digital />
         </div>
       </div>
-      <div className="w-full min-h-screen bg-gray-100 z-20 overflow-hidden relative grid place-items-center">
-        {/* <div className="w-[200%] h-[200%] absolute top-0 -left-[50%] bg-gray-200 grid grid-cols-4 gap-8 z-10 divide-y divide-blue-800">
-          <div className="relative h-1 border-dashed border-1 border-gray-800 w-[200%] rotate-[185deg]"></div>
-          <div className="relative h-1 border-dashed border-1 border-gray-800 w-[200%] rotate-[185deg]"></div>
-          <div className="relative h-1 border-dashed border-1 border-gray-800 w-[200%] rotate-[185deg]"></div>
-          <div className="relative h-1 border-dashed border-1 border-gray-800 w-[200%] rotate-[185deg]"></div>
-          <div className="relative h-1 border-dashed border-1 border-gray-800 w-[200%] rotate-[185deg]"></div>
-          <div className="relative h-1 border-dashed border-1 border-gray-800 w-[200%] rotate-[185deg]"></div>
-        </div> */}
-        <div className="lg:w-[1000px]">
+      <div className="w-full min-h-screen bg-gray-100 z-20 overflow-hidden  relative grid place-items-center relative bg-gray-200">
+        {/* <div className="w-full h-full bg-gray-400 absolute skew-y-[-15deg] -z-10"></div> */}
+        <div className="w-[1000px] h-[1000px]  absolute -right-[20%] top-[50%] rounded-full border-8 border-sky-500 "></div>
+
+        <div className="lg:w-[1000px] h-full ">
           <Services />
         </div>
       </div>
@@ -110,12 +107,14 @@ const HomePage = () => {
           </button>
           <Link
             href={"./about"}
-            className="bg-white text-blue-500 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            className="bg-white text-blue-500 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          >
             Meet Our Team
           </Link>
           <Link
             href="./contact"
-            className="bg-white text-blue-500 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            className="bg-white text-blue-500 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          >
             Contact Us
           </Link>
         </div>
