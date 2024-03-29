@@ -19,8 +19,8 @@ const Teamspitch = () => {
     },
     {
       name: "Mitchel",
-      title: "Have You Ever Seen a Man Whose Toe Was Blown Off, Like a Flower?",
-      des: "Rap music is a versatile art form that allows artists to convey a multitude of messages in a single song. It's a medium where storytelling and self-expression collide. Join me on this musical journey as we explore the depth of emotions and experiences.",
+      title: "Building Tomorrow's World, Today",
+      des: "Technology is not just about gadgets; it's about shaping the future. As a software engineer, I thrive on the cutting edge of innovation, turning ideas into reality through code. Whether it's developing scalable solutions or embracing emerging technologies, I'm driven by the passion to create a better tomorrow. Join me as we revolutionize the digital landscape and pave the way for a brighter future.",
       image: "/teamsVids/image3.jpg",
     },
   ];
@@ -57,7 +57,8 @@ const Teamspitch = () => {
       <div className="box-border tablet:max-w-[600px] rounded overflow-hidden shadow-[0_0_2px_0_gray]">
         <div
           style={{ left: `-${left}%` }}
-          className="  w-full h-[300px] bg-gray-200 relative flex transition-all">
+          className="  w-full h-[300px] bg-gray-200 relative flex transition-all"
+        >
           {teamspitchObj.map((image) => (
             <Image
               src={image.image}
@@ -85,26 +86,27 @@ const Teamspitch = () => {
                   : "opacity-60"
               } transition-all font-semibold`}
               onClick={() => handleOptionClick(teamspitchObj.indexOf(name))}
-              ref={menuRefs[teamspitchObj.indexOf(name)]}>
+              ref={menuRefs[teamspitchObj.indexOf(name)]}
+            >
               {name.name}
             </span>
           ))}
 
           <span
             style={{ width: barW, left: btmbdr }}
-            className="w-auto h-px bg-gray-800 absolute bottom-0 transition-all ]"></span>
+            className="w-auto h-px bg-gray-800 absolute bottom-0 transition-all ]"
+          ></span>
         </div>
         <div
           style={{ left: `-${left}%` }}
-          className="w-full flex  relative transition-all box-border">
+          className="w-full flex  relative transition-all box-border"
+        >
           {teamspitchObj.map((pitch) => (
-            <div
-              className="min-w-[100%] grid gap-2"
-              key={pitch.title}>
+            <div className="min-w-[100%] grid gap-2" key={pitch.title}>
               <h2 className="font-bold text-xl">{pitch.title}</h2>
               <p>{pitch.des}</p>
-              <span className="flex gap-2 place-items-center w-auto text-sm font-semibold bg-gray-200 hover:bg-gray-400 w-fit px-2 py-1 rounded-lg">
-                Book a meeting <FaChevronRight />
+              <span className="flex gap-2 h-fit place-items-center w-auto text-sm font-semibold bg-gray-200 hover:bg-gray-400 w-fit px-2 py-1 rounded-lg">
+                Read more <FaChevronRight />
               </span>
             </div>
           ))}
