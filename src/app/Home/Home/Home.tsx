@@ -6,7 +6,7 @@ import { observe } from "react-intersection-observer";
 import Services from "./Services";
 import Link from "next/link";
 import Image from "next/image";
-import { FaPaintBrush } from "react-icons/fa";
+
 const HomePage = () => {
   const [show, setShow] = useState<boolean>(false);
   const digiref: any = useRef();
@@ -62,8 +62,7 @@ const HomePage = () => {
             top: `-${hero}px`,
             fontSize: `${hero / 10}px`,
           }}
-          className={`z-10 transition-all relative z-20`}
-        >
+          className={`z-10 transition-all relative z-20`}>
           <Herosection />
         </div>
       </div>
@@ -107,14 +106,12 @@ const HomePage = () => {
           </button>
           <Link
             href={"./about"}
-            className="bg-white text-blue-500 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          >
+            className="bg-white text-blue-500 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-400">
             Meet Our Team
           </Link>
           <Link
             href="./contact"
-            className="bg-white text-blue-500 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          >
+            className="bg-white text-blue-500 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-400">
             Contact Us
           </Link>
         </div>
