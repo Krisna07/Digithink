@@ -20,7 +20,7 @@ const Teamspitch = () => {
     {
       name: "Mitchel",
       title: "Building Tomorrow's World, Today",
-      des: "Technology is not just about gadgets; it's about shaping the future. As a software engineer, I thrive on the cutting edge of innovation, turning ideas into reality through code. Whether it's developing scalable solutions or embracing emerging technologies, I'm driven by the passion to create a better tomorrow. Join me as we revolutionize the digital landscape and pave the way for a brighter future.",
+      des: "Technology is not just about gadgets; it's about shaping the future. As a software engineer, I thrive on the cutting edge of innovation, turning ideas into reality through code. Join me as we revolutionize the digital landscape and pave the way for a brighter future.",
       image: "/teamsVids/image3.jpg",
     },
   ];

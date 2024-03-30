@@ -46,7 +46,7 @@ const Footer = () => {
           </span>
         </div>
         <div className="grid place-items-left uppercase gap-4">
-          <span className="uppercase fnt-semi-bold">
+          {/* <span className="uppercase fnt-semi-bold">
             Want to be the smartest in our office ?
           </span>
           <span>
@@ -57,7 +57,7 @@ const Footer = () => {
               icon={undefined}
               className={undefined}
             />
-          </span>
+          </span> */}
           <span className="uppercase underline font-semibold">
             Sign up for our newsletters
           </span>

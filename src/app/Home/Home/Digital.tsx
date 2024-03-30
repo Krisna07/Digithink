@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { ThreeDCardDemo } from "./Card";
+
 import {
   FaChevronRight,
   FaInfo,
@@ -35,6 +35,7 @@ const Digital = () => {
     },
     {},
   ];
+
   return (
     <div className="w-full grid place-items-center relative">
       <div className="w-full h-full absolute grid grid-cols-3 divide-x divide-black/25 divide-dashed border-x border-1 border-dashed border-black/25">
