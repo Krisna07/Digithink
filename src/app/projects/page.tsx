@@ -97,10 +97,10 @@ const page = () => {
         <div className="font-semibold">
           Build faster and focus on your business
         </div>
-        <div className="w-full laptop:w-[80%] laptop:flex grid tablet:grid-cols-3 gap-4 overflow-hidden">
+        <div className="w-full h-fit laptop:w-[80%] flex  gap-4 overflow-x-scroll scrollbar-hide">
           {projectArray.map((items) => (
             <div
-              className=" w-fit grid gap-4 p-4 bg-gray-100"
+              className="min-w-[200px]  grid gap-4 p-4 bg-gray-100"
               key={items.title}
             >
               <div className="flex items-center gap-2 font-semibold">

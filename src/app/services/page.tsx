@@ -63,7 +63,7 @@ const page = () => {
     "laptop:w-[1000px]  w-full flex items-center justify-center gap-8 p-4";
   const sectiongrid = "grid gap-4";
   const subheading = "text-lg font-semibold";
-  const headings = "text-3xl font-bold";
+  const headings = "text-3xl font-semibold";
 
   const socials = [
     {
@@ -130,12 +130,21 @@ const page = () => {
   ];
 
   return (
-    <div className="w-full grid place-items-center gap-8">
-      <div className={`${sectioncss} h-screen jus  `}>
-        <div className=" h-fit grid gap-8 place-items-center text-center ">
-          <div className={`w-full m-auto  `}>
+    <div className="w-full grid place-items-center gap-8 ">
+      <div
+        className={`max-h-screen grid place-items-center gap-32 py-32 px-4 relative`}
+      >
+        <div className=" h-fit grid gap-8 place-items-center text-center relative z-20 bg-white/25 ">
+          <div className={` m-auto tablet:w-[50%] grid gap-4 `}>
             <h3 className={subheading}>we serve business</h3>
-            <h2 className={headings}>Solutions To Turn The Business Around </h2>
+            <h2 className={`${headings} text-4xl`}>
+              Solutions To Turn The
+              <span className="text-transparent textStroke">
+                {" "}
+                Business
+              </span>{" "}
+              Around{" "}
+            </h2>
             <p>
               We are a team of experienced digital marketers who are passionate
               about helping businesses succeed online. We offer a wide range of
@@ -151,6 +160,13 @@ const page = () => {
             size={"sm"}
           />
         </div>
+        {/* <Image
+          src={"/services.jpg"}
+          alt={"services"}
+          width={1000}
+          height={500}
+          className="rounded-[50%_50%_0_0] object-cover object-center -inset-0 absolute tablet:relative"
+        /> */}
       </div>
       <div className="w-full grid place-items-center bg-slate-600 text-white skew-y-[-5deg]  py-20">
         <div className={`${sectioncss} skew-y-[5deg]`}>
@@ -161,9 +177,13 @@ const page = () => {
               Our campaign is designed to help you achieve your business goals.
               We offer a variety of services, including:
             </p>
-            <div className="w-full h-fit grid tablet:grid-cols-2 laptop:grid-cols-3 gap-[20px]">
+            <div className="w-full h-full grid tablet:grid-cols-2 laptop:grid-cols-3 gap-[20px]">
               {socials.map((social) => (
-                <Social social={social} classname={subheading} />
+                <Social
+                  social={social}
+                  key={social.name}
+                  classname={subheading}
+                />
               ))}
             </div>
           </div>
@@ -204,25 +224,32 @@ const page = () => {
                     <FaArrowRight />
                   </div>
                 </div>
+                <p>
+                  We are committed to providing our clients with the highest
+                  quality services and results. We believe in building strong
+                  relationships with our clients and working closely with them
+                  to achieve their business goals.
+                </p>
               </div>
             </div>
             <div className="w-full relative grid place-items-center ">
               <div className="w-full h-full relative z-10 bg-gray-200 p-4 grid gap-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h3 className={subheading}>We are here to help you</h3>
-                    <h2 className={headings}>Our Goal is to help you grow</h2>
+                    <h3 className={subheading}>Bring Business Online</h3>
+                    <h2 className={headings}>
+                      We hlep the business to create the online presence
+                    </h2>
                   </div>
                   <div className="rounded-full bg-black p-4 text-white hover:bg-gray-800 hover:text-yellow-400 hover:shadow-[4px_0px_0px_1px_#f6ad55]">
                     <FaArrowRight size={"20px"} className="rotate-[-45deg]" />
                   </div>
                 </div>
                 <p>
-                  We are a team of experienced digital marketers who are
-                  passionate about helping businesses succeed online. We offer a
-                  wide range of services, including social media marketing, SEO,
-                  PPC, and content marketing. We are committed to providing our
-                  clients with the highest quality services and results.
+                  We help businesses establish a strong online presence,
+                  creating websites, managing social media accounts, and
+                  implementing digital marketing strategies to attract new
+                  customers and grow their brand.
                 </p>
               </div>
               <div className="w-[20%] h-[50%] absolute z-0 bg-yellow-400 -top-1 -left-1"></div>
@@ -254,11 +281,13 @@ const page = () => {
         </div>
       </div>
       <div className="w-full grid place-items-center ">
-        <div className={`${sectioncss} grid-cols-2`}>
-          <div className={`${sectiongrid} w-1/2`}>
-            <FaKickstarter />
+        <div className={`${sectioncss} grid tablet:grid-cols-2`}>
+          <div className={`${sectiongrid} `}>
             <div className="">
-              <h2 className={subheading}>strategy</h2>
+              <h2 className={`${subheading} flex items-center gap-2`}>
+                {" "}
+                <FaKickstarter /> strategy
+              </h2>
               <h2 className={headings}>
                 The Startegy Of Reviving A{" "}
                 <span className="text-transparent textStroke">Business</span>
@@ -271,6 +300,13 @@ const page = () => {
               </p>
             </div>
           </div>
+          <Image
+            src={"/strategy.jpg"}
+            alt={"image"}
+            width={600}
+            height={400}
+            className="w-full h-full object-cover rounded-lg"
+          />
         </div>
       </div>
     </div>
