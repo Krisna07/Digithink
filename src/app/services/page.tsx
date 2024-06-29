@@ -170,15 +170,21 @@ const page = () => {
         </div>
       </div>
       <div className="w-full p-8 bg-white grid place-items-center">
-        <div className={sectioncss}>
-          <div className={`${sectiongrid} h-full`}>
-            <h2 className={subheading}>
-              The services we have done should be enough for noew{" "}
-            </h2>
+        <div className={`grid gap-4 laptop:w-[1000px]`}>
+          <div className={`grid gap-4 tablet:w-[80%] `}>
+            <h2 className={subheading}>Our Goal</h2>
             <h2 className={headings}>
-              our goal is to bring the business together
+              Our goal is to bring the business together
             </h2>
-            <div className="grid grid-cols-2 gap-[20px]"></div>
+            <p>
+              {/* //write something about digital agency like digithink thinkinh about goal of a business */}
+              At Digithink, our goal is to empower businesses to thrive in the
+              digital age. We believe that every business deserves a strong
+              online presence and the tools to reach its full potential. We
+              strive to be your trusted partner, providing innovative solutions
+              and expert guidance to help you achieve your business objectives.
+            </p>
+
             <Button
               size={"sm"}
               variant={"primary"}
@@ -186,27 +192,63 @@ const page = () => {
               className={undefined}
             />
           </div>
-          <div className={`${sectiongrid}`}>
+          <div className="grid gap-8">
             <div className="w-full relative grid place-items-center ">
               <div className="w-full h-full relative z-10 bg-gray-200 p-4 grid gap-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h3 className={subheading}>Tech binds the business</h3>
-                    <h2 className={headings}>Business in Tech</h2>
+                    <h3 className={subheading}>We are here to help you</h3>
+                    <h2 className={headings}>Our Goal is to help you grow</h2>
+                  </div>
+                  <div className="rounded-full bg-black p-4 text-white hover:bg-gray-800 hover:text-yellow-400 hover:shadow-[4px_0px_0px_1px_#f6ad55]">
+                    <FaArrowRight />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="w-full relative grid place-items-center ">
+              <div className="w-full h-full relative z-10 bg-gray-200 p-4 grid gap-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className={subheading}>We are here to help you</h3>
+                    <h2 className={headings}>Our Goal is to help you grow</h2>
                   </div>
                   <div className="rounded-full bg-black p-4 text-white hover:bg-gray-800 hover:text-yellow-400 hover:shadow-[4px_0px_0px_1px_#f6ad55]">
                     <FaArrowRight size={"20px"} className="rotate-[-45deg]" />
                   </div>
                 </div>
                 <p>
-                  We help businesses leverage technology to streamline
-                  operations, enhance customer experiences, and drive growth.
-                  Our team of experts provides tailored solutions for digital
-                  transformation, from website development and mobile app
-                  creation to cloud migration and data analytics.
+                  We are a team of experienced digital marketers who are
+                  passionate about helping businesses succeed online. We offer a
+                  wide range of services, including social media marketing, SEO,
+                  PPC, and content marketing. We are committed to providing our
+                  clients with the highest quality services and results.
                 </p>
               </div>
               <div className="w-[20%] h-[50%] absolute z-0 bg-yellow-400 -top-1 -left-1"></div>
+            </div>
+            <div className={`${sectiongrid}`}>
+              <div className="w-full relative grid place-items-center ">
+                <div className="w-full h-full relative z-10 bg-gray-200 p-4 grid gap-4">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className={subheading}>Tech binds the business</h3>
+                      <h2 className={headings}>Business in Tech</h2>
+                    </div>
+                    <div className="rounded-full bg-black p-4 text-white hover:bg-gray-800 hover:text-yellow-400 hover:shadow-[4px_0px_0px_1px_#f6ad55]">
+                      <FaArrowRight size={"20px"} className="rotate-[-45deg]" />
+                    </div>
+                  </div>
+                  <p>
+                    We help businesses leverage technology to streamline
+                    operations, enhance customer experiences, and drive growth.
+                    Our team of experts provides tailored solutions for digital
+                    transformation, from website development and mobile app
+                    creation to cloud migration and data analytics.
+                  </p>
+                </div>
+                <div className="w-[20%] h-[50%] absolute z-0 bg-yellow-400 -top-1 -left-1"></div>
+              </div>
             </div>
           </div>
         </div>
