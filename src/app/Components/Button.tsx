@@ -13,7 +13,7 @@ const buttonVarients = cva("active:", {
   variants: {
     variant: {
       default:
-        " outline-none w-fit flex items-center gap-2 rounded-[8px] text-black hover:text-gray-100 bg-[#BEBEBE] text-black hover:bg-slate-900",
+        " outline-none w-fit flex items-center gap-2 rounded-[8px] text-black hover:text-gray-100 bg-[#BEBEBE] bg-slate-400 text-black hover:bg-slate-900",
       primary:
         "w-fit outline-none  flex items-center gap-2 rounded-[8px] text-gray-100 bg-black hover:bg-slate-800 hover:text-gray-200",
       ghost:

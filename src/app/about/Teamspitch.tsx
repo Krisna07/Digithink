@@ -62,7 +62,7 @@ const Teamspitch = () => {
           {teamspitchObj.map((image) => (
             <Image
               src={image.image}
-              alt={"ímage"}
+              alt={"image"}
               key={image.image}
               width={"800"}
               height={"100"}

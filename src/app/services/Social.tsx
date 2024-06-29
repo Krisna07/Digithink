@@ -6,12 +6,14 @@ const Social = ({ social, classn }: any) => {
   return (
     <div
       key={social.name}
-      onMouseOver={() => setDes(social.des)}
-      onMouseLeave={() => setDes(social.shortDes)}
-      className="w-full flex flex-col items-center  h-fit  shadow-sm bg-white text-black p-4 rounded-lg transition-all hover:scale-[1.05]"
+      // onMouseOver={() => setDes(social.des)}
+      // onMouseLeave={() => setDes(social.shortDes)}
+      className="w-full h-full flex flex-col gap-4 items-center   shadow-sm bg-white text-black p-4 rounded-lg transition-all hover:scale-[1.05]"
     >
-      <div className={`${classn} w-full flex justify-between`}>
-        {social.name} <div>{social.icon}</div>
+      <div
+        className={`${classn} w-full flex items-center justify-between text-[20px] font-semibold`}
+      >
+        {social.name} <div className="text-[32px]">{social.icon}</div>
       </div>
       <div>{des}</div>
     </div>

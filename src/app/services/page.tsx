@@ -60,7 +60,7 @@ const page = () => {
   //   };
   // }, []);
   const sectioncss =
-    "laptop:w-[1000px] w-full flex items-center justify-between gap-8 p-4";
+    "laptop:w-[1000px]  w-full flex items-center justify-center gap-8 p-4";
   const sectiongrid = "grid gap-4";
   const subheading = "text-lg font-semibold";
   const headings = "text-3xl font-bold";
@@ -131,14 +131,17 @@ const page = () => {
 
   return (
     <div className="w-full grid place-items-center gap-8">
-      <div className={sectioncss} ref={sectionRefs[0]}>
-        <div className="grid gap-8">
-          <div className={sectiongrid}>
-            <h3 className={subheading}>we provide</h3>
+      <div className={`${sectioncss} h-screen jus  `}>
+        <div className=" h-fit grid gap-8 place-items-center text-center ">
+          <div className={`w-full m-auto  `}>
+            <h3 className={subheading}>we serve business</h3>
             <h2 className={headings}>Solutions To Turn The Business Around </h2>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore
-              ex rem, assumenda culpa ut harum quidem ipsam quasi veniam sequi.
+              We are a team of experienced digital marketers who are passionate
+              about helping businesses succeed online. We offer a wide range of
+              services, including social media marketing, SEO, PPC, and content
+              marketing. We are committed to providing our clients with the
+              highest quality services and results.
             </p>
           </div>
           <Button
@@ -148,23 +151,19 @@ const page = () => {
             size={"sm"}
           />
         </div>
-        <Image
-          src={"/servicepage.png"}
-          width={500}
-          height={500}
-          alt={""}
-          className="hidden tablet:flex "
-        />
       </div>
       <div className="w-full grid place-items-center bg-slate-600 text-white skew-y-[-5deg]  py-20">
         <div className={`${sectioncss} skew-y-[5deg]`}>
           <div className={`${sectiongrid} w-full`}>
             <h3 className={subheading}> Social Media</h3>
             <h2 className={headings}>Our Social Media Services</h2>
-            <p className={subheading}>Associated apps</p>
-            <div className="w-full grid tablet:grid-cols-2 laptop:grid-cols-3 gap-[20px]">
+            <p className={"tablet:w-[80%]"}>
+              Our campaign is designed to help you achieve your business goals.
+              We offer a variety of services, including:
+            </p>
+            <div className="w-full h-fit grid tablet:grid-cols-2 laptop:grid-cols-3 gap-[20px]">
               {socials.map((social) => (
-                <Social social={social} classn={subheading} />
+                <Social social={social} classname={subheading} />
               ))}
             </div>
           </div>
@@ -192,17 +191,19 @@ const page = () => {
               <div className="w-full h-full relative z-10 bg-gray-200 p-4 grid gap-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h3 className={subheading}>Some title</h3>
-                    <h2 className={headings}>Headinngs</h2>
+                    <h3 className={subheading}>Tech binds the business</h3>
+                    <h2 className={headings}>Business in Tech</h2>
                   </div>
                   <div className="rounded-full bg-black p-4 text-white hover:bg-gray-800 hover:text-yellow-400 hover:shadow-[4px_0px_0px_1px_#f6ad55]">
                     <FaArrowRight size={"20px"} className="rotate-[-45deg]" />
                   </div>
                 </div>
                 <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Optio quia nisi, sequi perferendis vitae quod labore iure
-                  consectetur illum nemo?
+                  We help businesses leverage technology to streamline
+                  operations, enhance customer experiences, and drive growth.
+                  Our team of experts provides tailored solutions for digital
+                  transformation, from website development and mobile app
+                  creation to cloud migration and data analytics.
                 </p>
               </div>
               <div className="w-[20%] h-[50%] absolute z-0 bg-yellow-400 -top-1 -left-1"></div>
@@ -226,24 +227,6 @@ const page = () => {
                 ever-changing landscape of social media platforms to maximize
                 your online presence and reach your target audience.
               </p>
-            </div>
-          </div>
-          <div className="w-1/2 h-[300px] bg-yellow-300 relative grid place-items-center  rounded-xl">
-            <div className="w-1/2 h-[500px] bg-gray-200 absolute top-[-100px] shadow-lg rounded-lg "></div>
-            <div className="border border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto">
-              <div className="animate-pulse flex space-x-4">
-                <div className="rounded-full bg-slate-700 h-10 w-10"></div>
-                <div className="flex-1 space-y-6 py-1">
-                  <div className="h-2 bg-slate-700 rounded"></div>
-                  <div className="space-y-3">
-                    <div className="grid grid-cols-3 gap-4">
-                      <div className="h-2 bg-slate-700 rounded col-span-2"></div>
-                      <div className="h-2 bg-slate-700 rounded col-span-1"></div>
-                    </div>
-                    <div className="h-2 bg-slate-700 rounded"></div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
