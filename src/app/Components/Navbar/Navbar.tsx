@@ -76,9 +76,9 @@ const Navbar = () => {
   );
 
   return (
-    <div className="tablet:w-fit m-[0_auto] tablet:rounded-full mt-4 sticky top-0 px-16 min-h-fit transition-all text-black  z-[90] bg-gray-100/75  shadow-lg   py-[4px] bg-secondary-Btn grid  place-items-center">
+    <div className="desktop:w-fit m-[0_auto] w-full tablet:rounded-xl mt-4 sticky top-0  tablet:px-4 min-h-fit transition-all ease-in-out text-black  z-[90] bg-gray-300  shadow-lg   py-[4px] bg-secondary-Btn grid  place-items-center ">
       <div className="hidden relative z-[90] desktop:w-[1024px] tablet:w-full tablet:flex items-center justify-between">
-        <div className="">
+        <div className="w-full">
           <div className="w-[50px] h-[50px] rounded-full flex items-center justify-center overflow-hidden">
             <Image
               src="/logo.gif"
@@ -95,7 +95,7 @@ const Navbar = () => {
                 key={menu.navTitle}
                 onClick={() => handleOptionClick(navItems.indexOf(menu))}
                 ref={menuRefs[navItems.indexOf(menu)]}
-                className={`p-2 hover:text-gray-500 cursor-default text-sm font-semibold transition-all  ${
+                className={`p-2 hover:text-gray-500 cursor-default text-sm font-semibold transition-all whitespace-nowrap  ${
                   navItems.indexOf(menu) == active ? "text-red-800" : ""
                 } `}
               >
@@ -114,6 +114,7 @@ const Navbar = () => {
           variant={"default"}
           size={"sm"}
           icon={<FaPaperPlane />}
+          className="whitespace-nowrap"
         />
       </div>
       <div className="w-full h-fit tablet:hidden relative- z-[90] px-4 box-border grid gap-4 overflow-hidden">
@@ -142,7 +143,7 @@ const Navbar = () => {
           {navItems.map((menu) => (
             <div
               key={menu.navTitle}
-              className="w-full p-2 hover:text-background-color hover:bg-accent-color cursor-default font-semibold"
+              className="w-full p-2 hover:text-emerald-900 hover:bg-accent-color cursor-default font-semibold"
               onClick={() => (isopen ? setopen(!isopen) : "")}
             >
               <a href={menu.link}> {menu.navTitle}</a>

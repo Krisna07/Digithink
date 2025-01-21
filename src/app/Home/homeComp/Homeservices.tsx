@@ -39,7 +39,7 @@ const Homeservices = () => {
   ];
 
   return (
-    <div className="laptop:w-[1000px] grid gap-4 place-items-center">
+    <div className="laptop:w-[1000px] w-full p-4  grid gap-4 place-items-center">
       <h4 className=" text-left font-semibold text-lg">our services</h4>
       <h2 className="text-3xl text-left font-bold py-2">
         We have all the{" "}
@@ -56,11 +56,13 @@ const Homeservices = () => {
         <div
           className={`grid tablet:grid-cols-2 laptop:grid-cols-2 py-4 px-1 relative transition-all  overflow-hidden 
            gap-[20px]
-            `}>
+            `}
+        >
           {services.map((service) => (
             <div
               key={service.title}
-              className={`w-fit h-full relative transition-all ease-in-out bg-[#FFF] rounded-[20px] shadow-[0_0_3px_0px_gray] hover:shadow-[0_0_4px_0_gray]`}>
+              className={`w-fit h-full relative transition-all ease-in-out bg-[#FFF] rounded-[20px] shadow-[0_0_3px_0px_gray] hover:shadow-[0_0_4px_0_gray]`}
+            >
               <Card
                 cardTitle={service.title}
                 cardDes={service.des}

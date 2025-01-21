@@ -1,8 +1,9 @@
 "use client";
+import Button from "@/app/Components/Button";
+import Image from "next/image";
 // import Image from "next/image";
 import React, { useEffect, useState } from "react";
-// import Button from "../Button";
-// import { FaBookOpen } from "react-icons/fa";
+import { FaBookOpen } from "react-icons/fa";
 
 const Herosection = () => {
   const [load, setLoad] = useState<boolean>(false);
@@ -23,7 +24,7 @@ const Herosection = () => {
       <div className="text-[40px] md:text-[100px] relative h-fit">
         <div
           className={` leading-[90%] text-red-600 font-[800] relative transition-bottom duration-700 ${
-            !load ? "-bottom-[100px]" : "bottom-0"
+            !load ? "translate-y-[100px]" : "translate-y-0"
           }`}
         >
           We Are Digithink
@@ -54,14 +55,14 @@ const Herosection = () => {
         </div>
         <div
           className={` leading-[90%] text-sky-600 font-[800] relative transition-all duration-700 ${
-            !load ? "-top-[100px]" : "top-0"
+            !load ? "translate-y-[-100px]" : "translate-y-0"
           }`}
         >
           We Are Digithink
         </div>
       </div>
 
-      {/* <div className="w-fit text-white text-left tablet:text-center relative z-20  flex flex-col items-left tablet:items-center justify-center gap-4  box-border">
+      {/* <div className="w-fit text-white text-left tablet:text-center relative z-[200]  flex flex-col items-left tablet:items-center justify-center gap-4  box-border">
         <h2 className="font-semi-bold tablet:block hidden">DigiThink Media</h2>
         <h1 className="    w-full  font-bold  leading-[120%] text-transparent bg-clip-text bg-gradient-to-t from-[#FFFFFF] to-[#6D6D6D]">
           We Help You Take A Step In Digitial
@@ -80,8 +81,8 @@ const Herosection = () => {
           icon={<FaBookOpen />}
           className="h-fit"
         />
-      </div> */}
-      {/* <div className=" laptop:relative  h-full  absolute top-[0px] tablet:right-0 z-10">
+      </div>
+      <div className=" laptop:relative  h-full  absolute top-[0px] tablet:right-0 z-10">
         <Image
           src={"./herobackground.svg"}
           width={400}

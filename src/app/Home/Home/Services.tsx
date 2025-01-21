@@ -37,30 +37,23 @@ const Services = () => {
   ];
 
   return (
-    <section className="w-full h-full grid place-items-center  relative  ">
-      <div className="w-full h-full absolute grid grid-cols-3 divide-x divide-black/25 divide-dashed border-x border-1 border-dashed border-black/25">
+    <section className="w-full h-full grid place-items-center  relative py-4  ">
+      <div className="w-full h-full absolute grid grid-cols-3 divide-x divide-black/25 divide-dashed border-x border-1 border-dashed border-black/25 animate-pulse">
         <div></div>
         <div></div>
         <div></div>
       </div>
-      <div className="w-full h-fit px-4 grid gap-8 relative">
+      <div className="w-full h-fit grid gap-8 relative">
         <h2 className="text-3xl font-bold text-left ">
           Website Design and Development
         </h2>
         <div className="w-full grid h-fit md:grid-cols-2 lg:grid-cols-3  gap-8">
           {servicesData.map((service, index) => (
-            <ThreeDCardDemo title={service.heading} des={service.description} />
-            // <div
-            //   key={index}
-            //   className="bg-white grid gap-4 p-4 rounded-lg shadow-md relative hover:bg-gray-200 ">
-            //   <div className="w-full flex items-center justify-between">
-            //     <h3 className="text-lg font-semibold ">{service.heading}</h3>
-
-            //     </div>
-            //   </div>
-
-            //   <p className="w-fit text-gray-700">{service.description}</p>
-            // </div>
+            <ThreeDCardDemo
+              key={index}
+              title={service.heading}
+              des={service.description}
+            />
           ))}
         </div>
       </div>
