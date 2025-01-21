@@ -11,7 +11,7 @@ interface Navtypes {
   navItems: [
     {
       navItems: String;
-    }
+    },
   ];
 }
 
@@ -61,7 +61,7 @@ const Navbar = () => {
       : 0;
     setBarW(width);
     setBtmbdr(position);
-    const thisNav = navItems.find((item) => `.${item.link}` === path);
+    const thisNav = navItems.find((item) => path.includes(`.${item.link}`));
     const activeIndex = thisNav ? navItems.indexOf(thisNav) : -1;
     setActive(index ? index : 0);
   };

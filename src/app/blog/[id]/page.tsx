@@ -1,5 +1,6 @@
 "use client";
-import { useParams, usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 import Blogpage from "../component/Blogpage";
 import blog, { BlogPost } from "../dummydata";
 
