@@ -1,6 +1,7 @@
 "use client";
-import { addBlogPost, BlogPost } from "@/sanity/schemas/blogPosts";
 import React, { useState } from "react";
+import { addBlogPost, BlogPost, uploadImage } from "@/sanity/schemas/blogPosts";
+import { File } from "sanity";
 
 const AddBlog: React.FC = () => {
   const [blogPost, setBlogPost] = useState<BlogPost>({
@@ -9,13 +10,29 @@ const AddBlog: React.FC = () => {
     date: "",
     readTime: "",
     creator: [],
-    image: "",
+    image: undefined,
     blogBody: {
       introduction: "",
       sections: [],
       conclusion: "",
     },
   });
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const imageId = await uploadImage(file as unknown as File);
+      setBlogPost({
+        ...blogPost,
+        image: {
+          asset: {
+            _ref: imageId,
+            _type: "",
+          },
+        },
+      });
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -117,14 +134,12 @@ const AddBlog: React.FC = () => {
           className="block text-gray-700 text-sm font-bold mb-2"
           htmlFor="image"
         >
-          Image URL
+          Image Upload
         </label>
         <input
           id="image"
-          type="text"
-          placeholder="Image URL"
-          value={blogPost.image}
-          onChange={(e) => setBlogPost({ ...blogPost, image: e.target.value })}
+          type="file"
+          onChange={handleImageUpload}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />
       </div>
