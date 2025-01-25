@@ -37,6 +37,10 @@ const Navbar = () => {
       navTitle: "Blog",
       link: "/blog",
     },
+    {
+      navTitle: "News",
+      link: "/news",
+    },
   ];
 
   const [isopen, setopen] = useState<boolean>();
@@ -49,8 +53,7 @@ const Navbar = () => {
 
   const [btmbdr, setBtmbdr] = useState(0);
   const [path, setPath] = useState<string>(`./`);
-  const [active, setActive] = useState<number>(0);
-
+  const [active, setActive] = useState<number>();
   const [barW, setBarW] = useState(setWidth(menuRefs[0]));
 
   const handleOptionClick = async (index: number) => {
@@ -61,19 +64,32 @@ const Navbar = () => {
       : 0;
     setBarW(width);
     setBtmbdr(position);
-    const thisNav = navItems.find((item) => path.includes(`.${item.link}`));
+    const thisNav = navItems.find((item) => path.includes(`${item.link}`));
     const activeIndex = thisNav ? navItems.indexOf(thisNav) : -1;
     setActive(index ? index : 0);
   };
 
-  useEffect(() =>
+  useEffect(() => {
     navItems.forEach((item) => {
-      if (item.link === router) {
+      if (path.includes(item.link)) {
         const activeThis = navItems.indexOf(item);
         handleOptionClick(activeThis);
       }
-    })
-  );
+    });
+  }, []);
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 0) {
+  //       setopen(false);
+  //     }
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   return (
     <div className="desktop:w-fit m-[0_auto] w-full tablet:rounded-xl mt-4 sticky top-0  tablet:px-4 min-h-fit transition-all ease-in-out text-black  z-[90] bg-gray-300  shadow-lg   py-[4px] bg-secondary-Btn grid  place-items-center ">
@@ -88,7 +104,7 @@ const Navbar = () => {
             />
           </div>
         </div>
-        <div className="flex w-fit text-black gap-2 relative">
+        <div className="flex w-fit text-black gap-2 relative mr-4">
           {navItems.map((menu) => (
             <Link href={menu.link} key={menu.navTitle}>
               <div
@@ -143,7 +159,9 @@ const Navbar = () => {
           {navItems.map((menu) => (
             <div
               key={menu.navTitle}
-              className="w-full p-2 hover:text-emerald-900 hover:bg-accent-color cursor-default font-semibold"
+              className={`w-full p-2 hover:text-emerald-900 hover:bg-accent-color cursor-default font-semibold  ${
+                navItems.indexOf(menu) == active ? "text-red-800" : ""
+              }`}
               onClick={() => (isopen ? setopen(!isopen) : "")}
             >
               <a href={menu.link}> {menu.navTitle}</a>

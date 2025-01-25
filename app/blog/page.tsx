@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import blog from "./dummydata";
+import generateBlogContext from "../../utils/generate";
 
 const page = () => {
   const blogItem = blog;
@@ -23,15 +24,13 @@ const page = () => {
     return () => clearInterval(interval);
   }, [blogItem, counter]);
 
-  console.log(index);
-
   return (
     <div className="w-full grid place-items-center relative box-border ">
       <div className="desktop:w-[1200px] w-full py-8   tablet:flex grid gap-8 box-border">
         <img
           src={`${blog[index].image}`}
           alt={blog[index].title}
-          className="min-h-[400px] max-w-[600px] w-full object-cover transition-all duration-300 rounded-lg cursor-pointer filter grayscale hover:grayscale-0"
+          className="min-h-[400px] max-w-[600px] w-full object-contain transition-all duration-300 rounded-lg cursor-pointer filter grayscale hover:grayscale-0"
         />
         <div className="tablet:w-1/2 flex flex-col px-4 gap-4 ">
           <div className="flex gap-4 items-center text-sm text-gray-600 leading-[130%]">
@@ -101,7 +100,6 @@ const page = () => {
           ))}
         </div>
       </div>
-    
     </div>
   );
 };

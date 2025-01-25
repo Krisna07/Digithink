@@ -16,7 +16,8 @@ export function ThreeDCardDemo({ title, des }: card) {
         <div className="w-full flex items-center justify-between">
           <CardItem
             translateZ="50"
-            className="text-l font-bold text-neutral-600 dark:text-white">
+            className="text-l font-bold text-neutral-600 dark:text-white"
+          >
             {title}
           </CardItem>
           <div className="relative w-fit h-fit">
@@ -29,24 +30,10 @@ export function ThreeDCardDemo({ title, des }: card) {
         <CardItem
           as="p"
           translateZ="60"
-          className="text-neutral-500 text-sm w-[30ch] mt-2 dark:text-neutral-300">
+          className="text-neutral-500 text-sm w-[30ch] mt-2 dark:text-neutral-300"
+        >
           {des}
         </CardItem>
-
-        {/* <div className="flex justify-between items-center ">
-          <CardItem
-            translateZ={20}
-            as="button"
-            className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white">
-            Contact us →
-          </CardItem> 
-          <CardItem
-            translateZ={20}
-            as="button"
-            className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
-          >
-            Message
-          </CardItem> */}
       </CardBody>
     </CardContainer>
   );

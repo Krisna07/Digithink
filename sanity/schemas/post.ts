@@ -1,4 +1,4 @@
-import client from "@/utils/sanityClient";
+import client from "../../utils/sanityClient";
 
 export interface Post {
   title: string;

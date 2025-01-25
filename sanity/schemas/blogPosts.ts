@@ -1,5 +1,5 @@
-import client from "@/utils/sanityClient";
 import { File } from "sanity";
+import client from "../../utils/sanityClient";
 
 export interface BlogPost {
   title: string;
