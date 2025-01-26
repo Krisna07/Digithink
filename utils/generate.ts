@@ -1,5 +1,21 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
+// export interface ResponsePost {
+//   title: string;
+//   description: string;
+//   readTime: string;
+//   creator: string[];
+//   blogBody: {
+//     introduction: string;
+//     sections: {
+//       title: string;
+//       content: string;
+//       _ref: string;
+//     }[];
+//     conclusion: string;
+//   };
+// }
+
 const apiKey = process.env.GEMINI_API_KEY;
 if (!apiKey) {
   throw new Error("GEMINI_API_KEY is not defined");
@@ -15,7 +31,6 @@ const generateBlogContext = async (title: string, description: string) => {
     {
       "title": "string",
       "description": "string (20 words max)",
-      "date": "current date",
       "readTime": "estimated read time",
       "creator": ["username"],
       "blogBody": {
@@ -23,7 +38,7 @@ const generateBlogContext = async (title: string, description: string) => {
         "sections": [
           {
             "title": "string",
-            "content": "string"
+            "content": "string",
           }
         ],
         "conclusion": "string"
@@ -31,15 +46,21 @@ const generateBlogContext = async (title: string, description: string) => {
     }
     
     Requirements:
-    - At least 3 sections in blogBody
+    - At least 3 sections in blogBody, sections should be explained properly can break the lines too 
     - 1-3 creators
+    - Date should be the current date
     - Valid JSON format
   `;
 
-  const result = await model.generateContent(prompt);
-  const text = result.response.text();
+  try {
+    const result = await model.generateContent(prompt);
+    const text = result.response.text();
+    const response = text.replace(/```json|```/g, "").trim();
 
-  return text.replace(/```json|```/g, "").trim();
+    return response;
+  } catch (error) {
+    return "Error with autoblog AI. Please try again later";
+  }
 };
 
 export default generateBlogContext;

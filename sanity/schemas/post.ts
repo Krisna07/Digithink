@@ -23,7 +23,7 @@ export interface Post {
 
 export async function uploadImage(file: File): Promise<string> {
   const asset = await client.assets.upload("image", file);
-  return asset._id;
+  return asset._id; // Ensure this returns the correct asset ID
 }
 
 export async function addPost(post: Post) {
@@ -38,22 +38,8 @@ export async function addPost(post: Post) {
       image: post.image,
       blogBody: post.blogBody,
     });
-    console.log("Post created:", result);
+    return result;
   } catch (error) {
     console.error("Error creating post:", error);
   }
 }
-
-// export async function fetchAuthors(): Promise<{ _id: string; name: string }[]> {
-//   const query = `*[_type == "author"]{ _id, name }`;
-//   const authors = await client.fetch(query);
-//   return authors;
-// }
-
-// export async function fetchCategories(): Promise<
-//   { _id: string; title: string }[]
-// > {
-//   const query = `*[_type == "category"]{ _id, title }`;
-//   const categories = await client.fetch(query);
-//   return categories;
-// }
