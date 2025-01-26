@@ -85,7 +85,6 @@ const AddPost = () => {
           blogBody: generatedPost.blogBody,
           image: post.image,
         }).then((res) => {
-          console.log(res);
           setPost({
             title: "",
             description: "",
