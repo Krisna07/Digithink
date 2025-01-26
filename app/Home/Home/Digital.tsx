@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 import { IconType } from "react-icons/lib";
 import Image from "next/image";
-import Button from "@/app/Components/Button";
+
 import { SiFramework } from "react-icons/si";
 interface digiComp {
   title: string;
@@ -43,7 +43,7 @@ const Digital = () => {
         <div></div>
         <div></div>
       </div>
-      <div className="w-full grid  w-full gap-4 ">
+      <div className="grid  w-full gap-4 ">
         <div className="grid  overflow-y-auto">
           <div className="w-full  min-h-[600px]  grid md:grid-cols-[40%_60%] gap-4 md:gap-0  place-items-center  leading-[120%] relative">
             <div className="grid gap-2 px-2">
@@ -65,7 +65,7 @@ const Digital = () => {
                 <span className="font-bold text-gray-600 px-1">focus</span>
                 more on bringing the client and their customers together. <br />
               </p>
-              <div className="w-fit flex gap-2  text-sm flex items-center gap-2 border-b">
+              <div className="w-fit flex gap-2  text-sm items-center  border-b">
                 <span className="text-indigo-600 ">see details </span>
                 about how we do things for business
               </div>
@@ -104,7 +104,7 @@ const Digital = () => {
                 never been easier. Your input drives our process, ensuring that
                 we meet and exceed your expectations.
               </p>
-              <div className="w-fit flex gap-2 text-sm items-center gap-2 border-b">
+              <div className="w-fit flex gap-2 text-sm items-center  border-b">
                 <span className="text-indigo-600">Browse</span> our
                 user-centered applications
               </div>
@@ -138,7 +138,7 @@ const Digital = () => {
                 new trends and technologies to deliver forward-thinking
                 solutions. Experience innovation with us today.
               </p>
-              <div className="w-fit flex gap-2 text-sm items-center gap-2 border-b">
+              <div className="w-fit flex gap-2 text-sm items-center border-b">
                 <span className="text-indigo-600">Experience</span> innovation
                 with us
               </div>

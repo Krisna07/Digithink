@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import blog from "./dummydata";
-import generateBlogContext from "../../utils/generate";
 
 const page = () => {
   const blogItem = blog;
@@ -20,7 +19,6 @@ const page = () => {
       }
     }, 10000);
 
-    // Clean up the interval on component unmount to prevent memory leaks
     return () => clearInterval(interval);
   }, [blogItem, counter]);
 

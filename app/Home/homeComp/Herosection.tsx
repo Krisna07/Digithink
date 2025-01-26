@@ -1,6 +1,5 @@
 "use client";
-import Button from "@/app/Components/Button";
-import Image from "next/image";
+
 // import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { FaBookOpen } from "react-icons/fa";

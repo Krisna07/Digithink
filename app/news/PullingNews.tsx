@@ -13,7 +13,7 @@ const NewsPull: React.FC = () => {
     const fetchNews = async () => {
       try {
         const response = await fetch(
-          `https://newsapi.org/v2/everything?q=technology&apiKey=${process.env.NewsUrl}`
+          `https://newsapi.org/v2/everything?q=technology&apiKey=b4ae890567394c77b5c35bed6ba28b86`
         );
         const newsData = await response.json();
         console.log(newsData);
