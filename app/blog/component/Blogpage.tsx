@@ -1,19 +1,19 @@
 "use client";
 import React from "react";
-import blog, { BlogPost } from "../dummydata";
-import { Link } from "lucide-react";
+import { urlFor } from "../../../sanity/lib/image";
 
 const Blogpage = ({ Blog }: any) => {
-  const relatableBlog = blog.filter((item) => item.title !== Blog.title);
+  // const relatableBlog = blog.filter((item) => item.title !== Blog.title);
+  // console.log(Blog);
 
   return (
     <div className="w-full h-[100vh] fixed top-0 grid place-items-center bg-white py-20 overflow-auto z-20">
       {Blog && (
-        <div className="laptop:w-[1000px] bg-gradient-to-r from-white to-gray-100 py-8 px-4 grid gap-8 rounded-lg">
+        <div className="laptop:w-[1000px] text-justify bg-gradient-to-r from-white to-gray-100 py-8 px-4 grid gap-8 rounded-lg">
           <div>
             <h2 className="text-2xl font-semibold">{Blog.title}</h2>
-            <div className="flex items-center font-[500] text-sm">
-              <div className="flex items-center">
+            <div className="flex items-center font-[500] text-sm gap-2">
+              <div className="flex items-center gap-2">
                 {Blog.creator.map((creator: string, index: number) => (
                   <div
                     key={index}
@@ -30,7 +30,15 @@ const Blogpage = ({ Blog }: any) => {
             </div>
           </div>
           <div className="w-full max-h-[500px] overflow-hidden bg-gradient-to-r from-green-500 to-green-600">
-            {Blog.image ? <img src={Blog.image} alt={Blog.title} /> : ""}
+            {Blog.image ? (
+              <img
+                src={urlFor(Blog.image).url()}
+                alt={Blog.title}
+                className="object-cover w-full h-full"
+              />
+            ) : (
+              ""
+            )}
           </div>
           <div className="grid gap-4">
             <div>
@@ -50,7 +58,7 @@ const Blogpage = ({ Blog }: any) => {
           </div>
         </div>
       )}
-      <div className="flex">
+      {/* <div className="flex">
         {relatableBlog &&
           relatableBlog.map((blog: any) => (
             <Link
@@ -91,7 +99,7 @@ const Blogpage = ({ Blog }: any) => {
               </div>
             </Link>
           ))}
-      </div>
+      </div> */}
     </div>
   );
 };

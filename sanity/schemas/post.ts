@@ -6,7 +6,7 @@ export interface Post {
   date: string;
   readTime: string;
   creator: string[];
-  image?: {
+  image: {
     asset: {
       _ref: string;
     };
@@ -41,5 +41,28 @@ export async function addPost(post: Post) {
     return result;
   } catch (error) {
     console.error("Error creating post:", error);
+  }
+}
+
+export async function fetchAllPosts(): Promise<Post[]> {
+  try {
+    const posts = await client.fetch('*[_type == "post"]');
+    return posts;
+  } catch (error) {
+    console.error("Error fetching posts:", error);
+    return [];
+  }
+}
+
+export async function fetchPostByTitle(title: string): Promise<Post | null> {
+  try {
+    const post = await client.fetch(
+      `*[_type == "post" && title == $title][0]`,
+      { title }
+    );
+    return post || null;
+  } catch (error) {
+    console.error("Error fetching post:", error);
+    return null;
   }
 }

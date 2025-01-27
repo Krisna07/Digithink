@@ -4,7 +4,11 @@ export interface BlogPost {
   date: string;
   readTime: string;
   creator: string[];
-  image: string;
+  image?: {
+    asset: {
+      _ref: string;
+    };
+  };
   blogBody: {
     introduction: string;
     sections: {
@@ -22,8 +26,11 @@ const blog: BlogPost[] = [
     date: "10 January 2023",
     readTime: "10 min",
     creator: ["Sophie Anderson", "Chris Roberts"],
-    image:
-      "https://uploads-ssl.webflow.com/60f03643ffba6a48a3bda298/6144a3913f8df905925cdb98_blog-13-image-1.png",
+    image: {
+      asset: {
+        _ref: "https://uploads-ssl.webflow.com/60f03643ffba6a48a3bda298/6144a3913f8df905925cdb98_blog-13-image-1.png",
+      },
+    },
     blogBody: {
       introduction: `The world of e-commerce has undergone a significant transformation through the advent of personalization technology. By leveraging sophisticated algorithms and data analytics, e-commerce platforms can understand user behavior, preferences, and purchasing patterns. This enables them to offer tailored product recommendations and create a highly personalized shopping experience. The use of machine learning and AI-driven algorithms allows platforms to analyze vast amounts of user data, generating precise and individualized suggestions for consumers based on their past interactions with the platform. Personalization technology has revolutionized the way people shop online, enhancing user experiences and increasing engagement.
 
@@ -51,8 +58,12 @@ const blog: BlogPost[] = [
       "Exploring the latest advancements and challenges in the quest for interstellar travel and exploration.",
     date: "5 February 2023",
     readTime: "10 min",
-    image:
-      "https://cdn.mos.cms.futurecdn.net/Dix8MaQU4T2r5Pu5npqJFS-1200-80.jpg",
+    image: {
+      asset: {
+        _ref: "https://cdn.mos.cms.futurecdn.net/Dix8MaQU4T2r5Pu5npqJFS-1200-80.jpg",
+      },
+    },
+
     creator: ["Thomas Johnson"],
     blogBody: {
       introduction: `Humanity’s fascination with space exploration has seen significant progress with ongoing scientific endeavors to explore interstellar travel. Innovations in propulsion systems, space habitats, and other cutting-edge technologies have brought us closer to the realization of interstellar exploration. The quest for exploring beyond our solar system has intensified, leading to breakthroughs in propulsion and long-term space missions.`,
@@ -75,8 +86,11 @@ const blog: BlogPost[] = [
       "Exploring the transformative effect of machine learning in the financial sector.",
     date: "20 March 2023",
     readTime: "10 min",
-    image:
-      "https://finezza.in/blog/wp-content/uploads/2020/07/How-Machine-Learning-Can-Transform-the-Face-of-Financial-Services.jpg",
+    image: {
+      asset: {
+        _ref: "https://finezza.in/blog/wp-content/uploads/2020/07/How-Machine-Learning-Can-Transform-the-Face-of-Financial-Services.jpg",
+      },
+    },
     creator: ["Liam Peterson", "Elena Rodriguez"],
     blogBody: {
       introduction: `Machine learning has significantly transformed the financial services sector by optimizing fraud detection, risk assessment, and customer service. The capability to analyze vast datasets empowers financial institutions to make informed decisions, enhancing operational efficiency and customer satisfaction. The implementation of machine learning algorithms has revolutionized the way financial services operate, enabling predictive analysis and personalized services for customers.`,
@@ -100,8 +114,11 @@ const blog: BlogPost[] = [
     date: "15 April 2023",
     readTime: "6 min",
     creator: ["Nadia Patel"],
-    image:
-      "https://thumbs.dreamstime.com/z/biotechnology-concept-vector-illustration-scientists-looking-dna-charts-magnifier-laptop-biological-systems-bio-162896116.jpg",
+    image: {
+      asset: {
+        _ref: "https://thumbs.dreamstime.com/z/biotechnology-concept-vector-illustration-scientists-looking-dna-charts-magnifier-laptop-biological-systems-bio-162896116.jpg",
+      },
+    },
     blogBody: {
       introduction:
         "Biotechnology is playing a pivotal role in modern healthcare, offering advancements in drug development, personalized medicine, genetic engineering, and disease management. However, ethical considerations surrounding its use raise important discussions in the medical field.",
@@ -127,8 +144,11 @@ const blog: BlogPost[] = [
       "Exploring the impact of renewable energy sources and their role in the global energy landscape.",
     date: "25 September 2023",
     readTime: "12 min",
-    image:
-      "https://www.slashplan.com/wp-content/uploads/2020/12/electricity-power-outage-scaled.jpg",
+    image: {
+      asset: {
+        _ref: "https://www.slashplan.com/wp-content/uploads/2020/12/electricity-power-outage-scaled.jpg",
+      },
+    },
     creator: ["Emma Garcia", "Alexander Wang"],
     blogBody: {
       introduction: `Renewable energy sources have emerged as a transformative force in the global energy landscape. As the world grapples with climate change and sustainability challenges, the shift towards renewable energy plays a pivotal role in reducing carbon emissions and fostering a more sustainable future.`,
@@ -156,8 +176,11 @@ const blog: BlogPost[] = [
     date: "14 November 2023",
     readTime: "12 min",
     creator: ["Sophie Reynolds", "David Kim"],
-    image:
-      "https://www.ironorbit.com/wp-content/uploads/2020/05/5G-featured-Image-1080x500.jpg",
+    image: {
+      asset: {
+        _ref: "https://www.ironorbit.com/wp-content/uploads/2020/05/5G-featured-Image-1080x500.jpg",
+      },
+    },
     blogBody: {
       introduction: `5G technology has revolutionized connectivity and communication, promising faster speeds, lower latency, and enhanced capacity. The implications of 5G extend beyond mobile networks, impacting various industries and paving the way for a hyper-connected future.`,
       sections: [
@@ -184,8 +207,11 @@ const blog: BlogPost[] = [
       "Discussing the ethical considerations and responsibilities in the development and deployment of AI.",
     date: "18 June 2023",
     readTime: "6 min",
-    image:
-      "https://miro.medium.com/v2/resize:fit:1400/1*J9mArps-cNcNB9mbEuXdfw.jpeg",
+    image: {
+      asset: {
+        _ref: "https://miro.medium.com/v2/resize:fit:1400/1*J9mArps-cNcNB9mbEuXdfw.jpeg",
+      },
+    },
     creator: ["Lucas Thompson", "Eva Martinez"],
     blogBody: {
       introduction:
@@ -208,8 +234,11 @@ const blog: BlogPost[] = [
   },
   {
     title: "Cybersecurity in the Digital Age: Challenges and Innovations",
-    image:
-      "https://enotarylog.com/wp-content/uploads/2022/07/AdobeStock_435748816-scaled.jpeg",
+    image: {
+      asset: {
+        _ref: "https://enotarylog.com/wp-content/uploads/2022/07/AdobeStock_435748816-scaled.jpeg",
+      },
+    },
     description:
       "Exploring the evolving landscape of cybersecurity and the advancements in digital protection.",
     date: "25 July 2023",
@@ -236,8 +265,11 @@ const blog: BlogPost[] = [
   },
   {
     title: "The Role of Data Analytics in Business Decision-Making",
-    image:
-      "https://www.rtgsolutionsgroup.com/wp-content/uploads/2021/01/rsz_business_intelligence_data_analytics-scaled-1110x500.jpg",
+    image: {
+      asset: {
+        _ref: "https://www.rtgsolutionsgroup.com/wp-content/uploads/2021/01/rsz_business_intelligence_data_analytics-scaled-1110x500.jpg",
+      },
+    },
     description:
       "Examining the significance of data analytics in guiding effective business decisions.",
     date: "12 August 2023",
@@ -264,8 +296,11 @@ const blog: BlogPost[] = [
   },
   {
     title: "Cognitive Computing: Expanding Human-Machine Collaboration",
-    image:
-      "https://tendercapital.com/wp-content/uploads/2018/06/YAM112003_HungryMinds_Luglio_Articolo2_Foto_DEFbx.jpg",
+    image: {
+      asset: {
+        _ref: "https://tendercapital.com/wp-content/uploads/2018/06/YAM112003_HungryMinds_Luglio_Articolo2_Foto_DEFbx.jpg",
+      },
+    },
     description:
       "Exploring the evolving landscape of cognitive computing and its impact on human-machine interaction.",
     date: "6 September 2023",
@@ -292,8 +327,11 @@ const blog: BlogPost[] = [
   },
   {
     title: "The Future of Work: Embracing Remote Collaboration",
-    image:
-      "https://www.cloudtalk.io/wp-content/uploads/2021/12/illustration-remote-team.png",
+    image: {
+      asset: {
+        _ref: "https://www.cloudtalk.io/wp-content/uploads/2021/12/illustration-remote-team.png",
+      },
+    },
     description:
       "Exploring the shift towards remote work and the impact of technology on the future of work environments.",
     date: "19 October 2023",
