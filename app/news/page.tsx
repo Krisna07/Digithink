@@ -13,8 +13,9 @@ export interface News {
 }
 const page = () => {
   return (
-    <div className="grid place-items-center">
-      <NewsPull />
+    <div className="grid place-items-center w-full h-screen text-4xl text-center">
+      Page under construction
+      {/* <NewsPull /> */}
     </div>
   );
 };

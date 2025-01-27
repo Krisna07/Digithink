@@ -37,10 +37,10 @@ const Navbar = () => {
       navTitle: "Blog",
       link: "/blog",
     },
-    {
-      navTitle: "News",
-      link: "/news",
-    },
+    // {
+    //   navTitle: "News",
+    //   link: "/news",
+    // },
   ];
 
   const [isopen, setopen] = useState<boolean>();

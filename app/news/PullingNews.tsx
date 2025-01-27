@@ -49,7 +49,7 @@ const NewsPull: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setActiveNews(activeNews + 1), 5000);
+    const timeout = setTimeout(() => setActiveNews(activeNews + 1), 10000);
     return () => clearTimeout(timeout);
   }, [activeNews]);
   return currentNews.length ? (
