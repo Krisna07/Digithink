@@ -52,7 +52,7 @@ const Navbar = () => {
   const router = usePathname();
 
   const [btmbdr, setBtmbdr] = useState(0);
-  const [path, setPath] = useState<string>(`./`);
+  const [path, setPath] = useState<string>(router);
   const [active, setActive] = useState<number>();
   const [barW, setBarW] = useState(setWidth(menuRefs[0]));
 
@@ -70,26 +70,15 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    navItems.forEach((item) => {
-      if (path.includes(item.link)) {
+    path && navItems.forEach((item) => {
+      if (path && path.includes(item.link)) {
         const activeThis = navItems.indexOf(item);
         handleOptionClick(activeThis);
       }
     });
   }, []);
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (window.scrollY > 0) {
-  //       setopen(false);
-  //     }
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
+  
 
   return (
     <div className="desktop:w-fit m-[0_auto] w-full tablet:rounded-xl mt-4 sticky top-0  tablet:px-4 min-h-fit transition-all ease-in-out text-black  z-[90] bg-gray-300  shadow-lg   py-[4px] bg-secondary-Btn grid  place-items-center ">
