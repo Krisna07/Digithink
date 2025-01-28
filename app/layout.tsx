@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode; 
 }) {
   return (
     <html lang="en">
@@ -25,7 +25,7 @@ export default function RootLayout({
       ></meta>
       <body className={inter.className}>
         <Navbar />
-        <div className="relative min-h-[100vh] z-[20]">{children}</div>
+        <div className="relative  z-[20]">{children}</div>
       </body>
     </html>
   );

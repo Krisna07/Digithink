@@ -27,7 +27,7 @@ const ContactPage = () => {
   }
 
   return (
-    <div className="min-h-screen w-full grid place-items-center mx-auto py-8 px-4 relative">
+    <div className="min-h-screen w-full grid place-items-center mx-auto px-4  fixed top-0">
       <div className="w-full h-full absolute -top-1/2 skew-y-[-25deg] bg-red-200 z-0"></div>
       <form
         onSubmit={handleSubmit}
