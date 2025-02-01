@@ -45,8 +45,12 @@ export async function addPost(post: Post) {
 }
 
 export async function fetchAllPosts(): Promise<Post[]> {
+  let posts: Post[] = [];
   try {
-    const posts = await client.fetch('*[_type == "post"]');
+    const data = await client.fetch('*[_type == "post"]');
+    if (data) {
+      posts = data;
+    }
     return posts;
   } catch (error) {
     console.error("Error fetching posts:", error);

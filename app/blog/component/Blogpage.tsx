@@ -3,9 +3,6 @@ import React from "react";
 import { urlFor } from "../../../sanity/lib/image";
 
 const Blogpage = ({ Blog }: any) => {
-  // const relatableBlog = blog.filter((item) => item.title !== Blog.title);
-  // console.log(Blog);
-
   return (
     <div className="w-full h-[100vh] fixed top-0 grid place-items-center bg-white py-20 overflow-auto z-20">
       {Blog && (

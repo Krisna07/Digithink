@@ -129,19 +129,18 @@ const AddPost = () => {
         date: new Date().toLocaleString(),
         readTime: post.readTime || "5 min read", // Default value
       });
-
-      router.refresh();
       setPost(initialPostState);
+      setIsLoading(false);
+      router.refresh();
     } catch (err) {
       setError(err instanceof Error ? err.message : "Submission failed");
     } finally {
-      setIsLoading(false);
       router.push("/blog");
     }
   };
 
   useEffect(() => {
-    if (toast) {
+    if (!isLoading && toast) {
       const timer = setInterval(() => {
         setToast(false);
       }, 5000);

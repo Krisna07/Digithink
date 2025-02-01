@@ -12,14 +12,16 @@ const page = () => {
   const [index, setIndex] = useState<number>(0);
   const [counter, setCounter] = useState(0);
 
+  // const updateBlogItems = ()=>{
+
+  // }
+
   useEffect(() => {
     setLoading(true);
     const fetchData = async () => {
       try {
         const blogs = await fetchAllPosts();
-        if (blogs) {
-          setBlogItems(blogs);
-        }
+        setBlogItems(blogs);
       } catch (error) {
         console.error("Failed to fetch blogs:", error);
       } finally {
@@ -46,13 +48,9 @@ const page = () => {
     <div className="w-full grid place-items-center relative box-border p-4">
       <div className="desktop:w-[1200px] w-full py-8   tablet:flex grid gap-8 box-border">
         <img
-          src={urlFor(blogItem[index].image)
-            .width(600)
-            .height(400)
-            .flipHorizontal()
-            .url()}
+          src={urlFor(blogItem[index].image).width(600).height(400).url()}
           alt={blogItem[index].title}
-          className="max-h-[400px] max-w-[600px] tablet:w-1/2 w-full object-contain transition-all duration-300 rounded-lg cursor-pointer filter grayscale hover:grayscale-0"
+          className="max-h-[400px] max-w-[600px] tablet:w-1/2 w-full object-contain transition-all duration-300 rounded-lg cursor-pointer hover:grayscale-0"
         />
         <div className=" tablet:w-1/2 flex flex-col px-4 gap-4 ">
           <div className="flex gap-4 items-center text-sm text-gray-600 leading-[130%]">
@@ -95,9 +93,9 @@ const page = () => {
                 <div className="w-full h-[200px] rounded overflow-hidden bg-gradient-to-r from-sky-400 to-blue-500 shadow-[0_0_4px_0_gray]">
                   {blog.image && (
                     <img
-                      src={urlFor(blog.image).width(200).flipHorizontal().url()}
+                      src={urlFor(blog.image).width(200).url()}
                       alt={blog.title}
-                      className="w-full h-full object-cover transition-all duration-300 rounded-lg cursor-pointer filter grayscale group-hover:grayscale-0"
+                      className="w-full h-full object-cover transition-all duration-300 rounded-lg cursor-pointer filter grayscale group-hover:grayscale-0 group-hover:scale-[1.2]"
                     />
                   )}
                 </div>
@@ -110,7 +108,7 @@ const page = () => {
                     {blog.readTime} read
                   </span>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center gap-[4px]">
                   {blog.creator.map((creator: string, index: number) => (
                     <div
                       key={index}
@@ -121,9 +119,18 @@ const page = () => {
                         style={{ transform: `translateX(-${index * 10}px)` }}
                         className={`h-6 w-6 bg-gradient-to-tr from-red-400 via-pink-300 to-indigo-300 rounded-full relative translate-x-0 shadow-[0_0_4px_0_white] border-px  border-white `}
                       ></div>
-                      <div className="grid place-items-center">{creator}</div>
                     </div>
                   ))}
+                  <div className="flex flex-col items-start text-left w-fit">
+                    {blog.creator.map((creator: string, index: number) => (
+                      <div
+                        key={index}
+                        className="grid place-items-center text-[10px] leading-[120%]"
+                      >
+                        {creator}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </Link>

@@ -11,6 +11,7 @@ const page = () => {
   const router = usePathname();
 
   const [openBlog, setOpenBlog] = useState<BlogPost | undefined>(undefined);
+  const [blog, setBlog] = useState<BlogPost[]>([]);
 
   const thisblog = router.split("/")[2].split("%20").join(" ");
 
