@@ -1,27 +1,11 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-// export interface ResponsePost {
-//   title: string;
-//   description: string;
-//   readTime: string;
-//   creator: string[];
-//   blogBody: {
-//     introduction: string;
-//     sections: {
-//       title: string;
-//       content: string;
-//       _ref: string;
-//     }[];
-//     conclusion: string;
-//   };
-// }
-
 const apiKey = process.env.GEMINI_API_KEY;
 if (!apiKey) {
-  throw new Error("GEMINI_API_KEY is not defined");
+  console.log("GEMINI_API_KEY is not defined");
 }
 const genAI = new GoogleGenerativeAI(apiKey);
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+const model = genAI.getGenerativeModel({ model: "gemini-2.5-pro" });
 const generateBlogContext = async (title: string, description: string) => {
   const prompt = `Generate a blogpost using the following title and description:
     Title: ${title}
