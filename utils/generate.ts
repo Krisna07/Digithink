@@ -3,9 +3,9 @@ import mime from 'mime';
 import client from "./sanityClient";
 
 const apiKey = process.env.GEMINI_API_KEY || '';
-if (!apiKey) {
-  console.log("GEMINI_API_KEY is not defined");
-}
+// if (!apiKey) {
+//   console.log("GEMINI_API_KEY is not defined");
+// }
 const genAI = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,
 });
@@ -85,10 +85,10 @@ const handleImageGeneration = async (prompt: string, fileName: string) => {
       contents,
     });
 
-    console.log(response)
+    // console.log(response)
 
     for await (const chunk of response) {
-      console.log("Received chunk:", JSON.stringify(chunk, null, 2)); // Log the entire chunk for debugging
+      // console.log("Received chunk:", JSON.stringify(chunk, null, 2)); // Log the entire chunk for debugging
 
       if (chunk.candidates?.[0]?.safetyRatings && chunk.candidates[0].safetyRatings.some(rating => rating.blocked)) {
         console.warn("Image generation blocked due to safety policies.");
@@ -125,7 +125,7 @@ const handleImageGeneration = async (prompt: string, fileName: string) => {
         }
 
         const asset = await client.assets.upload("image", fileToUpload);
-        console.log("Sanity Asset uploaded:", asset);
+        // console.log("Sanity Asset uploaded:", asset);
 
         return {
           status: 200,

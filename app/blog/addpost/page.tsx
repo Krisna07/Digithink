@@ -80,7 +80,7 @@ const AddPost = () => {
     try {
       const prompt = promptData
       const response = await handleImageGeneration(prompt.prompt, prompt.title);
-      console.log(response)
+      // console.log(response)
       if(response && response.status !== 200){
         setToast(true);
         setError('oops !! Image generation failed. Please try again.')
@@ -112,10 +112,10 @@ const AddPost = () => {
     
       const response = await generateBlogContext(post.title, post.description);
       const generatedData = response && JSON.parse(response);
-      console.log(response)
+      // console.log(response)
       if (!post.image?.asset._ref) {
         const response = await handleImageGeneration(generatedData.description, generatedData.title.split(" ").join('_'));
-        console.log(response)
+        // console.log(response)
 
         if(response?.status !== 200){
           // setToast(true);

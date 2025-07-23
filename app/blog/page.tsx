@@ -18,7 +18,7 @@ const page = () => {
     const fetchData = async () => {
       try {
         const blogs = await fetchAllPosts();
-        console.log(blogs)
+        // console.log(blogs)
         setBlogItems(blogs);
       } catch (error) {
         console.error("Failed to fetch blogs:", error);
