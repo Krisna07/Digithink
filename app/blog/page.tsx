@@ -12,15 +12,13 @@ const page = () => {
   const [index, setIndex] = useState<number>(0);
   const [counter, setCounter] = useState(0);
 
-  // const updateBlogItems = ()=>{
-
-  // }
 
   useEffect(() => {
     setLoading(true);
     const fetchData = async () => {
       try {
         const blogs = await fetchAllPosts();
+        console.log(blogs)
         setBlogItems(blogs);
       } catch (error) {
         console.error("Failed to fetch blogs:", error);
@@ -48,7 +46,7 @@ const page = () => {
     <div className="w-full grid place-items-center relative box-border p-4">
       <div className="desktop:w-[1200px] w-full py-8   tablet:flex grid gap-8 box-border">
         <img
-          src={urlFor(blogItem[index].image).width(600).height(400).url()}
+          src={blogItem[index].image.asset._ref && urlFor(blogItem[index].image).width(600).height(400).url()}
           alt={blogItem[index].title}
           className="max-h-[400px] max-w-[600px] tablet:w-1/2 w-full object-contain transition-all duration-300 rounded-lg cursor-pointer hover:grayscale-0"
         />
@@ -93,7 +91,7 @@ const page = () => {
                 <div className="w-full h-[200px] rounded overflow-hidden bg-gradient-to-r from-sky-400 to-blue-500 shadow-[0_0_4px_0_gray]">
                   {blog.image && (
                     <img
-                      src={urlFor(blog.image).width(200).url()}
+                      src={blog.image.asset._ref ? urlFor(blog.image).width(200).url():''}
                       alt={blog.title}
                       className="w-full h-full object-cover transition-all duration-300 rounded-lg cursor-pointer filter grayscale group-hover:grayscale-0 group-hover:scale-[1.2]"
                     />

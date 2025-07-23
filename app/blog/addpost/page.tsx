@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import generateBlogContext from "../../../utils/generate";
+import  {generateBlogContext, handleImageGeneration } from "../../../utils/generate";
 import { addPost, Post, uploadImage } from "../../../sanity/schemas/post";
 import { FaSpinner } from "react-icons/fa";
 import { BiCheckCircle } from "react-icons/bi";
@@ -72,6 +72,33 @@ const AddPost = () => {
     }
   };
 
+  const handleImageAiGeneration = async (promptData:{
+    prompt:string,
+    title:string
+  }) => {
+    setUploading(true);
+    try {
+      const prompt = promptData
+      const response = await handleImageGeneration(prompt.prompt, prompt.title);
+      console.log(response)
+      if(response && response.status !== 200){
+        setToast(true);
+        setError('oops !! Image generation failed. Please try again.')
+        return 
+      }else{
+        setPost((prev) => ({
+          ...prev,
+          image: { asset: { _ref: response?.message } },
+        }));
+     
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Image upload failed");
+    } finally {
+      setUploading(false);
+    }
+  };
+
   const handleGeneratePost = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
@@ -82,26 +109,48 @@ const AddPost = () => {
       if (!post.title || !post.description) {
         throw new Error("Title and description are required");
       }
-      if (!post.image?.asset._ref) {
-        throw new Error("Please upload an image for your blog");
-      }
-
+    
       const response = await generateBlogContext(post.title, post.description);
-      const generatedData = JSON.parse(response);
+      const generatedData = response && JSON.parse(response);
+      console.log(response)
+      if (!post.image?.asset._ref) {
+        const response = await handleImageGeneration(generatedData.description, generatedData.title.split(" ").join('_'));
+        console.log(response)
 
-      await addPost({
+        if(response?.status !== 200){
+          // setToast(true);
+          setError('oops !! Image generation failed. Please try again.')
+          return 
+        }
+        if(!response?.message){
+          return 
+        }
+
+          setPost((prev) => ({
+            ...prev,
+            image: { asset: { _ref: response?.message } },
+          }));
+        
+       }
+      
+      const result  = await addPost({
         ...generatedData,
         image: post.image,
         date: new Date().toLocaleString(),
       });
 
-      router.refresh();
-      setPost(initialPostState);
+      if(result.status !== 200){
+        console.log(result.body.error)
+        return setError(result.body.message)
+      }
+        router.refresh();
+        setPost(initialPostState);
+        router.push("/blog");
     } catch (err) {
+      setIsLoading(false);
       setError(err instanceof Error ? err.message : "Generation failed");
     } finally {
       setIsLoading(false);
-      router.push("/blog");
     }
   };
 

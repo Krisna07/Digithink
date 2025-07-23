@@ -28,6 +28,15 @@ export async function uploadImage(file: File): Promise<string> {
 
 export async function addPost(post: Post) {
   try {
+    if (!post.image || post.image.asset._ref == "") {
+      return {
+        status: 400,
+        body: {
+          message: "No image yet uploaded",
+          error: undefined
+        }
+      }
+    }
     const result = await client.create({
       _type: "post",
       title: post.title,
@@ -38,9 +47,21 @@ export async function addPost(post: Post) {
       image: post.image,
       blogBody: post.blogBody,
     });
-    return result;
+    return {
+      status: 200,
+      body: {
+        message: "Post added succcessfully",
+        post: result
+      }
+    };
   } catch (error) {
-    console.error("Error creating post:", error);
+    return {
+      status: 400,
+      body: {
+        message: "Error creating post",
+        error: error
+      }
+    }
   }
 }
 
