@@ -61,9 +61,10 @@ const generateBlogContext = async (title: string, description: string) => {
 
 const handleImageGeneration = async (prompt: string, fileName: string) => {
   const model = 'gemini-2.0-flash-preview-image-generation';
-  // *** THE FIX IS HERE: Remove responseMimeType from config ***
+  // Fixed config based on working example
   const config = {
-    responseModalities: ['IMAGE', 'TEXT'], // Explicitly tell the model we want both
+    responseModalities: ['IMAGE', 'TEXT'],
+    responseMimeType: 'text/plain', // This is the key fix!
   };
 
   const contents = [
@@ -71,8 +72,7 @@ const handleImageGeneration = async (prompt: string, fileName: string) => {
       role: 'user',
       parts: [
         {
-          // Refined prompt for clarity to the model
-          text: `generate an image based on the following prompt: ${prompt}`,
+          text: prompt, // Simplified prompt like in working example
         },
       ],
     },
@@ -85,11 +85,12 @@ const handleImageGeneration = async (prompt: string, fileName: string) => {
       contents,
     });
 
-    // console.log(response)
+    console.log("Starting image generation...");
 
     for await (const chunk of response) {
-      // console.log("Received chunk:", JSON.stringify(chunk, null, 2)); // Log the entire chunk for debugging
+      console.log("Processing chunk...");
 
+      // Check for safety blocks first
       if (chunk.candidates?.[0]?.safetyRatings && chunk.candidates[0].safetyRatings.some(rating => rating.blocked)) {
         console.warn("Image generation blocked due to safety policies.");
         return {
@@ -98,62 +99,52 @@ const handleImageGeneration = async (prompt: string, fileName: string) => {
         };
       }
 
-      // Ensure we have candidates, content, and parts before proceeding
-      if (!chunk.candidates || chunk.candidates.length === 0 ||
-        !chunk.candidates[0].content || !chunk.candidates[0].content.parts ||
-        chunk.candidates[0].content.parts.length === 0) {
-        continue; // Skip if the chunk doesn't contain expected content structure
+      // Check if chunk has the expected structure
+      if (!chunk.candidates || !chunk.candidates[0]?.content || !chunk.candidates[0].content.parts) {
+        continue;
       }
 
-      const firstPart = chunk.candidates[0].content.parts[0];
-      // console.log("First part:", JSON.stringify(firstPart, null, 2)); // Log the first part for more detail
-
-      if (firstPart.inlineData) {
-        const inlineData = firstPart.inlineData;
-        const fileExtension = mime.getExtension(inlineData.mimeType || 'jpeg'); // Default to jpeg if mimeType is missing
+      // Look for inline data (image)
+      if (chunk.candidates[0].content.parts[0]?.inlineData) {
+        console.log("Found image data!");
+        const inlineData = chunk.candidates[0].content.parts[0].inlineData;
+        const fileExtension = mime.getExtension(inlineData.mimeType || 'jpeg');
         const buffer = Buffer.from(inlineData.data || '', 'base64');
 
-        let fileToUpload;
-        // Conditional handling for browser vs Node.js environments
-        if (typeof window !== 'undefined' && typeof Blob !== 'undefined' && typeof File !== 'undefined') {
-          // Browser environment: Create a Blob and then a File
-          const blob = new Blob([buffer], { type: inlineData.mimeType });
-          fileToUpload = new File([blob], `${fileName}.${fileExtension}`, { type: inlineData.mimeType });
-        } else {
-          // Node.js environment: Sanity's upload generally accepts a Buffer directly
-          fileToUpload = buffer;
+        try {
+          // For Node.js environment (server-side), upload buffer directly
+          const asset = await client.assets.upload("image", buffer, {
+            filename: `${fileName}.${fileExtension}`,
+          });
+
+          console.log("Sanity Asset uploaded successfully:", asset._id);
+
+          return {
+            status: 200,
+            message: asset._id // Return the Sanity asset ID
+          };
+        } catch (uploadError: any) {
+          console.error("Error uploading to Sanity:", uploadError);
+          return {
+            status: 500,
+            message: `Upload failed: ${uploadError.message || uploadError.toString()}`
+          };
         }
-
-        const asset = await client.assets.upload("image", fileToUpload);
-        // console.log("Sanity Asset uploaded:", asset);
-
-        return {
-          status: 200,
-          message: asset.id // Return the Sanity asset ID
-        };
-      } else if (firstPart.text) {
-        // This block will catch if the model returns text for some reason
-        // (e.g., if it couldn't generate an image and defaulted to a text explanation).
-        console.warn("Model returned text instead of inlineData (expected image):", firstPart.text);
-        return {
-          status: 400,
-          message: `Model returned text instead of image data: ${firstPart.text}`
-        };
-      } else {
-        // If the part exists but is neither inlineData nor text, log for investigation
-        console.warn("Unexpected content part structure:", firstPart);
+      } else if (chunk.text) {
+        // Handle text responses (but continue looking for image)
+        console.log("Received text response:", chunk.text);
       }
     }
 
-    // If the loop completes without finding and returning an image
-    console.warn("No image data found in any of the response chunks.");
+    // If no image was found
+    console.warn("No image data found in response chunks.");
     return {
       status: 404,
       message: "Image generation failed: No image data received from the model."
     };
 
   } catch (error: any) {
-    console.error("Error during image generation or upload:", error);
+    console.error("Error during image generation:", error);
     return {
       status: 500,
       message: `Internal server error: ${error.message || error.toString()}`

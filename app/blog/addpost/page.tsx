@@ -113,39 +113,53 @@ const AddPost = () => {
       const response = await generateBlogContext(post.title, post.description);
       const generatedData = response && JSON.parse(response);
       // console.log(response)
-      if (!post.image?.asset._ref) {
-        const response = await handleImageGeneration(generatedData.description, generatedData.title.split(" ").join('_'));
-        // console.log(response)
+      
+      let imageRef = post.image?.asset._ref || "";
+      
+      if (!imageRef) {
+        const imageResponse = await handleImageGeneration(generatedData.description, generatedData.title.split(" ").join('_'));
+        // console.log(imageResponse)
 
-        if(response?.status !== 200){
+        if(imageResponse?.status !== 200){
           // setToast(true);
           setError('oops !! Image generation failed. Please try again.')
           return 
         }
-        if(!response?.message){
+        if(!imageResponse?.message){
           return 
         }
 
-          setPost((prev) => ({
-            ...prev,
-            image: { asset: { _ref: response?.message } },
-          }));
-        
+        // Use the image reference directly instead of updating state
+        imageRef = imageResponse.message;
        }
+      
+      // Debug: Log the post object before sending to addPost
+      // console.log("Post object before addPost:", {
+      //   ...generatedData,
+      //   image: { asset: { _ref: imageRef } },
+      //   date: new Date().toLocaleString(),
+      // });
       
       const result  = await addPost({
         ...generatedData,
-        image: post.image,
+        image: { asset: { _ref: imageRef } },
         date: new Date().toLocaleString(),
       });
 
       if(result.status !== 200){
-        console.log(result.body.error)
+        console.log("addPost failed:", result.body.error)
         return setError(result.body.message)
       }
-        router.refresh();
-        setPost(initialPostState);
-        router.push("/blog");
+      
+      // Update the post state with the generated image for UI feedback
+      setPost((prev) => ({
+        ...prev,
+        image: { asset: { _ref: imageRef } },
+      }));
+      
+      router.refresh();
+      setPost(initialPostState);
+      router.push("/blog");
     } catch (err) {
       setIsLoading(false);
       setError(err instanceof Error ? err.message : "Generation failed");

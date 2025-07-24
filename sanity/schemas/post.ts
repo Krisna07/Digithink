@@ -53,7 +53,9 @@ export async function uploadImage(file: File): Promise<string> {
 
 export async function addPost(post: Post) {
   try {
-    if (!post.image || post.image.asset._ref == "") {
+    // More robust check for image
+    if (!post.image || !post.image.asset || !post.image.asset._ref || post.image.asset._ref.trim() === "") {
+      console.log("Image validation failed:", post.image);
       return {
         status: 400,
         body: {
@@ -62,6 +64,9 @@ export async function addPost(post: Post) {
         }
       }
     }
+
+    // console.log("Creating post with image:", post.image.asset._ref);
+
     const result = await client.create({
       _type: "post",
       title: post.title,
@@ -72,6 +77,9 @@ export async function addPost(post: Post) {
       image: post.image,
       blogBody: post.blogBody,
     });
+
+    // console.log("Post created successfully:", result._id);
+
     return {
       status: 200,
       body: {
