@@ -22,8 +22,33 @@ export interface Post {
 }
 
 export async function uploadImage(file: File): Promise<string> {
-  const asset = await client.assets.upload("image", file);
-  return asset._id; // Ensure this returns the correct asset ID
+  try {
+    // Validate file
+    if (!file) {
+      throw new Error("No file provided");
+    }
+
+    // Check file size (max 10MB)
+    if (file.size > 10 * 1024 * 1024) {
+      throw new Error("File size too large. Maximum 10MB allowed.");
+    }
+
+    // Check file type
+    const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/gif'];
+    if (!allowedTypes.includes(file.type)) {
+      throw new Error("Invalid file type. Only JPEG, PNG, WebP, and GIF are allowed.");
+    }
+
+    console.log("Uploading file:", { name: file.name, size: file.size, type: file.type });
+
+    const asset = await client.assets.upload("image", file);
+    console.log("Upload successful:", asset);
+
+    return asset._id; // Ensure this returns the correct asset ID
+  } catch (error) {
+    console.error("Image upload error:", error);
+    throw error;
+  }
 }
 
 export async function addPost(post: Post) {
